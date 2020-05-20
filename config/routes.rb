@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root "productlistings#index"
+  root 'items#index'
+  # resources "productlistings#index"
 end
