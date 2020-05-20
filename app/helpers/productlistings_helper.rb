@@ -1,0 +1,2 @@
+module ProductlistingsHelper
+end
