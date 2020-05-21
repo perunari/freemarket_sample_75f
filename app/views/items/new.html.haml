@@ -1,7 +1,5 @@
 .pro--list__wrap
-  .pro--list__head
-    .pro--list__head--box
-      = link_to "", root_path, class: "pro--list__head--box"
+  = render "layouts/header"
   .pro--list__main
     .pro--list__main__picture
       .pro--list__main__picture--title
@@ -30,14 +28,4 @@
       .pro--list__main__select__draft
       .pro--list__main__select__return
       .pro--list__main__select__notes
-  .pro--list__footer
-    .pro--list__footer__notes
-      %ul
-      .pro--list__footer__notes--contents
-        %li=link_to "プライバシーポリシー", "#", class: "pro--list__footer__notes--content"
-        %li=link_to "フリマ利用規約", "#", class: "pro--list__footer__notes--content"
-        %li=link_to "特定商取引に関する表記", "#", class: "pro--list__footer__notes--content"
-    .pro--list__footer__box
-      .pro--list__footer__box--icon
-    .pro--list__footer__trademark
-      ©️ FURIMA, Inc.
+  = render "layouts/footer"

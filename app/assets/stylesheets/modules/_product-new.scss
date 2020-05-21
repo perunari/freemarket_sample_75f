@@ -12,23 +12,22 @@ a {
 }
 
 // ヘッダー部分
-.pro--list__head {
-  height: 128px;
-  // background-color: #cff;
-  -webkit-box-align: center;
-  align-items: center;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
-.pro--list__head--box {
-  height: 50px;
-  width: 185px;
-  display: block;
-  background-image: image-url("material/logo/logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
+// .pro--list__head {
+//   height: 128px;
+//   -webkit-box-align: center;
+//   align-items: center;
+//   display: flex;
+//   -webkit-box-pack: center;
+//   justify-content: center;
+// }
+// .pro--list__head--box {
+//   height: 50px;
+//   width: 185px;
+//   display: block;
+//   background-image: image-url("material/logo/logo.png");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+// }
 
 // 入力フォーム部分
 .pro--list__main {
@@ -39,40 +38,38 @@ a {
 }
 
 // ヘッダー部分
-.pro--list__footer {
-  background-color: #fff;
-  padding: 40px 0px 41px;
-  margin-top: auto;
-  text-align: center;
-}
-.pro--list__footer__notes {
-  // background-color: lightblue;
-  height: 54px;
-}
-.pro--list__footer__notes--contents {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-}
-.pro--list__footer__notes--content {
-  display: block;
-  margin: 16px 0px 0px 16px;
-  font-size: 12px;
-}
+// .pro--list__footer {
+//   background-color: #fff;
+//   padding: 40px 0px 41px;
+//   margin-top: auto;
+//   text-align: center;
+// }
+// .pro--list__footer__notes {
+//   height: 54px;
+// }
+// .pro--list__footer__notes--contents {
+//   display: flex;
+//   justify-content: center;
+//   list-style: none;
+// }
+// .pro--list__footer__notes--content {
+//   display: block;
+//   margin: 16px 0px 0px 16px;
+//   font-size: 12px;
+// }
 
-.pro--list__footer__box {
-  // background-color: #cff;
-  display: flex;
-  justify-content: center;
-}
-.pro--list__footer__box--icon {
-  height: 50px;
-  width: 185px;
-  display: block;
-  background-image: image-url("material/logo/logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.pro--list__footer__trademark {
-  font-size: 12px;
-}
+// .pro--list__footer__box {
+//   display: flex;
+//   justify-content: center;
+// }
+// .pro--list__footer__box--icon {
+//   height: 50px;
+//   width: 185px;
+//   display: block;
+//   background-image: image-url("material/logo/logo.png");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+// }
+// .pro--list__footer__trademark {
+//   font-size: 12px;
+// }
