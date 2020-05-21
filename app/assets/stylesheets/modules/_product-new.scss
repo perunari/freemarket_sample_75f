@@ -3,15 +3,16 @@ a {
   text-decoration: none;
 }
 
-
-.pro-list-wrap {
+// 全体
+.pro--list__wrap {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: #f8f8f8;
 }
 
-.pro-list-head {
+// ヘッダー部分
+.pro--list__head {
   height: 128px;
   background-color: #cff;
   -webkit-box-align: center;
@@ -20,14 +21,25 @@ a {
   -webkit-box-pack: center;
   justify-content: center;
 }
+.pro--list__head--box {
+  height: 50px;
+  width: 185px;
+  display: block;
+  background-image: image-url("material/logo/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
-.pro-list-main {
+// 入力フォーム部分
+.pro--list__main {
   height: 100vh;
   background-color: #fff;
   max-width: 700px;
   margin: 0 auto;
 }
-.pro-list-footer {
+
+// ヘッダー部分
+.pro--list__footer {
   background-color: #272727;
   padding: 40px 0px 41px;
   margin-top: auto;
