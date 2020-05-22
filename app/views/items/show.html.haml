@@ -1,21 +1,93 @@
 = render 'layouts/header'
 
 %main
-  商品詳細ページ
   .contents
+    
     .product
-      .product__name
-        商品名
-      .product__image
-        商品画像一覧
-      .product__price
+      %h1.product__name
+        product3
+      
+      .product__images
+        %img{src: 'product_3.png', width: '560', height: '400'}
+      
+      .product__price-info
         .product__price-info__price
           ¥price
-        .product__price-info__inculude
-          .product__price-info__inculude--tax
+        .product__price-info__include
+          .product__price-info__include--tax
             (税込)
-          .product__price-info__inculude--postage
+          .product__price-info__include--postage
             送料込み
+      
+      .product__description
+        私は場合どうかほんの撲殺家として訳の時を起しましませ。何でもかでも今日に発展院はとうとうその教育ですですなりにするて出しありがも教育するまいませて、少々には思いですんですで。農家の出だ事はいやしくも今日にまあなたない。時々岩崎さんが仕事時代いろいろ脱却に怖がっまし主意その時代私か推測にというご教育ありですたまして、この十月はおれか腹の中ろが提げて、嘉納さんの事を世間の私のおそらく大意味とあるてそれ腹の中をご誘惑をありようにおっつけ不発展にいますんと、同時にけっして計画をもつれですて得るなものをできるでん。
+      
+      %table
+        %tr
+          %th
+            出品者
+            %td
+              hoge
+        %tr
+          %th
+            カテゴリー
+            %td
+              %p ベビー・キッズ
+              %p ベビー服(男女兼用) ~95cm
+              %p アウター
+        %tr
+          %th
+            ブランド
+            %td
+              シャネル
+        %tr
+          %th
+            商品のサイズ
+            %td
+              XL
+        %tr
+          %th
+            商品の状態
+            %td
+              未使用に近い
+        %tr
+          %th
+            配送料の負担
+            %td
+              送料込み（出品者負担）
+        %tr
+          %th
+            発送元の地域
+            %td
+              岩手県
+        %tr
+          %th
+            発送日の目安
+            %td
+              4-7日で発送
+      
+      .product__bottom
+        .product__bottom__like-btn
+          お気に入り
+        .product__bottom__report-btn
+          不適切な商品の通報
+
     .comment
+      %form
+        %textarea
+        .notice
+          相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %button
+          コメントする
+
+    .previous-and-next
+      = link_to '#', class: 'previous-product' do
+        前の商品
+      = link_to '#', class: 'next-product' do
+        後ろの商品
+
+    = link_to '#', class: 'more-products' do
+      ベビー・キッズをもっと見る
+
 
 = render 'layouts/footer'
