@@ -33,7 +33,7 @@
           %span /1000
     .pro--list__main__details
       .pro--list__main__box
-        .pro--list__main__title--free
+        .pro--list__main__title--middle
           商品の詳細
         .pro--list__main__middle__box
           .pro--list__main__title
@@ -65,9 +65,11 @@
               %option{value: "4"}  やや傷や汚れあり
     .pro--list__main__delivery
       .pro--list__main__box
-        .pro--list__main__title--free
+        .pro--list__main__title--middle
           配送について
-          = link_to "?", "#"
+          .question--box
+            = link_to "#", class: "link__color--question" do
+              = icon("far", "question-circle")
         .pro--list__main__middle__box
           .pro--list__main__title
             配送料の負担
@@ -98,19 +100,48 @@
               %option{value: "2"}  4~7日で発送
     .pro--list__main__sale
       .pro--list__main__box
-        .pro--list__main__title--free
-          価格（¥300~9,999,999)
-        .pro--list__main__middle__box
+        .pro--list__main__sale--title
+          価格（¥300〜9,999,999)
+          .question--box
+            = link_to "#", class: "link__color--question" do
+              = icon("far", "question-circle")
+        .pro--list__main__sale--boxes
           .pro--list__main__title
-            カテゴリー
+            販売価格
             %span 必須
-      .pro--list__main__sale--title
-      .pro--list__main__sale__price
-      .pro--list__main__price__fee
-      .pro--list__main__price__profit
-    .pro--list__main__select
-      .pro--list__main__select__exhibition
-      .pro--list__main__select__draft
-      .pro--list__main__select__return
-      .pro--list__main__select__notes
+          .price--mark
+            ¥
+          .price--box
+            %input.price--box--inner{name: "price", placeholder: "0", autocomplete: "off", type: "number", value: ""}
+        .pro--list__main__fee--boxes
+          .price__sub--title
+            販売手数料（10%）
+          .price__value
+            %p ー
+        .pro--list__main__profit--boxes
+          .price__sub--title
+            販売利益
+          .price__value
+            %p ー
+    .pro--list__select
+      .pro--list__main__box--select
+        .pro--list__select--boxes
+          .pro--list__select--field
+            %button.submit__btn--ex{type: "submit"}出品する
+          .pro--list__select--field
+            %button.submit__btn--draft{type: "submit"}下書きに保存
+          .pro--list__select__return
+            = link_to "もどる", "#", class: "select__btn--return"
+        .pro--list__select__notes
+          禁止されている
+          = link_to "行為", "#", class: "link__color"
+          および
+          = link_to "出品物", "#", class: "link__color"
+          を必ずご確認ください。
+          = link_to "偽ブランド品", "#", class: "link__color"
+          や
+          = link_to "盗品物", "#", class: "link__color"
+          などの販売は犯罪であり、 法律により処罰される可能性があります。 また、出品をもちまして
+          = link_to "加盟店規約", "#", class: "link__color"
+          に同意したことになります。
   = render "layouts/footer"
