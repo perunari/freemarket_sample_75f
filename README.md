@@ -13,12 +13,11 @@
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
 |address_id|integer|null: false, foreign_key: true|
-|credit_card_id|integer|null: false, foreign_key: true|
 
 ### Association
 
 - has_one :address
-- has_one :credit_card
+- has_many :credit_cards
 - has_many :items
 - has_many :buyings
 
@@ -54,7 +53,7 @@
 
 ### Association
 
-- has_one :user
+- belongs_to :user
 - has_many :buyings
 
 ## buyingsテーブル
