@@ -1,0 +1,21 @@
+= render 'layouts/header'
+
+%main
+  商品詳細ページ
+  .contents
+    .product
+      .product__name
+        商品名
+      .product__image
+        商品画像一覧
+      .product__price
+        .product__price-info__price
+          ¥price
+        .product__price-info__inculude
+          .product__price-info__inculude--tax
+            (税込)
+          .product__price-info__inculude--postage
+            送料込み
+    .comment
+
+= render 'layouts/footer'
