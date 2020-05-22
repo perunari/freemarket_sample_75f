@@ -1,0 +1,39 @@
+.pro--list__main__details__box {
+  overflow: hidden;
+  margin-top: 16px;
+  text-align: center;
+  height: 48px;
+  line-height: 48px;
+}
+.pro--list__main__details__box select {
+  width: 100%;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+.pro--list__main__details__box {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #ffffff;
+}
+.pro--list__main__details__box:before {
+  position: absolute;
+  right: 0.8em;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-family: 'Font Awesome 5 Free';
+  content: "\f078";
+  font-weight: 900;
+  pointer-events: none;
+}
+.pro--list__main__details__box select {
+  padding: 8px 38px 8px 8px;
+  // color: #333;
+}

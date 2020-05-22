@@ -16,22 +16,22 @@
 
 // 入力フォーム部分
 .pro--list__main {
-  height: 100vh;
+  // height: 100vh;
   background-color: #000;
   max-width: 700px;
   margin: 0 auto;
 }
-
-.pro--list__main__picture {
+    // 流用Box
+.pro--list__main__box {
   background-color: #fff;
   padding: 40px;
 }
 .pro--list__main__picture__box {
-  // background-color: lightgray;
   width: 620px;
   height: 220px;
 }
-.pro--list__main__picture--title {
+    // 流用title
+.pro--list__main__title {
   height: 20px;
   align-items: center;
   display: flex;
@@ -39,7 +39,7 @@
   font-weight: 600;
   line-height: 1.4em;
 }
-.pro--list__main__picture--title span{
+.pro--list__main__title span{
   color: #fff;
   background-color: red;
   margin-left: 8px;
@@ -81,6 +81,79 @@
   width: 100%;
   color: #333;
 }
+
+
+
+.pro--list__main__product__name__text--box {
+  margin-top: 16px;
+}
+.product__name__text--area {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.pro--list__main__product__instruction {
+  margin-top: 32px;
+}
+.pro--list__main__product__instruction__text--box {
+  margin-top: 16px;
+}
+.product__instruction__text--area {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 13px 16px;
+  width: 100%;
+  resize: vertical;
+  vertical-align: middle;
+  height: 154px;
+  word-break: normal;
+}
+.product__instruction__text--count {
+  margin-top: 16px;
+  height: 16px;
+  text-align: right;
+  line-height: 16px;
+  font-size: 12px;
+  color: #333;
+}
+
+
+
+.pro--list__main__title--free {
+  height: 20px;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4em;
+  color: #888888;
+}
+.pro--list__main__title--free span{
+  color: #fff;
+  background-color: #888888;
+  margin-left: 8px;
+  font-size: 12px;
+  padding: 0 4px;
+}
+.pro--list__main__details__category {
+  margin-top: 32px;
+}
+// .pro--list__main__details__box {
+//   height: 48px;
+//   margin-top: 16px;
+//   border-radius: 4px;
+
+// }
 
 
 

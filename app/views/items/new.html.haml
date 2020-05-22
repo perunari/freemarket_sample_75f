@@ -1,9 +1,9 @@
 .pro--list__wrap
   = render "layouts/header"
   .pro--list__main
-    .pro--list__main__picture
+    .pro--list__main__box
       .pro--list__main__picture__box
-        .pro--list__main__picture--title
+        .pro--list__main__title
           出品画像
           %span 必須
         .pro--list__main__picture--tips
@@ -16,14 +16,39 @@
               ドラッグアンドドロップ
               %br
               またはクリックしてファイルをアップロード
-    .pro--list__main__product
+    .pro--list__main__box
       .pro--list__main__product__name
+        .pro--list__main__title
+          商品名
+          %span 必須
+        .pro--list__main__product__name__text--box
+          %input.product__name__text--area{name: "value", placeholder: "40字まで", type: "text", value: ""}
       .pro--list__main__product__instruction
+        .pro--list__main__title
+          商品の説明
+          %span 必須
+        .pro--list__main__product__instruction__text--box
+          %textarea.product__instruction__text--area{name: "description", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n", value: ""}
+        .product__instruction__text--count
+          %span /1000
     .pro--list__main__details
-      .pro--list__main__details--title
-      .pro--list__main__details__category
-      .pro--list__main__details__brand
-      .pro--list__main__details__status
+      .pro--list__main__box
+        .pro--list__main__title--free
+          商品の詳細
+        .pro--list__main__details__category
+          .pro--list__main__title
+            カテゴリー
+            %span 必須
+          -# .pro--list__main__details__box
+          %div.pro--list__main__details__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  ¥~999
+              %option{value: "2"} ¥1,000~¥1,999
+              %option{value: "3"} ¥2,000~¥2,999
+              %option{value: "4"} ¥3,000~
+        .pro--list__main__details__brand
+        .pro--list__main__details__status
     .pro--list__main__delivery
       .pro--list__main__delivery--title
       .pro--list__main__delivery__burden
