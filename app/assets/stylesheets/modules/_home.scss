@@ -1,32 +1,91 @@
 .main {
   background-color:lightblue;
-  height:3200px;
-  width :100%;
-  &__top {
+}
+  .top {
     background-color:lightgreen;
     height:560px;
     padding:0 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    &__content{
+  }
+    .content {
       background-color :lightseagreen;
       height:410px;
       width:100%;
       padding-top:35px;
-        h2 {
+        &__title {
           font-size: 60px;
           color:white;
-      }
-        p {
+        }
+        &__text {
           color:white;
           font-size:18px;
         }
-
+        &__btn{
+          background-color:red;
+          height:50px;
+          margin-top:25px;
+        }
+    }
+  .introduction{
+    padding :60px 20px;
+    height:400px;
+    background-color: lightslategray;
+      h2{
+        text-align: center;
+        font-size : 26px;
+        line-height: 1.4;
+        margin-bottom: 25px;
+        padding-bottom:15px;
+      }
+  }
+    .lists{
+      background-color:lightyellow;
+      text-align: center;
+      max-width:1020px;
+      display:flex;
+      justify-content: space-between;
+      li{
+        margin:16px 5% 0 0;
+        .list{
+        width :30%;
+        display:flex;
+        &__img{
+        margin-bottom:20px;
+        }
+        &__toptext{
+        font-size: 24px;
+        line-height: 50px;
+        }
+        &__undertext{
+          font: size 18px;
+          line-height:1.5;
+          margin:16px 0 0;
+        }
+      }
     }
   }
-}
-
-
-
-
+  .feature{
+    padding:60px 100px;
+  }
+    h2.featuretop{
+      font-size:27px;
+      text-align:center;
+      margin:0 0 40px;
+      font-weight: bold;
+      margin-bottom:25px;
+      padding-bottom: 15px;
+      position:relative;
+    }
+    .feature{
+    }
+    h2.featuretop{
+    }
+    .featurecontents{
+      width:100%;
+      section.featurecontent{
+        display:flex;
+        justify-content: space-between;
+      }
+    }
