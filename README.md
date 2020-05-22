@@ -16,10 +16,10 @@
 
 ### Association
 
-- has_one :address
-- has_many :credit_cards
-- has_many :items
-- has_many :buyings
+- has_one :address, dependent: :destroy
+- has_many :credit_cards, dependent: :destroy
+- has_many :items, dependent: :destroy
+- has_many :buyings, dependent: :destroy
 
 ## addressesテーブル
 
@@ -39,7 +39,7 @@
 
 ### Association
 
-- has_one :user
+- belongs_to :user
 - has_many :buyings
 
 ## credit_cardsテーブル
@@ -71,7 +71,7 @@
 - belongs_to :user
 - belongs_to :address
 - belongs_to :credit_card
-- has_one :item
+- belongs_to :item
 
 ## itemsテーブル
 
@@ -91,8 +91,8 @@
 ### Association
 
 - belongs_to :user
-- has_one :buying
-- has_many :images
+- has_one :buying, dependent: :destroy
+- has_many :images, dependent: :destroy
 - belongs_to :category
 - belongs_to :brand
 
