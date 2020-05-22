@@ -39,8 +39,7 @@
           .pro--list__main__title
             カテゴリー
             %span 必須
-          -# .pro--list__main__details__box
-          %div.pro--list__main__details__box
+          %div.select__box
             %select
               %option{value: "0"}  選択してください
               %option{value: "1"}  レディース
@@ -48,6 +47,16 @@
               %option{value: "3"}  ベビー・キッズ
               %option{value: "4"}  インテリア
         .pro--list__main__details__brand
+          .pro--list__main__title
+            ブランド
+            %span 任意
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  レディース
+              %option{value: "2"}  メンズ
+              %option{value: "3"}  ベビー・キッズ
+              %option{value: "4"}  インテリア
         .pro--list__main__details__status
     .pro--list__main__delivery
       .pro--list__main__delivery--title
