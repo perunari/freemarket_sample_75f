@@ -14,6 +14,7 @@
 // ヘッダー部分
 // modules/_header.scssを使用
 
+
 // 入力フォーム部分
 .pro--list__main {
   // height: 100vh;
@@ -45,6 +46,7 @@
   margin-left: 8px;
   font-size: 12px;
   padding: 0 4px;
+  border-radius: 2px;
 }
 .pro--list__main__picture--tips {
   height: 19px;
@@ -84,10 +86,10 @@
 
 
 
-.pro--list__main__product__name__text--box {
+.pro--list__main__product__text--box {
   margin-top: 16px;
 }
-.product__name__text--area {
+.product__text--area {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -136,16 +138,17 @@
   font-size: 14px;
   font-weight: bold;
   line-height: 1.4em;
-  color: #888888;
+  // color: #888888;
 }
 .pro--list__main__title--free span{
   color: #fff;
-  background-color: #888888;
+  background-color: #ccc;
   margin-left: 8px;
   font-size: 12px;
   padding: 0 4px;
+  border-radius: 2px;
 }
-.pro--list__main__details__category {
+.pro--list__main__middle__box {
   margin-top: 32px;
 }
 

@@ -21,8 +21,8 @@
         .pro--list__main__title
           商品名
           %span 必須
-        .pro--list__main__product__name__text--box
-          %input.product__name__text--area{name: "value", placeholder: "40字まで", type: "text", value: ""}
+        .pro--list__main__product__text--box
+          %input.product__text--area{name: "value", placeholder: "40字まで", type: "text", value: ""}
       .pro--list__main__product__instruction
         .pro--list__main__title
           商品の説明
@@ -35,7 +35,7 @@
       .pro--list__main__box
         .pro--list__main__title--free
           商品の詳細
-        .pro--list__main__details__category
+        .pro--list__main__middle__box
           .pro--list__main__title
             カテゴリー
             %span 必須
@@ -46,24 +46,64 @@
               %option{value: "2"}  メンズ
               %option{value: "3"}  ベビー・キッズ
               %option{value: "4"}  インテリア
-        .pro--list__main__details__brand
-          .pro--list__main__title
+        .pro--list__main__middle__box
+          .pro--list__main__title--free
             ブランド
             %span 任意
+          .pro--list__main__product__text--box
+          %input.product__text--area{name: "value", placeholder: "例）シャネル", type: "text", value: ""}
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            商品の状態
+            %span 必須
           %div.select__box
             %select
               %option{value: "0"}  選択してください
-              %option{value: "1"}  レディース
-              %option{value: "2"}  メンズ
-              %option{value: "3"}  ベビー・キッズ
-              %option{value: "4"}  インテリア
-        .pro--list__main__details__status
+              %option{value: "1"}  新品・未使用
+              %option{value: "2"}  未使用に近い
+              %option{value: "3"}  目立った傷や汚れなし
+              %option{value: "4"}  やや傷や汚れあり
     .pro--list__main__delivery
-      .pro--list__main__delivery--title
-      .pro--list__main__delivery__burden
-      .pro--list__main__delivery__area
-      .pro--list__main__delivery__day
+      .pro--list__main__box
+        .pro--list__main__title--free
+          配送について
+          = link_to "?", "#"
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            配送料の負担
+            %span 必須
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  送料込み(出品者負担)
+              %option{value: "2"}  着払い(購入者負担)
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            発送元の地域
+            %span 必須
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  北海道
+              %option{value: "2"}  青森県
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            発送までの日数
+            %span 必須
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  1~2日で発送
+              %option{value: "2"}  2~3日で発送
+              %option{value: "2"}  4~7日で発送
     .pro--list__main__sale
+      .pro--list__main__box
+        .pro--list__main__title--free
+          価格（¥300~9,999,999)
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            カテゴリー
+            %span 必須
       .pro--list__main__sale--title
       .pro--list__main__sale__price
       .pro--list__main__price__fee
