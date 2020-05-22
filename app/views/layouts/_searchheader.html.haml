@@ -5,13 +5,25 @@
         = image_tag "material/logo/logo.png", class:"icon",size: "140x40"
       .mainheader__search
         .mainheader__search__form
-          .mainheader__search__form__line
-          .mainheader__search__form__submit
+          %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+          %input.mainheader__search__form__line{:name => "key", :placeholder => "キーワードから探す"}/
+          %form.button_to{:action => "/?type=submit", :method => "post"}
+          %button{:type => "submit"}
             .mainheader__search__form__submit__icon
+              = image_tag "material/icon/icon-search 1.png", class:"icon",size: "20x20"
     .underheader
       .underheader__left
         .underheader__left__category
+          %h2
+            カテゴリー
         .underheader__left__brand
+          %h2
+            ブランド
       .underheader__right
         .underheader__right__loginbtn
+          %h2
+            ログイン
         .underheader__right__signupbtn
+          %h2
+            新規会員登録
