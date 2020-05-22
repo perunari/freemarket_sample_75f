@@ -82,7 +82,7 @@
 |name|string|null: false|
 |description|text|null: false|
 |category_id|integer|null: false, foreign_key: true|
-|bland_id|integer|foreign_key: true|
+|brand_id|integer|foreign_key: true|
 |condition|string|null: false|
 |postage_payment|string|null: false|
 |ship_from|string|null: false|
@@ -95,7 +95,7 @@
 - has_one :buying
 - has_many :images
 - belongs_to :category
-- belongs_to :bland
+- belongs_to :brand
 
 ## imagesテーブル
 
@@ -119,7 +119,7 @@
 
 - has_many :items
 
-## blandsテーブル
+## brandsテーブル
 
 |Column|Type|Option|
 |------|----|------|
