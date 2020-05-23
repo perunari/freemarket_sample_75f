@@ -1,6 +1,46 @@
 .confirm__wrap
   = render "layouts/header"
   .confirm__main
-
-  
+    .confirm__title
+      購入内容の確認
+    .confirm__product
+      .confirm__product__box
+        .confirm__product__box__inner
+          .confirm__product--image
+            %img{src: "/material/pict/bg-appBanner-pict.jpg"}
+          .confirm__product--detail
+            %p.confirm--name 未使用、2020年、A6、卓上カレンダー
+            .confirm__detail--box
+              %p.confirm--price ¥1,234,567
+              %p.confirm--fee （税込）送料込み
+    .confirm__payment
+      .totalpayment
+        .totalpayment--name
+          支払い金額
+        .totalpayment--price
+          ¥1,234,567
+      .use-points
+        .use-points--check
+          %input{type: "checkbox", class: "check-box", style: "transform:scale(1.5)"}
+        .use-points--tips
+          ポイントを使用（所持ポイント：P0）
+      .medhod-payment
+        .method--title
+          支払い方法
+        .please-register
+          = icon("fa", "plus-circle")
+          登録してください
+      .shipping-address
+        .address--title
+          配送先
+        .please-register
+          = icon("fa", "plus-circle")
+          登録してください
+      .attention
+        郵便局/コンビニ受取をご希望の方は、購入後に取引画面
+        %br から受取場所を変更をすることが可能です。出品者
+        が発送作業を開始した後は受取場所の変更ができませ
+        %br んので、早めに変更を行ってください。
+      .payment-btn
+        %button.submit__btn--ex{type: "submit"}購入する
   = render "layouts/footer"
