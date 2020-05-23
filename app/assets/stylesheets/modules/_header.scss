@@ -1,0 +1,17 @@
+// ヘッダー部分
+.header {
+  height: 128px;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  &--box {
+    height: 50px;
+    width: 185px;
+    display: block;
+    background-image: image-url("material/logo/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
