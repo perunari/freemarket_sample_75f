@@ -4,6 +4,10 @@
   text-align: center;
   height: 48px;
   line-height: 48px;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #ffffff;
 }
 .select__box select {
   width: 100%;
@@ -15,13 +19,11 @@
   background: transparent;
   box-shadow: none;
   -webkit-appearance: none;
+  padding: 8px 38px 8px 8px;
+  color: #333;
 }
-.select__box {
-  position: relative;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #ffffff;
-}
+
+// 下向き矢印
 .select__box:before {
   position: absolute;
   right: 0.8em;
@@ -32,8 +34,4 @@
   content: "\f078";
   font-weight: 900;
   pointer-events: none;
-}
-.select__box select {
-  padding: 8px 38px 8px 8px;
-  color: #333;
 }
