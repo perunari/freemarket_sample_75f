@@ -263,22 +263,18 @@
 }
 
 .pro--list__select__return {
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
+  display: flex;
 }
 .select__btn--return {
   &:hover {
-    border-bottom: solid 1px #0097eeb7;
-    display: inline;
+    text-decoration: underline;
     color: #0097eeb7;
   }
-  display: block;
-  height: 100%;
   width: 100%;
   text-decoration: none;
   color: #0095EE;
   font-size: 14px;
+  text-align: center;
 }
 
 .pro--list__select__notes {
@@ -303,7 +299,6 @@
 }
 .link__color--question {
   &:hover {
-    border-bottom: solid 1px #0097eeb7;
     display: inline;
     color: #0097eeb7;
   }
