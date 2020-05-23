@@ -12,12 +12,12 @@
 
 // 入力フォーム部分
 .pro--list__main {
-  // height: 100vh;
   background-color: #000;
   max-width: 700px;
   margin: 0 auto;
 }
-    // 流用Box
+
+// 流用Box
 .pro--list__main__box {
   background-color: #fff;
   padding: 40px;
@@ -26,7 +26,8 @@
   width: 620px;
   height: 220px;
 }
-    // 流用title
+
+// 流用title
 .pro--list__main__title {
   height: 20px;
   align-items: center;
@@ -34,15 +35,19 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 1.4em;
+   span{
+    color: #fff;
+    background-color: red;
+    margin-left: 8px;
+    font-size: 12px;
+    padding: 0 4px;
+    border-radius: 2px;
+  }
 }
-.pro--list__main__title span{
-  color: #fff;
-  background-color: red;
-  margin-left: 8px;
-  font-size: 12px;
-  padding: 0 4px;
-  border-radius: 2px;
-}
+
+
+
+// 画像アップロード
 .pro--list__main__picture--tips {
   height: 19px;
   font-size: 14px;
@@ -53,36 +58,37 @@
 .pro--list__main__picture--upload {
   height: 158px;
   margin-top: 16px;
-}
-.pro--list__main__picture--upload__field {
-  background-color: rgb(245, 245, 245);
-  height: 158px;
-  border: lightgray 1px dashed;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-.pro--list__main__picture--upload__icon {
-  height: 24px;
-  width: 24px;
-  line-height: 24px;
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-.pro--list__main__picture--upload__text {
-  font-size: 12px;
-  line-height: 1.4em;
-  text-align: center;
-  width: 100%;
-  color: #333;
+  &__field {
+    background-color: rgb(245, 245, 245);
+    height: 158px;
+    border: lightgray 1px dashed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  &__icon {
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 1.4em;
+    text-align: center;
+    width: 100%;
+    color: #333;
+  }
 }
 
 
 
+// 商品名と説明
 .pro--list__main__product__text--box {
-  margin-top: 16px;
+  margin-top: 16px; 
 }
 .product__text--area {
   border: 1px solid #ccc;
@@ -94,38 +100,39 @@
   margin: 0;
   padding: 0 16px;
   width: 100%;
-}
+  }
 
 .pro--list__main__product__instruction {
   margin-top: 32px;
-}
-.pro--list__main__product__instruction__text--box {
-  margin-top: 16px;
-}
-.product__instruction__text--area {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-  margin: 0;
-  padding: 13px 16px;
-  width: 100%;
-  resize: vertical;
-  vertical-align: middle;
-  height: 154px;
-  word-break: normal;
-}
-.product__instruction__text--count {
-  margin-top: 16px;
-  height: 16px;
-  text-align: right;
-  line-height: 16px;
-  font-size: 12px;
-  color: #333;
+  &__text--box {
+    margin-top: 16px;
+  }
+  .product__instruction__text--area {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    padding: 13px 16px;
+    width: 100%;
+    resize: vertical;
+    vertical-align: middle;
+    height: 154px;
+    word-break: normal;
+  }
+  .product__instruction__text--count {
+    margin-top: 16px;
+    height: 16px;
+    text-align: right;
+    line-height: 16px;
+    font-size: 12px;
+    color: #333;
+  }
 }
 
 
 
+// 商品の詳細
 .pro--list__main__title--free {
   height: 20px;
   align-items: center;
@@ -133,15 +140,19 @@
   font-size: 14px;
   font-weight: bold;
   line-height: 1.4em;
+   span{
+    color: #fff;
+    background-color: #ccc;
+    margin-left: 8px;
+    font-size: 12px;
+    padding: 0 4px;
+    border-radius: 2px;
+  }
 }
-.pro--list__main__title--free span{
-  color: #fff;
-  background-color: #ccc;
-  margin-left: 8px;
-  font-size: 12px;
-  padding: 0 4px;
-  border-radius: 2px;
-}
+
+
+
+// 配送について
 .pro--list__main__middle__box {
   margin-top: 32px;
 }
@@ -155,7 +166,22 @@
   color: #888888;
 }
 
+.question--box {
+  padding-left: 10px;
+  .link__color--question {
+    &:hover {
+      display: inline;
+      color: #0097eeb7;
+    }
+    text-decoration: none;
+    color: #0095EE;
+    font-size: 14px;
+  }
+}
 
+
+
+// 価格項目
 .pro--list__main__sale--title {
   height: 20px;
   align-items: center;
@@ -165,33 +191,31 @@
   line-height: 1.4em;
   color: #888888;
 }
-
 .pro--list__main__sale--boxes {
   height: 60px;
   margin-top: 24px;
   display: flex;
   align-items: center;
+  .price--mark {
+    font-size: 14px;
+    height: 14px;
+    margin: 0 8px 0 auto;
+    line-height: 14px;
+  }
+  .price--box {
+    width: 285px;
+    right: 0;
+    &--inner {
+      text-align: right;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      height: 48px;
+      width: 100%;
+      padding-right: 15px;
+    }
+  }
 }
-.price--mark {
-  font-size: 14px;
-  height: 14px;
-  margin: 0 8px 0 auto;
-  line-height: 14px;
-}
-.price--box {
-  width: 285px;
-  right: 0;
-}
-.price--box--inner {
-  text-align: right;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  height: 48px;
-  width: 100%;
-  padding-right: 15px;
-}
-
 .pro--list__main__fee--boxes {
   height: 70px;
   margin-top: 12px;
@@ -218,94 +242,81 @@
 }
 
 
+// main-footer 出品ボタン等各種
 .pro--list__main__box--select {
   background-color: #fff;
   padding: 0 40px 64px 40px;
-  // margin-bottom: 48px;
-}
-.pro--list__select--boxes {
-  background-color: #fff;
-  margin: 0 130px 32px 130px;
-}
-.pro--list__select--field {
-  height: 50px;
-  border-radius: 4px;
-  width: 100%;
-  margin-bottom: 24px;
-}
-.submit__btn--ex {
-  &:hover {
-    background-color: #c4140b;
+  .pro--list__select--boxes {
+    background-color: #fff;
+    margin: 0 130px 32px 130px;
+    .pro--list__select--field {
+      height: 50px;
+      border-radius: 4px;
+      width: 100%;
+      margin-bottom: 24px;
+      .submit__btn--ex {
+        &:hover {
+          background-color: #c4140b;
+        }
+        background-color: #EA352D;
+        width: 100%;
+        height: 100%;
+        font-size: 17px;
+        color: #fff;
+        border-radius: 4px;
+        border-style: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .submit__btn--draft {
+        &:hover {
+          background-color: #bebebe;
+        }
+        background-color: #cccccc;
+        width: 100%;
+        height: 100%;
+        font-size: 17px;
+        color: #000;
+        border-radius: 4px;
+        border-style: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+    .pro--list__select__return {
+      display: flex;
+      .select__btn--return {
+        &:hover {
+          text-decoration: underline;
+          color: #0097eeb7;
+        }
+        width: 100%;
+        text-decoration: none;
+        color: #0095EE;
+        font-size: 14px;
+        text-align: center;
+      }
+    }
   }
-  background-color: #EA352D;
-  width: 100%;
-  height: 100%;
-  font-size: 17px;
-  color: #fff;
-  border-radius: 4px;
-  border-style: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-.submit__btn--draft {
-  &:hover {
-    background-color: #bebebe;
+  .pro--list__select__notes {
+    height: 32px;
+    font-size: 12px;
+    line-height: 1.4em;
+    display: block;
+    word-break: normal;
+    .link__color {
+      &:hover {
+        border-bottom: solid 1px #0097eeb7;
+        display: inline;
+        color: #0097eeb7;
+      }
+      text-decoration: none;
+      color: #0095EE;
+    }
   }
-  background-color: #cccccc;
-  width: 100%;
-  height: 100%;
-  font-size: 17px;
-  color: #000;
-  border-radius: 4px;
-  border-style: none;
-  cursor: pointer;
-  font-weight: bold;
 }
 
-.pro--list__select__return {
-  display: flex;
-}
-.select__btn--return {
-  &:hover {
-    text-decoration: underline;
-    color: #0097eeb7;
-  }
-  width: 100%;
-  text-decoration: none;
-  color: #0095EE;
-  font-size: 14px;
-  text-align: center;
-}
 
-.pro--list__select__notes {
-  height: 32px;
-  font-size: 12px;
-  line-height: 1.4em;
-  display: block;
-  word-break: normal;
-}
-.link__color {
-  &:hover {
-    border-bottom: solid 1px #0097eeb7;
-    display: inline;
-    color: #0097eeb7;
-  }
-  text-decoration: none;
-  color: #0095EE;
-}
-
-.question--box {
-  padding-left: 10px;
-}
-.link__color--question {
-  &:hover {
-    display: inline;
-    color: #0097eeb7;
-  }
-  text-decoration: none;
-  color: #0095EE;
-  font-size: 14px;
-}
 
 // ヘッダー部分
 // modules/_footer.scssを使用
