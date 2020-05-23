@@ -34,16 +34,16 @@
   &__trademark {
     display: flex;
     justify-content: center;
-      &--contents {
-        font-size: 12px;
-        line-height: 12px;
-        position: absolute;
-      }
-      &--contents span{
-        font-size: 24px; 
-        float: left;
-        position: relative;
-        padding-right: 3px;
-      }
+    &--contents {
+      font-size: 12px;
+      line-height: 12px;
+      position: absolute;
     }
+    &--contents span{
+      font-size: 24px; 
+      float: left;
+      position: relative;
+      padding-right: 3px;
+    }
+  }
 }
