@@ -1,0 +1,43 @@
+.confirm__wrap
+  = render "layouts/header"
+  .confirm__main
+    .confirm__title
+      購入内容の確認
+    .confirm__product
+      .confirm__product__box
+        .confirm__product__box__inner
+          .confirm__product--image
+            = image_tag "/bg-appBanner-pict.jpg", class: "confirm__product--image",size: "80x80"
+          .confirm__product--detail
+            %p.confirm--name 未使用、2020年、A6、卓上カレンダー
+            .confirm__detail--box
+              %p.confirm--price ¥1,234,567
+              %p.confirm--fee （税込）送料込み
+    .confirm__payment
+      .totalpayment
+        .totalpayment--name
+          支払い金額
+        .totalpayment--price
+          ¥1,234,567
+      .use-points
+        .use-points--check
+          %input{type: "checkbox", class: "check-box", style: "transform:scale(1.5)"}
+        .use-points--tips
+          ポイントを使用（所持ポイント：P0）
+      .payment-rule
+        .payment-rule--title
+          支払い方法
+        .please-register
+          = link_to "", "#"
+          = icon("fa", "plus-circle")
+          登録してください
+      .payment-rule
+        .payment-rule--title
+          配送先
+        .please-register
+          = link_to "", "#"
+          = icon("fa", "plus-circle")
+          登録してください
+      .payment-btn
+        %button.submit__btn--ex{type: "submit"}購入する
+  = render "layouts/footer"
