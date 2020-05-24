@@ -59,7 +59,6 @@
           .confirm--price {
             font-size: 12px;
             padding: 0 2px;
-            // display: inline-block;
           }
           .confirm--fee {
             font-size: 11px;
@@ -95,7 +94,7 @@
   }
   .use-points {
     max-width: 343px;
-    margin: 24px auto 32px auto;
+    margin: 24px auto 32px;
     display: flex;
     height: 14px;
     position: relative;
@@ -139,17 +138,17 @@
 
   // 購入するボタン
   .payment-btn {
-    margin: 32px auto 0 auto;
+    margin: 32px auto 0;
     height: 50px;
     border-radius: 4px;
     max-width: 343px;
     margin-bottom: 24px;
     .submit__btn--ex {
-      // &:hover {
+      // &:hover {                      ボタン稼働時に使用
         // background-color: #c4140b;
       // }
       @include submitinner;
-      // background-color: #EA352D;
+      // background-color: #EA352D;     ボタン稼働時に使用
       background-color: gray;
       font-size: 17px;
       color: #fff;
