@@ -96,7 +96,6 @@
     }
   }
   .use-points {
-    background-color: #ccc ;
     max-width: 343px;
     margin: 24px auto 32px auto;
     display: flex;
@@ -118,31 +117,45 @@
       line-height: 30px;
     }
   }
-  .medhod-payment {
+  .payment-rule {
+    max-width: 343px;
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 32px 0;
+    &--title {
+      font-weight: bold;
+    }
+    .please-register {
+      color: #0099e8;
+      text-decoration: none;
+      width: 100%;
+      margin-top: 8px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
-  .shipping-address {
-  }
-  .attention {
-  }
+
+  // 購入するボタン
   .payment-btn {
-    // height: 50px;
-    // border-radius: 4px;
-    // width: 100%;
-    // margin-bottom: 24px;
-    // .submit__btn--ex {
-    //   &:hover {
-    //     background-color: #c4140b;
-    //   }
-    //   @include submitinner;
-    //   background-color: #EA352D;
-    //   font-size: 17px;
-    //   color: #fff;
-    // }
+    margin: 32px auto 0 auto;
+    height: 50px;
+    border-radius: 4px;
+    max-width: 343px;
+    margin-bottom: 24px;
+    .submit__btn--ex {
+      // &:hover {
+        // background-color: #c4140b;
+      // }
+      @include submitinner;
+      // background-color: #EA352D;
+      background-color: gray;
+      font-size: 17px;
+      color: #fff;
+    }
   }
 }
-
-
-
 
 
 // ヘッダー部分
