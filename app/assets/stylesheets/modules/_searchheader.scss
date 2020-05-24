@@ -1,89 +1,82 @@
 .header {
-  background-color: blue;
   margin :0 60px ;
 }
   .inner {
-    background-color: skyblue;
-    height :90px;
+
     padding-top :15px;
   }
     .mainheader {
-      background-color:green;
-
       display:flex;
       &__logo {
-        background-color: greenyellow;
         height:50px;
         width :140px;
         padding-bottom: 10px;
         margin-right: 30px;
       }
       &__search {
-        background-color:gainsboro;
+        background-color:#3CCACE;
         height:35px;
         width:100%;
         margin:5px 0 5px 0;
+
         &__form{
-          background-color:blue;
           height:35px;
           width: 100%;
           display: flex;
             &__line{
-              background-color:peru;
               height:35px;
               width: calc(100% - 35px);
-              border :2px solid black;
               padding-left:5px;
             }
             &__submit{
-              margin:2px 0;
-              background-color: salmon;
-              height: 31px;
-              width:31px;
-              display: flex;
-              align-items: center;
+              &__color{
+                background-color: #3CCACE;
               &__icon{
                 height: 20px;
                 width:20px;
-                background-color: rosybrown;
                 margin: 0 auto;
-                
+              }
               }
             }
           }
         }
     }
-    .underheader {
+    .undernav {
       margin-bottom: 10px;
       display:flex;
+      font-size :14px;
       justify-content: space-between;
-      &__left{
-        background-color:darkorange;
+      line-height: 32px;
+      font-family: inherit;
+      color:#333;
+      .underleft {
         height:25px;
         width:200px;
         display:flex;
-        &__category{
-          background-color: darksalmon;
+        .lists__item{
           width :125px;
+            a#catbtn{
+              text-decoration: none;
+              line-height: 32px;
+              background-position: center right;
+              background-repeat: no-repeat;
+            }
+          }
         }
-        &__brand{
-          background-color: orangered;
+        .lists__brand{
           width :100px;
           padding-left:15px;
         }
-      }
-      &__right{
-        background-color: plum;
+      .underright {
         height: 25px;
         width:170px;
         display:flex;
         &__loginbtn{
-          background-color: rosybrown;
           width:70px;
         }
         &__signupbtn{
-          background-color: sienna;
           width:100px;
         }
       }
-  }
+    
+    }
