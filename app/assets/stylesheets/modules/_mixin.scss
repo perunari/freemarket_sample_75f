@@ -11,3 +11,66 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+@mixin form-width{
+  max-width: 400px;
+  margin:0 auto;
+}
+
+@mixin signup-field{
+  margin-bottom: 15px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+@mixin basic-form{
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  width: 345px;
+}
+
+@mixin hissu{
+  color: #fff;
+  background-color: red;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+@mixin ninni{
+  color: #fff;
+  background-color: #ccc;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+@mixin title{
+  height:70px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: white;
+  line-height:70px;
+}
+
+@mixin birthday-form{
+  width: 75px;
+  height: 50px;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  background-color: #fff;
+}

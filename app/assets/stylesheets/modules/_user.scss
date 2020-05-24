@@ -6,60 +6,64 @@
     width: 450px;
     margin: 0 auto;
     background-color: rgb(245, 245, 245);
-  }
-  .no-acount{
-    padding-top: 40px;
-    text-align: center;
-  }
-  .new-acount {
-    width: 365px;
-    height: 50px;
-    text-decoration: none;
-    line-height: 50px;
-    border: 1px solid #0099e8;
-    background: #0099e8;
-    color: #fff;
-    margin-top: 8px;
-    display: block;
-    text-align: center;
-    margin: 0px auto;
-    margin-bottom: 40px;
-  }
-  .field{
-    text-align: center;
-    input[type="email"] {
-      width: 365px;
-      height: 50px;
-      margin-bottom: 40px;
-      border-radius: 4px;
-      padding: 10px 16px 8px;
+    .go-signup{
+      .no-acount{
+        padding-top: 40px;
+        text-align: center;
+      }
+      .new-acount{
+        width: 365px;
+        height: 50px;
+        text-decoration: none;
+        line-height: 50px;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+        color: #fff;
+        margin-top: 8px;
+        display: block;
+        text-align: center;
+        margin: 0px auto;
+        margin-bottom: 40px;
+      }
     }
-    input[type="password"] {
-      width: 365px;
-      height: 50px;
-      margin-bottom: 40px;
-      border-radius: 4px;
-      padding: 10px 16px 8px;
-  }
-  }
-  .actions{
-    text-align: center;
-    input[type="submit"] {
-      height: 50px;
-      width: 365px;
-      background: #ea352d;
-      color: #fff;
+    .go-login{
+      padding-bottom: 30px;
+      .field{
+        text-align: center;
+        .text-form{
+          width: 365px;
+          height: 50px;
+          margin-bottom: 40px;
+          border-radius: 4px;
+          padding: 10px 16px 8px;
+        }
+      }
+      .actions{
+        text-align: center;
+        .login-btn{ 
+          height: 50px;
+          width: 365px;
+          background: #ea352d;
+          color: #fff;
+          margin-bottom: 40px;
+          &:hover{
+            cursor: pointer;
+          }
+        }  
+      }
+      .forget-password{
+        margin: 40px 0 30px 48px;
+        color: #0099e8;
+        text-decoration: none;
+        &:hover{
+          border-bottom: solid 1px #0099e8;
+          opacity: 0.7;
+        }
+      }
     }
-    
-  }
-  .forget-password{
-    display: block;
-    margin-top: 40px;
-    margin-left: 64px;
-    color: #0099e8;
-    text-decoration: none;
   }
 }
+
 
 
 .signup-main{
@@ -70,60 +74,34 @@
     margin: 0 auto;
     background-color: rgb(245, 245, 245);
     &__information{
-      height:70px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      line-height:70px;
-      background-color: white;
+      @include title;
     }
     &__first{
-      max-width: 400px;
-      margin:0 auto;
+      @include form-width;
       .field{
-        margin-bottom: 15px;
-        padding: 10px 16px 8px;
-        border-radius: 4px;
-        font-size: 16px;
+        @include signup-field;
         .text-form{
-          height: 48px;
-          padding: 10px 16px 8px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
-          width: 345px;
+          @include basic-form;
         }
         .form-require{
-          color: #fff;
-          background-color: red;
-          margin-left: 8px;
-          margin-bottom: 8px;
-          font-size: 12px;
-          padding: 2px 4px;
-          border-radius: 2px;
+          @include hissu;
         }
         .form-ninni{
-          color: #fff;
-          background-color: #ccc;
-          margin-left: 8px;
-          margin-bottom: 8px;
-          font-size: 12px;
-          padding: 2px 4px;
-          border-radius: 2px;
+          @include ninni;
         }
-        .lastname{
-          height: 50px;
-          width: 165px;
-          border-radius: 4px;
-
-        }
-        .firstname{
-          float: right;
-          height: 50px;
-          width: 165px;
-          border-radius: 4px;
+        &__name{
+          display: flex;
+          .lastname{
+            height: 50px;
+            width: 165px;
+            border-radius: 4px;
+          }
+          .firstname{
+            height: 50px;
+            width: 165px;
+            border-radius: 4px;
+            margin-left: 20px;
+          }
         }
         .info-text{
           color: #888;
@@ -131,42 +109,24 @@
         }
         &__birthday{
           display: flex;
-          width: 33%;
-          .year{
-            width: 75px;
-            height: 50px;
-            padding: 0 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            margin-top: 8px;
+          width: 100%;
+          #user_email{
+            @include birthday-form;
           }
           .year-label{
-            line-height: 50px;
+            line-height: 65px;
           }
-          .month{
-            width: 75px;
-            height: 50px;
-            padding: 0 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            margin-top: 8px;
+          #user_email{
+            @include birthday-form;
           }
           .month-label{
-            line-height: 50px;
+            line-height: 65px;
           }
-          .date{
-            width: 75px;
-            height: 50px;
-            padding: 0 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            margin-top: 8px;
+          #user_email{
+            @include birthday-form;
           }
           .date-label{
-            line-height: 50px;
+            line-height: 65px;
           }
         }
       }
@@ -180,31 +140,15 @@
       }
     }
     &__identification{
-      height:70px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      background-color: white;
-      line-height:70px;
+      @include title;
     }
     &__second{
-      max-width: 380px;
-      margin:0 auto;
+      @include form-width;
       .field{
-        margin-bottom: 15px;
-        padding: 10px 16px 8px;
-        border-radius: 4px;
-        font-size: 16px;
+        @include signup-field;
         .text-form{
           margin-top: 8px;
-          height: 48px;
-          padding: 10px 16px 8px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
-          width: 345px;
+          @include basic-form;
         }
         #user_email{
           margin-top: 8px;
@@ -220,22 +164,10 @@
           
         }
         .form-require{
-          color: #fff;
-          background-color: red;
-          margin-left: 8px;
-          margin-bottom: 8px;
-          font-size: 12px;
-          padding: 2px 4px;
-          border-radius: 2px;
+          @include hissu;
         }
         .form-ninni{
-          color: #fff;
-          background-color: #ccc;
-          margin-left: 8px;
-          margin-bottom: 8px;
-          font-size: 12px;
-          padding: 2px 4px;
-          border-radius: 2px;
+          @include ninni;
         }
         .lastname{
           margin-top: 8px;
@@ -267,7 +199,7 @@
             color: #0099e8;
           }
           a:hover{
-            text-decoration: underline;
+            border-bottom: solid 1px #0099e8  ;
           }  
         } 
         .personal-information{
@@ -277,7 +209,7 @@
             color: #0099e8;
           }
           a:hover{
-            text-decoration: underline;
+            border-bottom: solid 1px #0099e8  ;
           }
         }
         .recaptcha_term{
@@ -293,7 +225,7 @@
             text-decoration: none;
           }
           a:hover{
-            text-decoration: underline;
+            border-bottom: solid 1px #0099e8  ;
           }
         }
       }
@@ -301,7 +233,7 @@
   }
 }
 
-  
+
  
   
 
