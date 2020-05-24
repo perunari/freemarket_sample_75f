@@ -55,9 +55,8 @@
           }
         }
     }
-  .introduction{
+  section.introduction{
     padding :60px 20px;
-
       h2{
         text-align: center;
         font-size : 26px;
@@ -82,15 +81,14 @@
    }
 
     .lists{
-      max-width:1020px;
       display:flex;
       width:100%;
+      margin: 0 auto;
       margin-block-start: 1em;
       margin-block-end: 1em;
       margin-inline-start: 0px;
       margin-inline-end: 0px;
       padding-inline-start: 40px;
-
       li{
         margin:16px 5% 0 0;
         .list{
@@ -101,6 +99,8 @@
         background-image: "material/pict/pict-reason-02.jpg";
         margin-bottom:20px;
         position: relative;
+        max-width: 100%;
+        height: auto;
           .num{
             position: absolute;
             display: inline-block;
@@ -135,12 +135,12 @@
   }
 
   section.middle{
-      background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
-      background-position: bottom right;
-      height: 400px;
-      background-size: cover;
-      display: flex;
-      align-items: center;
+    background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
+    background-position: bottom right;
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
     }
     .middle__inner{
       color: #fff;
@@ -161,7 +161,7 @@
       }
   }
 
-  .feature{
+  section.feature{
     padding:60px 100px;
     max-width: calc( 1040px + 20px);
   }
@@ -192,22 +192,121 @@
       display: flex;
       flex-wrap: wrap;
     }
-      section.featurecontent {
-        width: calc(1 / 3 * 100%);
-        padding:0 20px;
-        .featurecontent__img{
-          width: 70%;
-          margin: 0 auto;
-          line-height: 120px;
-        }
-        .featurecontent__message {
-          margin :38px 0 10px;
-          font-size: 19px;
-          font-weight:bold;
-        }
-        &__text{
-          margin :0 0 40px;
-          font-weight:200;
-          font-size: 17px;
-        }
+  section.featurecontent {
+    display: flex;
+    flex-direction: column;
+    width: calc(1 / 3 * 100%);
+    text-align: center;
+    padding: 0 20px;
+    .featurecontent__img{
+      width: 70%;
+      line-height: 120px;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    .featurecontent__message {
+      margin :38px 0 10px;
+      font-size: 19px;
+      font-weight:bold;
+    }
+    &__text{
+      margin :0 0 40px;
+      font-weight:200;
+      font-size: 17px;
+    }
+  }
+  section.news{
+    padding: 80px 0 0;
+    background-color: #f8f8f8;
+    height: 100%;
+    display: block;
+    h2.top{
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+      .box{
+        width: 780px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        display: block;
+        box-sizing: border-box;
       }
+        .pichead{
+          text-align: center;
+        }
+          .postspic{
+            text-decoration: none;
+            color: #3CCACE;
+            font-weight: bold;
+          }
+      .postlists{
+        width: 780px;
+        margin: 0 auto;
+        
+        
+        display: flex;
+        justify-content: space-around;
+      }
+        .postlist{
+          a {
+            color: -webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+          }
+        }
+  }
+  secsion.picbrand {
+    padding: 80px 0 0;
+    background-color: #f8f8f8;
+    height: 100%;
+    display: block;
+    h2.top{
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+      .box{
+        width: 780px;
+        margin: 26px auto;
+        display: flex;
+        justify-content: space-around;
+        display: block;
+        box-sizing: border-box;
+      }
+        .pichead{
+          text-align: center;
+        }
+          .postspic{
+            text-decoration: none;
+            color: #3CCACE;
+            font-weight: bold;
+          }
+      .postlists{
+        width: 780px;
+        margin: 26px auto;
+        display: flex;
+        justify-content: space-around;
+      }
+        .postlist{
+          a {
+            color: -webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+          }
+        }
+  }
+   

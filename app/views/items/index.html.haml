@@ -12,7 +12,7 @@
         .content__btn__applebtn
         .content__btn__googlebtn
       .content__picture
-  .introduction
+  %section.introduction
     %h2.subtitle
       FURIMAが選ばれる３つの理由
     %ul.lists
@@ -29,7 +29,7 @@
           スマホで入力するだけで簡単に出品できる！
       %li.list
         .list__img
-          = image_tag "material/pict/pict-reason-01.jpg",class:"list__img",size: "200x200"
+          = image_tag "material/pict/pict-reason-02.jpg",class:"list__img",size: "200x200"
           %span.num
             2
         %h3.list__toptext
@@ -62,28 +62,66 @@
       .content__btn
         .content__btn__applebtn
         .content__btn__googlebtn
-  .feature
+  %section.feature
     %h2.featuretop
       FURIMAの特徴
     .featurecontents
       %section.featurecontent
-        = image_tag "material/icon/icon-01.png", class:"featurecontent__img",size: "73x120"
+        = image_tag "material/icon/icon-01.png", class:"featurecontent__img"
         %h3.featurecontent__message
           簡単に売り買いできる
         %h3.featurecontent__text
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       %section.featurecontent
-        = image_tag "material/icon/icon-03.png", class:"icon",size: "73x120"
+        = image_tag "material/icon/icon-03.png", class:"featurecontent__img"
         %h3.featurecontent__message
           売上金は即日振込みに対応
         %h3.featurecontent__text
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
       %section.featurecontent
-        = image_tag "material/icon/icon-04.png", class:"icon",size: "73x120"
+        = image_tag "material/icon/icon-04.png", class:"featurecontent__img"
         %h3.featurecontent__message
           様々な支払いに対応
         %h3.featurecontent__text
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  %section.news
+    %h2.top
+      ピックアップカテゴリー
+      .box
+        .pichead
+          %h3.postspic
+            新規投稿商品
+        .postlists
+          .postlist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+          .postlist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+          .postlist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+  %secsion.picbrand
+    %h2.top
+      ピックアップブランド
+      .box
+        .pichead
+          %h3.postspic
+            アーカイバ
+        .postlists
+          .postlist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+          .postlist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+          .postlist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+
+%span.purchaseBtn__text
+  = link_to root_path do
+    = image_tag "material/icon/icon_camera.png", class:"camera",size: "73x120"
 
 
 
