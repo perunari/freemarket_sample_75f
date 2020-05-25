@@ -1,0 +1,160 @@
+// 全体
+.confirm__wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+// ヘッダー部分
+// modules/_header.scssを使用
+
+// 入力フォーム部分
+.confirm__main {
+  background-color: #fff;
+  width: 700px;
+  margin: 0 auto;
+}
+
+// タイトル
+.confirm__title {
+  padding: 32px;
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+// 商品情報
+.confirm__product {
+  padding: 32px 16px;
+  &__box {
+    max-width: 343px;
+    margin: 0 auto;
+    &__inner {
+      display: flex;
+      .confirm__product--image {
+        background-color: #dedede;
+        height: 80px;
+        width: 80px;
+        min-width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: contain;
+      }
+      .confirm__product--detail {
+        margin-left: 16px;
+        .confirm--name {
+          font-size: 13px;
+          word-break: normal;
+          color: #333;
+        }
+        .confirm__detail--box {
+          display: flex;
+          height: 20px;
+          line-height: 20px;
+          font-weight: 600;
+
+          .confirm--price {
+            font-size: 12px;
+            padding: 0 2px;
+          }
+          .confirm--fee {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 支払い方法等
+.confirm__payment {
+  padding: 32px 16px;
+  .totalpayment {
+    max-width: 343px;
+    margin: 0 auto;
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    font-weight: bold;
+    &--name {
+      width: 100%;
+      height: 100%;
+      padding-top: 8px;
+    }
+    &--price {
+      text-align: right;
+      height: 100%;
+      width: 100%;
+      font-size: 22px;
+      padding-top: 2px;
+    }
+  }
+  .use-points {
+    max-width: 343px;
+    margin: 24px auto 32px;
+    display: flex;
+    height: 14px;
+    position: relative;
+    &--check {
+      width: 22px;
+      height: 14px;
+      .check-box {
+        position: absolute;
+        top: -1px;
+        left: 4px;
+        display: block;
+      }
+    }
+    &--tips {
+      padding-left: 10px;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+  .payment-rule {
+    max-width: 343px;
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 32px 0;
+    &--title {
+      font-weight: bold;
+      height: 14px;
+      line-height: 14px;
+    }
+    .please-register {
+      color: #0099e8;
+      text-decoration: none;
+      width: 100%;
+      margin-top: 8px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // 購入するボタン
+  .payment-btn {
+    margin: 32px auto 0;
+    height: 50px;
+    border-radius: 4px;
+    max-width: 343px;
+    margin-bottom: 24px;
+    .submit__btn--ex {
+      // &:hover {                      ボタン稼働時に使用
+        // background-color: #c4140b;
+      // }
+      @include submitinner;
+      // background-color: #EA352D;     ボタン稼働時に使用
+      background-color: gray;
+      font-size: 17px;
+      color: #fff;
+    }
+  }
+}
+
+// ヘッダー部分
+// modules/_footer.scssを使用
