@@ -56,7 +56,6 @@ header .inner .upper {
 header .inner .lower {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
   color: #333333;
 
   ul li a {
@@ -64,6 +63,7 @@ header .inner .lower {
       color: #333333;
       display: inline-block;
       line-height: 32px;
+      font-size: 14px;
     }
 
   ul.lower__left li a:hover {
