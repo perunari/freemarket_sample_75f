@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
 
 
-  def new
+  def edit
   end
 
   def create
