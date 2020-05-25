@@ -2,17 +2,25 @@
 
 %main
   .contents
-    
+
     .product
       %h1.product__name
         product3
       
       .product__images
-        %img{src: 'product_3.png', width: '560', height: '400'}
-      
+        .product__images__main-image
+          %img{src: 'product_image_main.png', width: '560', height: '350'}
+        %ul.product__images__sub-images
+          %li.product__images__sub-images__image
+            %img{src: 'product_image_sub1.png', width: '140', height: '90'}
+          %li.product__images__sub-images__image
+            %img{src: 'product_image_sub2.png', width: '140', height: '90'}
+          %li.product__images__sub-images__image
+            %img{src: 'product_image_sub3.png', width: '140', height: '90'}
+
       .product__price-info
         .product__price-info__price
-          ¥price
+          ¥30,000
         .product__price-info__include
           .product__price-info__include--tax
             (税込)
@@ -20,7 +28,7 @@
             送料込み
       
       .product__description
-        私は場合どうかほんの撲殺家として訳の時を起しましませ。何でもかでも今日に発展院はとうとうその教育ですですなりにするて出しありがも教育するまいませて、少々には思いですんですで。農家の出だ事はいやしくも今日にまあなたない。時々岩崎さんが仕事時代いろいろ脱却に怖がっまし主意その時代私か推測にというご教育ありですたまして、この十月はおれか腹の中ろが提げて、嘉納さんの事を世間の私のおそらく大意味とあるてそれ腹の中をご誘惑をありようにおっつけ不発展にいますんと、同時にけっして計画をもつれですて得るなものをできるでん。
+        親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
       
       %table
         %tr
@@ -32,19 +40,26 @@
           %th
             カテゴリー
             %td
-              %p ベビー・キッズ
-              %p ベビー服(男女兼用) ~95cm
-              %p アウター
+              %ul.product__categories
+                %li
+                  = link_to '#', class: 'product__category' do
+                    ベビー・キッズ
+                %li
+                  = link_to '#', class: 'product__category' do
+                    ベビー服(男女兼用) ~95cm
+                %li
+                  = link_to '#', class: 'product__category' do
+                    アウター
         %tr
           %th
             ブランド
             %td
-              シャネル
+              
         %tr
           %th
             商品のサイズ
             %td
-              XL
+              
         %tr
           %th
             商品の状態
@@ -59,7 +74,8 @@
           %th
             発送元の地域
             %td
-              岩手県
+              = link_to '#', class: 'product__ship-from' do
+                岩手県
         %tr
           %th
             発送日の目安
@@ -67,27 +83,31 @@
               4-7日で発送
       
       .product__bottom
-        .product__bottom__like-btn
-          お気に入り
-        .product__bottom__report-btn
+        %button.product__bottom__like-btn
+          = icon('fas', 'star')
+          お気に入り 0
+        = link_to '#', class: 'product__bottom__report-btn' do
+          = icon('fab', 'font-awesome-flag')
           不適切な商品の通報
 
     .comment
-      %form
-        %textarea
-        .notice
+      %form.comment-form
+        %textarea.comment-form__textarea{rows: '5'}
+        .comment-form__notice
           相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %button
+        %button.comment-form__submit-btn
+          = icon('fas', 'comment')
           コメントする
 
     .previous-and-next
       = link_to '#', class: 'previous-product' do
+        = icon('fas', 'chevron-left', class: 'icon--chevron')
         前の商品
       = link_to '#', class: 'next-product' do
         後ろの商品
+        = icon('fas', 'chevron-right', class: 'icon--chevron')
 
-    = link_to '#', class: 'more-products' do
+    = link_to '#', class: 'same-category-products' do
       ベビー・キッズをもっと見る
-
 
 = render 'layouts/footer'
