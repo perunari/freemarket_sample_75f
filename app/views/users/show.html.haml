@@ -1,5 +1,10 @@
-= render 'layouts/header'
+= render "layouts/header"
+.my--main
+  .my--main__boxes
+    .my--nickname
+      = link_to "だーさん", "#", class: "link"
+    
 
-%h1 マイページ
 
-= render 'layouts/footer'
+= render "layouts/menu_bar"
+= render "layouts/footer"
