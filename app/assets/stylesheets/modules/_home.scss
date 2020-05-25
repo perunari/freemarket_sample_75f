@@ -1,148 +1,133 @@
 .main {
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
-  section.top {
-    background-image: url("material/pict/bg-mainVisual-pict_pc.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    height:560px;
-    padding:0 60px;
+section.top {
+  background-image: url("material/pict/bg-mainVisual-pict_pc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height:560px;
+  padding:0 60px;
+  display: flex;
+  align-items: center;
+}
+.content {
+  width:100%;
+  padding-top:35px;
+  &__title {
+    font-size: 60px;
+    color:white;
+    text-shadow:0 0 5px rgba(0,0,0,0.4);
+  }
+  &__text {
+    color:white;
+    font-size:18px;
+    text-shadow:0 0 5px rgba(0,0,0,0.4);
+  }
+  &__btn{
+    height:53.33px;
+    margin-top:25px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    &__applebtn{
+      background:url(https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps);
+      @include appbtn();
+      width:180px;
+      margin-right: 10px;
+    &:hover {
+      opacity: 0.5;
+    }
+}
+    &__googlebtn{
+      overflow:hidden;background:url(https://play.google.com/intl/us-en/badges/static/images/badges/ja_badge_web_generic.png);
+      @include appbtn();
+      width:200px;
+      height:65px;
+      position: absolute;
+      bottom:0;
+      left:180px;
+    &:hover {
+      opacity: 0.5;
+    }
+    }
+    }
+    }
+
+section.introduction{
+  padding :60px 20px;
+  h2{
+    text-align: center;
+    font-size : 26px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    padding-bottom:15px;
+    position: relative;
+    font-weight: bold;
   }
-    .content {
-      max-width: 1280px;
-      width:100%;
-      margin:0 auto;
-      padding-top:35px;
-        &__title {
-          font-size: 60px;
-          color:white;
-          text-shadow:0 0 5px rgba(0,0,0,0.4);
-        }
-        &__text {
-          color:white;
-          font-size:18px;
-          text-shadow:0 0 5px rgba(0,0,0,0.4);
-        }
-        &__btn{
-          height:53.33px;
-          margin-top:25px;
-          display: flex;
-          position: relative;
-          // mixin
-          &__applebtn{
-            background:url(https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps);
-            display:inline-block;
-            overflow:hidden;
-            background-size: cover;
-            width:180px;
-            margin-right: 10px;
-            cursor: pointer;
-          &:hover {
-              opacity: 0.5;
-            }
-          }
-          &__googlebtn{
-            overflow:hidden;background:url(https://play.google.com/intl/us-en/badges/static/images/badges/ja_badge_web_generic.png);
-            display:inline-block;
-            overflow:hidden;
-            background-size: cover;
-            width:200px;
-            height:65px;
-            position: absolute;
-            bottom:0;
-            left:180px;
-            cursor: pointer;
-            &:hover {
-              opacity: 0.5;
-            }
-          }
+  h2::after{
+    content: "";
+    width: 70px;
+    height: 4px;
+    background-color: #3CCACE;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom:0;
+  }
+}
+ul.lists{
+  display:flex;
+  margin: 0 auto;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  li.list{
+    margin: 16px 5% 0 0;
+    .list{
+    display: flex;
+    &__img {
+    margin-bottom:20px;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+      &__pic{
+        width: 100%;
+      }
+        span.num{
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 30px;
+          margin: 0 5px 0 0;
+          padding: 10px 20px;
+          background-color: #3CCACE;
+          color: #fff;
         }
     }
-  section.introduction{
-    padding :60px 20px;
-    box-sizing: border-box;
-      h2{
+    &__toptext{
+      span{
+        color:#3CCACE;
         text-align: center;
-        font-size : 26px;
-        line-height: 1.4;
-        margin-bottom: 25px;
-        padding-bottom:15px;
-        position: relative;
+        }
+        text-align: center;
         font-weight: bold;
-      }
-      h2::after{
-        content: "";
-        width: 70px;
-        height: 4px;
-        background-color: #3CCACE;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        position: absolute;
-        bottom:0;
-      }
-   }
-
-    ul.lists{
-      display:flex;
-      margin: 0 auto;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      padding-inline-start: 40px;
-      li.list{
-        margin: 16px 5% 0 0;
-        .list{
-        display: flex;
-        
-        &__img {
-        margin-bottom:20px;
-        position: relative;
-        max-width: 100%;
-        height: auto;
-          &__pic{
-            width: 100%;
-          }
-            span.num{
-              position: absolute;
-              top: 0;
-              left: 0;
-              font-size: 30px;
-              margin: 0 5px 0 0;
-              padding: 10px 20px;
-              background-color: #3CCACE;
-              color: #fff;
-              text-align: center;
-              padding-left:20px;
-          }
-        }
-        &__toptext{
-          span{
-            color:#3CCACE;
-            text-align: center;
-          }
-          text-align: center;
-          font-weight: bold;
-          font-size: 24px;
-          line-height: 50px;
-          margin: 0 0 0 2px;
-        }
-        &__undertext{
-          text-align: center;
-          font-size: 18px;
-          line-height: 1.5;
-          margin: 16px 0 0;
-        }
+        font-size: 24px;
+        line-height: 50px;
+        margin: 0 0 0 2px;
+    }
+      &__undertext{
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 16px 0 0;
       }
     }
   }
-
+}
   section.middle{
     background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
     background-size: cover;
@@ -172,7 +157,6 @@
         line-height: 1.5;
       }
   }
-
   section.feature{
     padding:60px 100px;
   }
@@ -323,14 +307,4 @@
     display: block;
     font-size: 18px;
     text-decoration: none;
-  }
-  .camerabtn{
-    width: 120px;
-    background: #3CCACE;
-    text-align: center;
-    border-radius: 4%;
-    bottom: 32px;
-    right: 32px;
-    position: fixed;
-    padding: 15px;
   }
