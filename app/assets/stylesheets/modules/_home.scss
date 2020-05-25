@@ -14,7 +14,6 @@
   }
     .content {
       max-width: 1280px;
-
       width:100%;
       margin:0 auto;
       padding-top:35px;
@@ -41,6 +40,10 @@
             background-size: cover;
             width:180px;
             margin-right: 10px;
+            cursor: pointer;
+          &:hover {
+              opacity: 0.5;
+            }
           }
           &__googlebtn{
             overflow:hidden;background:url(https://play.google.com/intl/us-en/badges/static/images/badges/ja_badge_web_generic.png);
@@ -52,11 +55,16 @@
             position: absolute;
             bottom:0;
             left:180px;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.5;
+            }
           }
         }
     }
   section.introduction{
     padding :60px 20px;
+    box-sizing: border-box;
       h2{
         text-align: center;
         font-size : 26px;
@@ -80,52 +88,53 @@
       }
    }
 
-    .lists{
+    ul.lists{
       display:flex;
-      width:100%;
       margin: 0 auto;
       margin-block-start: 1em;
       margin-block-end: 1em;
       margin-inline-start: 0px;
       margin-inline-end: 0px;
       padding-inline-start: 40px;
-      li{
-        margin:16px 5% 0 0;
+      li.list{
+        margin: 16px 5% 0 0;
         .list{
-        width :30%;
-        display:flex;
+        display: flex;
         
         &__img {
-        background-image: "material/pict/pict-reason-02.jpg";
         margin-bottom:20px;
         position: relative;
         max-width: 100%;
         height: auto;
-          .num{
-            position: absolute;
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 4%;
-            font-size: 30px;
-            text-align: center;
-            margin: 0 5px 0 0;
-            padding: 10px 20px;
-            background-color: #3CCACE;
-            color: #fff;
+          &__pic{
+            width: 100%;
+          }
+            span.num{
+              position: absolute;
+              top: 0;
+              left: 0;
+              font-size: 30px;
+              margin: 0 5px 0 0;
+              padding: 10px 20px;
+              background-color: #3CCACE;
+              color: #fff;
+              text-align: center;
+              padding-left:20px;
           }
         }
         &__toptext{
           span{
             color:#3CCACE;
+            text-align: center;
           }
+          text-align: center;
           font-weight: bold;
           font-size: 24px;
           line-height: 50px;
           margin: 0 0 0 2px;
         }
         &__undertext{
+          text-align: center;
           font-size: 18px;
           line-height: 1.5;
           margin: 16px 0 0;
@@ -136,17 +145,20 @@
 
   section.middle{
     background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
-    background-position: bottom right;
-    height: 400px;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 400px;
+    padding: 0 60px;
     display: flex;
+    justify-content: center;
     align-items: center;
     }
     .middle__inner{
       color: #fff;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       text-align: left;
-      max-width: 1040px;
+      max-width: 1300px;
       width: 100%;
       margin: 0 auto;
       h2{
@@ -163,7 +175,6 @@
 
   section.feature{
     padding:60px 100px;
-    max-width: calc( 1040px + 20px);
   }
     h2.featuretop{
       font-size: 27px;
@@ -247,8 +258,6 @@
       .postlists{
         width: 780px;
         margin: 0 auto;
-        
-        
         display: flex;
         justify-content: space-around;
       }
@@ -277,7 +286,7 @@
     }
       .box{
         width: 780px;
-        margin: 26px auto;
+        margin: 0 auto;
         display: flex;
         justify-content: space-around;
         display: block;
@@ -293,7 +302,7 @@
           }
       .postlists{
         width: 780px;
-        margin: 26px auto;
+        margin: 26px auto 0;
         display: flex;
         justify-content: space-around;
       }
@@ -309,4 +318,19 @@
           }
         }
   }
-   
+  a{
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .camerabtn{
+    width: 120px;
+    background: #3CCACE;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
+  }
