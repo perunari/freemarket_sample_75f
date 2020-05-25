@@ -1,0 +1,238 @@
+.login-main{
+  height: 100%;
+  width: 100%;
+  &__form{
+    max-width: none;
+    width: 450px;
+    margin: 0 auto;
+    background-color: rgb(245, 245, 245);
+    .go-signup{
+      .no-acount{
+        padding-top: 40px;
+        text-align: center;
+      }
+      .new-acount{
+        width: 365px;
+        height: 50px;
+        text-decoration: none;
+        line-height: 50px;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+        color: #fff;
+        margin-top: 8px;
+        display: block;
+        text-align: center;
+        margin: 0px auto;
+        margin-bottom: 40px;
+      }
+    }
+    .go-login{
+      padding-bottom: 30px;
+      .field{
+        text-align: center;
+        .text-form{
+          width: 365px;
+          height: 50px;
+          margin-bottom: 40px;
+          border-radius: 4px;
+          padding: 10px 16px 8px;
+        }
+      }
+      .actions{
+        text-align: center;
+        .login-btn{ 
+          height: 50px;
+          width: 365px;
+          background: #ea352d;
+          color: #fff;
+          margin-bottom: 40px;
+          &:hover{
+            cursor: pointer;
+          }
+        }  
+      }
+      .forget-password{
+        margin: 40px 0 30px 48px;
+        color: #0099e8;
+        text-decoration: none;
+        &:hover{
+          border-bottom: solid 1px #0099e8;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+
+
+.signup-main{
+  height: 100%;
+  width: 100%;
+  .signup-form{
+    width: 700px;
+    margin: 0 auto;
+    background-color: rgb(245, 245, 245);
+    &__information{
+      @include title;
+    }
+    &__first{
+      @include form-width;
+      .field{
+        @include signup-field;
+        .text-form{
+          @include basic-form;
+        }
+        .form-require{
+          @include hissu;
+        }
+        .form-ninni{
+          @include ninni;
+        }
+        &__name{
+          display: flex;
+          .lastname{
+            height: 50px;
+            width: 165px;
+            border-radius: 4px;
+            padding: 10px 16px 8px;
+            -webkit-appearance: none;
+          }
+          .firstname{
+            height: 50px;
+            width: 165px;
+            border-radius: 4px;
+            margin-left: 20px;
+            padding: 10px 16px 8px;
+            -webkit-appearance: none;
+          }
+        }
+        .info-text{
+          color: #888;
+          margin-top: 8px;
+        }
+        &__birthday{
+          display: flex;
+          width: 100%;
+          #user_email{
+            @include birthday-form;
+          }
+          .year-label{
+            line-height: 65px;
+          }
+          #user_email{
+            @include birthday-form;
+          }
+          .month-label{
+            line-height: 65px;
+          }
+          #user_email{
+            @include birthday-form;
+          }
+          .date-label{
+            line-height: 65px;
+          }
+        }
+      }
+      .identification{
+        padding: 10px 16px 0px;
+        font-size :16px;
+        font-weight: bold;
+      }
+      .confirmation{
+        padding: 0 16px 8px;
+      }
+    }
+    &__identification{
+      @include title;
+    }
+    &__second{
+      @include form-width;
+      .field{
+        @include signup-field;
+        .text-form{
+          margin-top: 8px;
+          @include basic-form;
+        }
+        #user_email{
+          margin-top: 8px;
+          display: inline-block;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          width: 345px;
+          
+        }
+        .form-require{
+          @include hissu;
+        }
+        .form-ninni{
+          @include ninni;
+        }
+        .lastname{
+          margin-top: 8px;
+          height: 50px;
+          width: 165px;
+          border-radius: 4px;
+        }
+        .firstname{
+          margin-top: 8px;
+          height: 50px;
+          width: 165px;
+          border-radius: 4px;
+        }
+        .signup-btn{
+          height: 50px;
+          width: 345px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          margin-bottom: 40px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+        .doui{
+          text-align: center;
+          a{
+            text-decoration: none;
+            color: #0099e8;
+          }
+          a:hover{
+            border-bottom: solid 1px #0099e8  ;
+          }  
+        } 
+        .personal-information{
+          text-align: right;
+          a{
+            text-decoration: none;
+            color: #0099e8;
+          }
+          a:hover{
+            border-bottom: solid 1px #0099e8  ;
+          }
+        }
+        .recaptcha_term{
+          margin-top: 30px;
+          color: #888888;
+          font-size: 12px;
+          background-color:white;
+          padding: 8px 16px;
+          width: 345px;
+          height: 55px;
+          a{
+            color: #0099e8;
+            text-decoration: none;
+          }
+          a:hover{
+            border-bottom: solid 1px #0099e8  ;
+          }
+        }
+      }
+    }
+  }
+}
