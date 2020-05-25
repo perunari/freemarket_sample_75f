@@ -1,14 +1,55 @@
-.footer
-  .footer__notes
-    %ul
-    .footer__notes--contents
-      %li=link_to "プライバシーポリシー", "#", class: "footer__notes--content"
-      %li=link_to "フリマ利用規約", "#", class: "footer__notes--content"
-      %li=link_to "特定商取引に関する表記", "#", class: "footer__notes--content"
-  .footer__box
-    .footer__box--icon
-      = link_to "", root_path, class: "footer__box--icon"
-  .footer__trademark
-    .footer__trademark--contents
-      %span©️
-      FURIMA, Inc.
+%footer.footer
+  .footer__upper
+    .contents
+      .contents__catchphrase
+        だれでもかんたん、人生を変えるフリマアプリ
+      .contents__prompt
+        今すぐ無料ダウンロード！
+      .contents__download-banners
+        = link_to '#', class: 'banner app-store' do
+          = image_tag 'material/icon/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', height: '54', width: '180'
+        = link_to '#', class: 'banner google-play' do
+          = image_tag 'material/icon/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', height: '54', width: '180'
+
+  .footer__lower
+    .site-map
+      %ul.site-map__box
+        %p FURIMAについて
+        %li
+          = link_to '#' do
+            会社概要（運営会社）
+        %li
+          = link_to '#' do
+            プライパシーポリシー
+        %li
+          = link_to '#' do
+            FURIMA利用規約
+        %li
+          = link_to '#' do
+            ポイントに関する特約
+
+      %ul.site-map__box
+        %p FURIMAを見る
+        %li
+          = link_to '#' do
+            カテゴリー一覧
+        %li
+          = link_to '#' do
+            ブランド一覧
+
+      %ul.site-map__box
+        %p ヘルプ&ガイド
+        %li
+          = link_to '#' do
+            FURIMAガイド
+        %li
+          = link_to '#' do
+            FURIMAロゴ利用ガイドライン
+        %li
+          = link_to '#' do
+            お知らせ
+
+    = link_to root_path, class: 'logo' do
+      = image_tag 'material/logo/logo-white.png', height: '46', width: '160'
+    %small
+      © FURIMA
