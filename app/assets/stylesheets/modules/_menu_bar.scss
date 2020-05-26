@@ -1,18 +1,16 @@
 .menu__field {
-  // width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: 50px;
   .menu__bar {
     width: 280px;
     margin-right: 40px;
-    // タイトル
     &--title {
       position: relative;
       display: block;
       font-weight: bold;
       @include menu-content;
     }
-    // リスト
     &--list {
       background-color: #eee;
       &__contents {

@@ -1,8 +1,8 @@
 .confirm__wrap
-  = render "layouts/header"
+  = render "layouts/searchheader.html"
   .my--main
     .confirm__logout
       .logout-btn
         = link_to "ログアウトする", "#", method: :delete, class: "submit__btn--out"
   = render "layouts/menu_bar"
-  = render "layouts/footer"
+  = render "layouts/richfooter.html"
