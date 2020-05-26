@@ -6,7 +6,7 @@
         %h2 クレジットカード情報
       .creditcard-main__form__text
         .creditcard-main__form__text__input
-          = form_with url: new_credit_cards_path do |form|
+          = form_with url: new_credit_card_path do |form|
             .field
               = form.label :カード番号, { class: 'form-label'}
               = form.label :必須, { class: 'form-require' }
