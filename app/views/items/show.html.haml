@@ -9,14 +9,14 @@
       
       .product__images
         .product__images__main-image
-          %img{src: 'product_image_main.png', width: '560', height: '350'}
+          = image_tag '/product_image_main.png', width: '560', height: '350'
         %ul.product__images__sub-images
           %li.product__images__sub-images__image
-            %img{src: 'product_image_sub1.png', width: '140', height: '90'}
+            = image_tag '/product_image_sub1.png', width: '140', height: '90'
           %li.product__images__sub-images__image
-            %img{src: 'product_image_sub2.png', width: '140', height: '90'}
+            = image_tag '/product_image_sub2.png', width: '140', height: '90'
           %li.product__images__sub-images__image
-            %img{src: 'product_image_sub3.png', width: '140', height: '90'}
+            = image_tag '/product_image_sub3.png', width: '140', height: '90'
 
       .product__price-info
         .product__price-info__price
