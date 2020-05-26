@@ -1,0 +1,124 @@
+.mainindex
+  %section.topindex
+    .indexcontent
+      %h2.indexcontent__title
+        <br/>人生を変えるフリマアプリ
+      %p.indexcontent__text
+        FURIMAはだれでもかんたんに出品・購入できる<br/>フリマアプリです
+      .indexcontent__btn
+        .indexcontent__btn__applebtn
+          = image_tag 'material/icon/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', height: '54', width: '180'
+        .indexcontent__btn__googlebtn
+          = image_tag 'material/icon/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', height: '54', width: '180'
+      .indexcontent__picture
+  %section.introduction
+    %h2.subtitle
+      FURIMAが選ばれる３つの理由
+    %ul.lists
+      %li.list
+        .list__img
+          .list__img__pic
+            = image_tag "material/pict/pict-reason-01.jpg",class:"list__img__pic"
+            %span.num
+              1
+          %h3.list__toptext
+            %span
+              3分
+            ですぐに出品
+          %p.list__undertext
+            スマホで入力するだけで簡単に出品できる！
+      %li.list
+        .list__img
+          .list__img__pic
+            = image_tag "material/pict/pict-reason-02.jpg",class:"list__img__pic"
+            %span.num
+              2
+          %h3.list__toptext
+            %span
+              シンプル
+            で使いやすい
+          %p.list__undertext
+            めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list
+        .list__img
+          .list__img__pic
+            = image_tag "material/pict/pict-reason-03.jpg",class:"list__img__pic"
+            %span.num 
+              3
+          %h3.list__toptext
+            手数料
+            %span
+              業界最安
+          %p.list__undertext
+            最大3%でお得に出品&購入！
+  %section.middle
+    .middle__inner
+      %h2
+        会員数日本一位
+      %p.middletext
+        FURIMAは、フリマアプリで最も人気。
+        %br
+          出品・購入回数も業界最多です！
+        %br
+          ほしかったあの商品に出会えるかもしれません。
+      .indexcontent__btn
+        .indexcontent__btn__applebtn
+          = image_tag 'material/icon/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', height: '54', width: '180'
+        .indexcontent__btn__googlebtn
+          = image_tag 'material/icon/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', height: '54', width: '180'
+  %section.feature
+    %h2.featuretop
+      FURIMAの特徴
+    .featurecontents
+      %section.featurecontent
+        = image_tag "material/icon/icon-01.png", class:"featurecontent__img"
+        %h3.featurecontent__message
+          簡単に売り買いできる
+        %h3.featurecontent__text
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %section.featurecontent
+        = image_tag "material/icon/icon-03.png", class:"featurecontent__img"
+        %h3.featurecontent__message
+          売上金は即日振込みに対応
+        %h3.featurecontent__text
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %section.featurecontent
+        = image_tag "material/icon/icon-04.png", class:"featurecontent__img"
+        %h3.featurecontent__message
+          様々な支払いに対応
+        %h3.featurecontent__text
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  %section.news
+    %h2.newstop
+      ピックアップカテゴリー
+      .newsbox
+        .newshead
+          %h3.newspic
+            新規投稿商品
+        .newslists
+          .newslist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+          .newslist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+          .newslist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+  %secsion.picbrand
+    %h2.pictop
+      ピックアップブランド
+      .picbox
+        .pichead
+          %h3.picarchive
+            アーカイブ
+        .piclists
+          .piclist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+          .piclist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+          .piclist
+            = link_to root_path do
+              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
