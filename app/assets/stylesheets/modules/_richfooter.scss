@@ -1,0 +1,80 @@
+.footer {
+  color: #FFFFFF;
+
+  &__upper {
+    background-image: image-url("material/pict/bg-appBanner-pict.jpg");
+    background-size: cover;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contents {
+      width: 80%;
+      &__catchphrase {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 0 0 4px #808080;
+      }
+      &__prompt {
+        text-align: center;
+        font-size: 30px;
+        text-shadow: 0 0 4px #808080;
+      }
+      &__download-banners {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        .app-store {
+          margin-right: 10px;
+        }
+        a img:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &__lower {
+    background-color: #333333;
+    padding: 60px 0;
+    .site-map {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      width: 820px;
+      &__box {
+        width: 260px;
+        p {
+          font-size: 16px;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        li {
+          text-align: center;
+          a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 32px;
+          }
+          a:hover {
+            border-bottom: 1px solid #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+small {
+  display: block;
+  text-align: center;
+  line-height: 16px;
+}

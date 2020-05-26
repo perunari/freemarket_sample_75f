@@ -1,14 +1,16 @@
-.main
-  %section.top
-    .content
-      %h2.content__title
+.mainindex
+  %section.topindex
+    .indexcontent
+      %h2.indexcontent__title
         <br/>人生を変えるフリマアプリ
-      %p.content__text
+      %p.indexcontent__text
         FURIMAはだれでもかんたんに出品・購入できる<br/>フリマアプリです
-      .content__btn
-        .content__btn__applebtn
-        .content__btn__googlebtn
-      .content__picture
+      .indexcontent__btn
+        .indexcontent__btn__applebtn
+          = image_tag 'material/icon/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', height: '54', width: '180'
+        .indexcontent__btn__googlebtn
+          = image_tag 'material/icon/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', height: '54', width: '180'
+      .indexcontent__picture
   %section.introduction
     %h2.subtitle
       FURIMAが選ばれる３つの理由
@@ -53,15 +55,17 @@
     .middle__inner
       %h2
         会員数日本一位
-      %p.text
+      %p.middletext
         FURIMAは、フリマアプリで最も人気。
         %br
           出品・購入回数も業界最多です！
         %br
           ほしかったあの商品に出会えるかもしれません。
-      .content__btn
-        .content__btn__applebtn
-        .content__btn__googlebtn
+      .indexcontent__btn
+        .indexcontent__btn__applebtn
+          = image_tag 'material/icon/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', height: '54', width: '180'
+        .indexcontent__btn__googlebtn
+          = image_tag 'material/icon/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', height: '54', width: '180'
   %section.feature
     %h2.featuretop
       FURIMAの特徴
@@ -85,36 +89,36 @@
         %h3.featurecontent__text
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
   %section.news
-    %h2.top
+    %h2.newstop
       ピックアップカテゴリー
-      .box
-        .pichead
-          %h3.postspic
+      .newsbox
+        .newshead
+          %h3.newspic
             新規投稿商品
-        .postlists
-          .postlist
+        .newslists
+          .newslist
             = link_to root_path do
               = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
-          .postlist
+          .newslist
             = link_to root_path do
               = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
-          .postlist
+          .newslist
             = link_to root_path do
               = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
   %secsion.picbrand
-    %h2.top
+    %h2.pictop
       ピックアップブランド
-      .box
+      .picbox
         .pichead
-          %h3.postspic
-            アーカイバ
-        .postlists
-          .postlist
+          %h3.picarchive
+            アーカイブ
+        .piclists
+          .piclist
             = link_to root_path do
               = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
-          .postlist
+          .piclist
             = link_to root_path do
               = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
-          .postlist
+          .piclist
             = link_to root_path do
               = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
