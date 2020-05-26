@@ -60,9 +60,7 @@
                      width: 130px;
                      background-color: #fff;
                      text-indent: 8px;
-                     &:hover{
-                        cursor: pointer;
-                     }
+                     cursor: pointer;
                   }
                   .deadline-label{
                      line-height: 50px;
@@ -75,10 +73,8 @@
                   background: #ea352d;
                   border: 1px solid #ea352d;
                   color: #fff;
-                  &:hover{
-                     cursor: pointer;
-                  }
-               }
+                  cursor: pointer;
+               } 
             }
          }
       }
