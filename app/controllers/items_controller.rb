@@ -1,11 +1,15 @@
 class ItemsController < ApplicationController
 
+  def index
+  end
 
-
-  def edit
+  def new
   end
 
   def create
+  end
+
+  def edit
   end
 
   def show
