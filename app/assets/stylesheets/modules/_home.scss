@@ -87,35 +87,36 @@ ul.lists{
       &__pic{
         width: 100%;
       }
-        span.num{
-          position: absolute;
-          top: 0;
-          left: 0;
-          font-size: 30px;
-          margin: 0 5px 0 0;
-          padding: 10px 20px;
-          background-color: #3CCACE;
-          color: #fff;
-        }
+      span.num{
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 30px;
+        margin: 0 5px 0 0;
+        padding: 10px 20px;
+        background-color: #3CCACE;
+        color: #fff;
+      }
     }
     &__toptext{
       span{
         color:#3CCACE;
         text-align: center;
-        }
-        text-align: center;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 50px;
-        margin: 0 0 0 2px;
-    }
-      &__undertext{
-        text-align: center;
-        font-size: 18px;
-        line-height: 1.5;
-        margin: 16px 0 0;
       }
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 50px;
+      margin: 0 0 0 2px;
     }
+    }
+    &__undertext{
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 16px 0 0;
+    }
+    
   }
 }
 section.middle{
