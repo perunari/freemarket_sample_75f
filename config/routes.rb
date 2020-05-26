@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "users#show"
-  resources :items, only: [:edit, :create, :show]
+
+  root 'items#index'
+  resources :items, only: [:new, :edit, :create, :show]
   resources :credit_cards, only: :new
-  resources :users, only: :edit
-  get "/logout", to: "users#index"
 end

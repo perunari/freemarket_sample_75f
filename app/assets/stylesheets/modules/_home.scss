@@ -2,11 +2,12 @@
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 section.topindex {
-  background-image: url("material/pict/bg-mainVisual-pict_pc.jpg");
+  background-image: image-url("material/pict/bg-mainVisual-pict_pc.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   height:560px;
+  width:100%;
   padding:0 60px;
   display: flex;
   align-items: center;
@@ -14,6 +15,7 @@ section.topindex {
 .indexcontent {
   width:100%;
   padding-top:35px;
+  z-index: 1;
   &__title {
     font-size: 60px;
     color:white;
@@ -119,7 +121,7 @@ ul.lists{
   }
 }
 section.middle{
-  background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
+  background-image: image-url("material/pict/bg-topMiddleDl-pict.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
