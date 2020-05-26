@@ -1,0 +1,17 @@
+.my--main {
+  padding: 40px;
+  &__boxes {
+    text-align: center;
+    font-weight: bold;
+    .my--nickname {
+      font-size: 50px;
+      .link {
+        text-decoration: none;
+        color: #000;
+        &:hover {
+          border-bottom: 2px solid;
+        }
+      }  
+    }
+  }
+}
