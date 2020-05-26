@@ -2,10 +2,9 @@
   padding: 40px;
   &__boxes {
     text-align: center;
+    font-weight: bold;
     .my--nickname {
       font-size: 50px;
-      font-weight: bold;
-      padding: 40px auto;
       .link {
         text-decoration: none;
         color: #000;
