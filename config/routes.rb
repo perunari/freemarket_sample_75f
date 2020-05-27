@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :users, only: :show
   get '/logout', to: 'users#index'
-  resources :items, only: [:new, :edit, :create, :show]
+  resources :items, only: [:new, :create, :edit, :update, :show]
   resources :credit_cards, only: :new
   resources :buyings, only: [:new, :create]
 end
