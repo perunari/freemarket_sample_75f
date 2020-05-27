@@ -73,6 +73,9 @@ gem 'haml-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'jquery-rails'
+gem 'payjp'
+gem 'ancestry'
+gem 'active_hash'
 
 group :production do
   gem 'unicorn'
