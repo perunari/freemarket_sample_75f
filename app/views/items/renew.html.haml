@@ -1,0 +1,147 @@
+.pro--list__wrap
+  = render "layouts/header"
+  = form_with model: @item, class: 'pro--list__main' do |f|
+    .pro--list__main__box
+      .pro--list__main__picture__box
+        .pro--list__main__title
+          出品画像
+          %span 必須
+        .pro--list__main__picture--tips
+          最大10枚までアップロードできます
+        .pro--list__main__picture--upload
+          = f.file_field :picture, class: 'pro--list__main__picture--upload__field'
+            .pro--list__main__picture--upload__icon
+              = icon("fa", "camera")
+            .pro--list__main__picture--upload__text
+              ドラッグアンドドロップ
+              %br
+              またはクリックしてファイルをアップロード
+    .pro--list__main__box
+      .pro--list__main__product__name
+        .pro--list__main__title
+          商品名
+          %span 必須
+        .pro--list__main__product__text--box
+          %input.product__text--area{name: "value", placeholder: "40字まで", type: "text", value: ""}
+      .pro--list__main__product__instruction
+        .pro--list__main__title
+          商品の説明
+          %span 必須
+        .pro--list__main__product__instruction__text--box
+          %textarea.product__instruction__text--area{name: "description", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n", value: ""}
+        .product__instruction__text--count
+          %span 0/1000
+    .pro--list__main__details
+      .pro--list__main__box
+        .pro--list__main__title--middle
+          商品の詳細
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            カテゴリー
+            %span 必須
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  レディース
+              %option{value: "2"}  メンズ
+              %option{value: "3"}  ベビー・キッズ
+              %option{value: "4"}  インテリア
+        .pro--list__main__middle__box
+          .pro--list__main__title--free
+            ブランド
+            %span 任意
+          .pro--list__main__product__text--box
+          %input.product__text--area{name: "value", placeholder: "例）シャネル", type: "text", value: ""}
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            商品の状態
+            %span 必須
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  新品・未使用
+              %option{value: "2"}  未使用に近い
+              %option{value: "3"}  目立った傷や汚れなし
+              %option{value: "4"}  やや傷や汚れあり
+    .pro--list__main__delivery
+      .pro--list__main__box
+        .pro--list__main__title--middle
+          配送について
+          .question--box
+            = link_to "#", class: "link__color--question" do
+              = icon("far", "question-circle")
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            配送料の負担
+            %span 必須
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  送料込み(出品者負担)
+              %option{value: "2"}  着払い(購入者負担)
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            発送元の地域
+            %span 必須
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  北海道
+              %option{value: "2"}  青森県
+        .pro--list__main__middle__box
+          .pro--list__main__title
+            発送までの日数
+            %span 必須
+          %div.select__box
+            %select
+              %option{value: "0"}  選択してください
+              %option{value: "1"}  1~2日で発送
+              %option{value: "2"}  2~3日で発送
+              %option{value: "2"}  4~7日で発送
+    .pro--list__main__sale
+      .pro--list__main__box
+        .pro--list__main__sale--title
+          価格（¥300〜9,999,999)
+          .question--box
+            = link_to "#", class: "link__color--question" do
+              = icon("far", "question-circle")
+        .pro--list__main__sale--boxes
+          .pro--list__main__title
+            販売価格
+            %span 必須
+          .price--mark
+            ¥
+          .price--box
+            %input.price--box--inner{name: "price", placeholder: "0", autocomplete: "off", type: "number", value: ""}
+        .pro--list__main__fee--boxes
+          .price__sub--title
+            販売手数料（10%）
+          .price__value
+            %p ー
+        .pro--list__main__profit--boxes
+          .price__sub--title
+            販売利益
+          .price__value
+            %p ー
+    .pro--list__select
+      .pro--list__main__box--select
+        .pro--list__select--boxes
+          .pro--list__select--field
+            %button.submit__btn--ex{type: "submit"}出品する
+          .pro--list__select--field
+            %button.submit__btn--draft{type: "submit"}下書きに保存
+          .pro--list__select__return
+            = link_to "もどる", "#", class: "select__btn--return"
+        .pro--list__select__notes
+          禁止されている
+          = link_to "行為", "#", class: "link__color"
+          および
+          = link_to "出品物", "#", class: "link__color"
+          を必ずご確認ください。
+          = link_to "偽ブランド品", "#", class: "link__color"
+          や
+          = link_to "盗品物", "#", class: "link__color"
+          などの販売は犯罪であり、 法律により処罰される可能性があります。 また、出品をもちまして
+          = link_to "加盟店規約", "#", class: "link__color"
+          に同意したことになります。
+  = render "layouts/footer"
