@@ -1,9 +1,52 @@
-.category-field {
-  background-color: #000;
+.category--field {
   padding: 50px;
   margin: 0 auto;
-  .category-main {
+  .category__main {
     width: 700px;
     margin: 0 auto;
+    .category__box {
+      padding: 16px 18px;
+      .parent--panel {
+        &:hover {
+          background-color: #3ccace;
+          color: #fff;
+          cursor: pointer;
+        }
+        display: inline-block;
+        background-color: #fff;
+        border-radius: 4px;
+        min-width: 80px;
+        line-height: 40px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-align: center;
+        padding: 0 30px;
+        margin: 5px;
+        color: #333;
+        text-decoration: none;
+      }
+    }
+    .parent__box {
+      padding: 16px 18px;
+      .parent--title {
+        background-color: #3ccace;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+        text-decoration: none;
+        display: block;
+        padding: 16px 10px 8px;
+        text-align: left;
+        font-weight: bold;
+        font-size: 22px;
+      }
+      .children__box {
+        background-color: #dedede;
+        padding: 16px;
+
+      }
+    }
   }
 }
+
+
+
+

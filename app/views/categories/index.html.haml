@@ -1,11 +1,20 @@
 = render 'layouts/searchheader'
-.category-field
+.category--field
   .category__main
-    
-    - @parents.each do |parent|
-      = parent.name
-  -# - parent.children.each do |child|
-  -#   =child.name
+    .category__box
+      - @parents.each do |parent|
+        .parent--panel
+          = parent.name
+    .parent__box
+      .parent--title
+        レディース
+        .children__box
+          - @parents.each do |parent|
+
+            - parent.children.each do |child|
+              -# .children--title
+              = child.name
+  
   -#   - child.children.each do |grandchild|
   -#     =grandchild.name
 
