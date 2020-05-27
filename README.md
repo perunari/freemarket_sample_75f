@@ -12,11 +12,10 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
-|address_id|integer|null: false, foreign_key: true|
 
 ### Association
 
-- has_one :address, dependent: :destroy
+- has_many :address, dependent: :destroy
 - has_many :credit_cards, dependent: :destroy
 - has_many :items, dependent: :destroy
 - has_many :buyings, dependent: :destroy
