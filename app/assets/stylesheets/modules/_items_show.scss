@@ -118,6 +118,39 @@ td {
   border: 1px solid #CCCCCC;
 }
 
+
+.edit-destroy {
+  &__edit-btn{
+    display: block;
+    margin: 0 auto;
+    color: #FFFFFF;
+    background-color: #48D1CC;
+    border: 1px solid #48D1CC;
+    font-size: 18px;
+    border-radius: 28px;
+    padding: 12px 140px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  &__destroy-btn{
+    display: block;
+    margin: 0 auto;
+    color: #FFFFFF;
+    background-color: #aaa;
+    border: 1px solid #aaa;
+    font-size: 18px;
+    border-radius: 28px;
+    padding: 12px 140px;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+
+
 .comment {
   background-color: #FFFFFF;
   padding: 20px;
