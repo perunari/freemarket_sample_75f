@@ -76,6 +76,8 @@ gem 'jquery-rails'
 gem 'payjp'
 gem 'ancestry'
 gem 'active_hash'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
