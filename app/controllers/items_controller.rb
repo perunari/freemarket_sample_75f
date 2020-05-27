@@ -13,5 +13,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @tax = 1.1
   end
+
 end

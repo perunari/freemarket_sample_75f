@@ -5,8 +5,9 @@
 
     .product
       %h1.product__name
-        product3
-      
+        = @item.name
+        -# = @item.name[:id]
+        -# product3
       .product__images
         .product__images__main-image
           = image_tag '/product_image_main.png', width: '560', height: '350'
@@ -20,12 +21,14 @@
 
       .product__price-info
         .product__price-info__price
-          ¥30,000
+          = "#{(@item.price * @tax).to_i}円"
+          -# = "#{(@item.price[:id] * @tax).to_i}円"
         .product__price-info__include
           .product__price-info__include--tax
             (税込)
           .product__price-info__include--postage
-            送料込み
+            = @item.postage_payment
+            -# = @item.postage_payment[:id]
       
       .product__description
         親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
@@ -35,7 +38,7 @@
           %th
             出品者
             %td
-              hoge
+              = @item.user.nickname
         %tr
           %th
             カテゴリー
