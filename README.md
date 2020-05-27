@@ -59,7 +59,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|buyer_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
 |address_id|integer|null: false, foreign_key: true|
 |credit_card_id|integer|null: false, foreign_key: true|
@@ -76,7 +76,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|seller_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |name|string|null: false|
 |description|text|null: false|
 |category_id|integer|null: false, foreign_key: true|
