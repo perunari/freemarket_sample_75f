@@ -15,7 +15,7 @@
 
 ### Association
 
-- has_many :address, dependent: :destroy
+- has_one :address, dependent: :destroy
 - has_many :credit_cards, dependent: :destroy
 - has_many :items, dependent: :destroy
 - has_many :buyings, dependent: :destroy
