@@ -20,9 +20,14 @@
           = link_to '#', class: 'bland' do
             ブランド
       %ul.lower__right
-        %li.lower__right__loginbtn
-          = link_to new_user_session_path do
-            ログイン
-        %li.lower__right__signupbtn
-          = link_to new_user_registration_path do
-            新規会員登録
+        - if user_signed_in?
+          %li.lower__right__logoutbtn 
+            = link_to logout_path do
+              ログアウト
+        - else
+          %li.lower__right__loginbtn
+            = link_to new_user_session_path do
+              ログイン
+          %li.lower__right__signupbtn
+            = link_to new_user_registration_path do
+              新規会員登録
