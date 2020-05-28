@@ -1,24 +1,33 @@
-= render 'layouts/searchheader'
-.category--field
-  .category__main
-    .category__box
-      - @parents.each do |parent|
-        .parent--panel
-          = parent.name
-    .parent__box
-      .parent--title
-        レディース
-        .children__box
-          - @parents.each do |parent|
-
-            - parent.children.each do |child|
-              -# .children--title
-              = child.name
-  
-  -#   - child.children.each do |grandchild|
-  -#     =grandchild.name
-
-
-  
-= render 'layouts/camerabtn'
-= render 'layouts/richfooter'
+.pro--list__wrap
+  = render 'layouts/searchheader'
+  .category--field
+    .category__main
+      .category__box
+        - @parents.each do |parent|
+          .parent--panel
+            = parent.name
+      .parent__box
+        .parent--title
+          レディース
+        .children__boxes
+          -# - @parents.each do |parent|
+          -#   - parent.children.each do |child|
+          .children--title
+            トップス
+            -# = child.name
+          .grandchild__box
+            .grandchild--list
+              = link_to "Tシャツ/カットソー(半袖/袖なし)", "#", class: "grandchild--title"
+            .grandchild--list
+              = link_to "Tシャツ/カットソー(七分/長袖)", "#", class: "grandchild--title"
+            .grandchild--list
+              = link_to "シャツ/ブラウス(半袖/袖なし)", "#", class: "grandchild--title"
+            .grandchild--list
+              = link_to "シャツ/ブラウス(七分/長袖)", "#", class: "grandchild--title"
+                  
+                  
+    
+    -#   - child.children.each do |grandchild|
+    -#     =grandchild.name
+  = render 'layouts/camerabtn'
+  = render 'layouts/richfooter'

@@ -38,10 +38,32 @@
         font-weight: bold;
         font-size: 22px;
       }
-      .children__box {
-        background-color: #dedede;
+      .children__boxes {
+        background-color: #fff;
         padding: 16px;
-
+        .children--title {
+          color: #000;
+          font-weight: bold;
+          font-size: 16px;
+          text-decoration: none;
+          display: inline-block;
+        }
+        .grandchild__box {
+          padding: 0 0 0 20px;
+          display: inline-block;
+          .grandchild--list {
+            margin: 8px 0;
+            display: inline-block;
+            width: 50%;
+            float: left;
+          }
+          .grandchild--title {
+            color: #ffb340;
+            text-decoration: none;
+            font-size: 14px;
+            list-style: none;
+          }
+        }
       }
     }
   }
