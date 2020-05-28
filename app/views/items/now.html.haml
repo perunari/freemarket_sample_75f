@@ -1,6 +1,6 @@
 .pro--list__wrap
   = render "layouts/header"
-  = form_with model: @item, class: 'pro--list__main' do |f|
+  .pro--list__main
     .pro--list__main__box
       .pro--list__main__picture__box
         .pro--list__main__title
@@ -9,7 +9,7 @@
         .pro--list__main__picture--tips
           最大10枚までアップロードできます
         .pro--list__main__picture--upload
-          = f.file_field :picture, class: 'pro--list__main__picture--upload__field'
+          .pro--list__main__picture--upload__field
             .pro--list__main__picture--upload__icon
               = icon("fa", "camera")
             .pro--list__main__picture--upload__text

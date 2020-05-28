@@ -1,0 +1,37 @@
+.productlisting-wrap {
+  background-color: #EEEEEE;
+  .main {
+    background-color: #FFFFFF;
+    width: 720px;
+    margin: 0 auto;
+    .break {
+      padding: 20px;
+      border-top: 1px solid black;
+      .field {
+        
+        label {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .image-upload {
+          cursor: pointer;
+          &__box {
+            background-color: #EEEEEE;
+            border: 1px dashed black;
+            text-align: center;
+            i {
+              font-size: 24px;
+            }
+            p {
+              font-size: 12px;
+              font-weight: 100;
+            }
+          }
+          .hidden {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
