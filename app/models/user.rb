@@ -9,4 +9,6 @@ class User < ApplicationRecord
   mailRegex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 　email = "a@a.com"
 　email.match? mailRegex
+  validates :family_name, :first_name, :family_name_kana, :first_name_kana, format: { with: /\A[ぁ-んァ-ン一-龥]/}
+  validates :nickname, uniqueness: true
 end
