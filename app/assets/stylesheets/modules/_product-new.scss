@@ -99,10 +99,13 @@
       .field.withmargin {
         margin-top: 30px;
       }
-      .field.price {
+      .field.withmargin.price {
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
+        .field__header {
+          margin-top: 12px;
+        }
         .price-input {
 
           span {
