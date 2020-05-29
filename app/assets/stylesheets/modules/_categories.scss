@@ -4,7 +4,7 @@
   .category__main {
     width: 700px;
     margin: 0 auto;
-    .category__box {
+    .category__panel {
       padding: 16px 18px;
       .parent--panel {
         &:hover {
@@ -21,35 +21,43 @@
         text-align: center;
         padding: 0 30px;
         margin: 5px;
-        color: #333;
-        text-decoration: none;
+        .panel--font {
+          color: #333;
+          text-decoration: none;
+
+        }
       }
     }
     .parent__box {
       padding: 16px 18px;
       .parent--title {
         background-color: #3ccace;
-        color: #fff;
         border-radius: 5px 5px 0 0;
-        text-decoration: none;
         display: block;
         padding: 16px 10px 8px;
         text-align: left;
-        font-weight: bold;
-        font-size: 22px;
+        .parent--font {
+          color: #fff;
+          font-weight: bold;
+          font-size: 22px;
+          text-decoration: none;
+        }
       }
       .children__boxes {
         background-color: #fff;
         padding: 16px;
-        .children--title {
-          color: #000;
-          font-weight: bold;
-          font-size: 16px;
-          text-decoration: none;
-          display: inline-block;
+        .children--box {
+          display: block;
+          margin: 10px 0 5px;
+          .children--title {
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+          }
         }
         .grandchild__box {
-          padding: 0 0 0 20px;
+          padding: 5px 0 10px 20px;
           display: inline-block;
           .grandchild--list {
             margin: 8px 0;
