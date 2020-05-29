@@ -1,35 +1,170 @@
 .productlisting-wrap {
-  background-color: #EEEEEE;
+  background-color: #F5F5F5;
   .main {
     background-color: #FFFFFF;
     width: 720px;
     margin: 0 auto;
-    .break {
-      padding: 20px;
-      border-top: 1px solid black;
+    border-bottom: 1px solid #EEEEEE;
+    .content {
+      padding: 40px;
+      border-top: 1px solid #EEEEEE;
+      &__about {
+        font-size: 14px;
+        font-weight: 600;
+        color: #888888;
+        display: inline-block;
+      }
+      a i {
+        color: #0095EE;
+      }
       .field {
         
-        label {
-          font-size: 14px;
-          font-weight: 600;
+        &__header {
+          margin-bottom: 16px;
+          label {
+            font-size: 14px;
+            font-weight: 600;
+          }
+          span.colored {
+            font-size: 12px;
+            font-weight: 800;
+            color: #FFFFFF;
+            border-style: none;
+            border-radius: 2px;
+            padding: 2px 4px;
+          }
+          span.colored.required {
+            background-color: #FF3333;
+          }
+          span.colored.optional {
+            background-color: #BBBBBB;
+          }
+          .span.char-counter {
+  
+          }
+        }
+        &__input {
+          width: 100%;
+          position: relative;
+          input, textarea, select {
+            width: 100%;
+            border: 1px solid #DDDDDD;
+            border-radius: 4px;
+            padding: 10px 16px;
+            cursor: pointer;
+          }
+          select {
+            height: 3em;
+            -webkit-appearance: none;
+            appearance: none;
+          }
+          i {
+            font-size: 20px;
+            color: #CCCCCC;
+            position: absolute;
+            right: 24px;
+            bottom: 14px;
+          }
+        }
+        p {
+          font-size: 12px;
+          font-weight: 100;
+          color: #333333;
         }
         .image-upload {
           cursor: pointer;
           &__box {
-            background-color: #EEEEEE;
-            border: 1px dashed black;
+            margin-top: 16px;
+            padding: 40px 0;
+            background-color: #F5F5F5;
+            border: 1px dashed #CCCCCC;
             text-align: center;
             i {
-              font-size: 24px;
-            }
-            p {
-              font-size: 12px;
-              font-weight: 100;
+              font-size: 20px;
+              margin-bottom: 8px;
             }
           }
           .hidden {
             display: none;
           }
+        }
+        span.char-counter {
+          font-size: 10px;
+          display: block;
+          text-align: right;
+          margin-top: 10px;
+          color: #666666;
+        }
+      }
+      .field.withmargin {
+        margin-top: 30px;
+      }
+      .field.price {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .price-input {
+
+          span {
+            font-size: 12px;
+          }
+          input {
+            width: 300px;
+            border: 1px solid #DDDDDD;
+            border-radius: 4px;
+            padding: 10px 16px;
+            cursor: pointer;
+            text-align: end;
+          }
+        }
+      }
+      .price-opt {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        font-size: 14px;
+      }
+      .price-opt.comission {
+        border-bottom: 1px solid #EEEEEE;
+      }
+    }
+    .btn {
+      text-align: center;
+      input {
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+        width: 300px;
+        height: 40px;
+        background-color: #FF3333;
+        border: none;
+        border-radius: 6px;
+        color: #FFFFFF;
+        font-weight: 800;
+        margin-bottom: 20px;
+        &:hover {
+          background-color: #CC3333;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: #0095EE;
+        &:hover {
+          color: #87CEEB;
+          border-bottom: 1px solid;
+        }
+      }
+    }
+    .notes {
+      padding: 0 40px;
+      margin: 40px 0 60px;
+      font-size: 12px;
+      a {
+        text-decoration: none;
+        color: #0095EE;
+        &:hover {
+          color: #87CEEB;
+          border-bottom: 1px solid;
         }
       }
     }

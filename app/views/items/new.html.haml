@@ -4,10 +4,11 @@
   .main
     = form_with model: @item do |f|
       = f.fields_for :images do |i|
-        .break
+        .content
           .field
-            = i.label :出品画像
-            %span 必須
+            .field__header
+              = i.label :出品画像
+              %span.colored.required 必須
             %p 最大10枚までアップロードできます
             %label.image-upload
               .image-upload__box
@@ -18,94 +19,114 @@
                   またはクリックしてファイルをアップロード
               = i.file_field :picture, class: 'hidden'
       
-      .break
+      .content
         .field
-          = f.label :商品名, class: 'title'
-          %span 必須
-          = f.text_field :name, placeholder: '40字まで'
+          .field__header
+            = f.label :商品名, class: 'title'
+            %span.colored.required 必須
+          .field__input
+            = f.text_field :name, placeholder: '40字まで'
         
-        .field
-          = f.label :商品の説明
-          %span 必須
-          = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-          %span 0/1000
+        .field.withmargin
+          .field__header
+            = f.label :商品の説明
+            %span.colored.required 必須
+          .field__input
+            = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: '6'
+          %span.char-counter 0/1000
 
-      .break
-        %p 商品の詳細
-        .field
-          = f.label :カテゴリー
-          %span 必須
-          = f.select :category_id, [['選択してください', 0], ['レディース', 1], ['メンズ', 2], ['ベビー・キッズ', 3], ['インテリア', 4]]
+      .content
+        %p.content__about 商品の詳細
+        .field.withmargin
+          .field__header
+            = f.label :カテゴリー
+            %span.colored.required 必須
+          .field__input
+            = f.select :category_id, [['選択してください', 0], ['レディース', 1], ['メンズ', 2], ['ベビー・キッズ', 3], ['インテリア', 4]]
+            = icon('fas', 'chevron-down')
         
-        .field
-          = f.label :ブランド
-          %span 任意
-          = f.text_field :brand_id, placeholder: '例）シャネル'
+        .field.withmargin
+          .field__header
+            = f.label :ブランド
+            %span.colored.optional 任意
+          .field__input
+            = f.text_field :brand_id, placeholder: '例）シャネル'
         
-        .field
-          = f.label :商品の状態
-          %span 必須
-          = f.select :condition, [['選択してください', 0], ['新品・未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4]]
+        .field.withmargin
+          .field__header
+            = f.label :商品の状態
+            %span.colored.required 必須
+          .field__input
+            = f.select :condition, [['選択してください', 0], ['新品・未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4]]
+            = icon('fas', 'chevron-down')
 
-      .break
-        %p 配送について
+      .content
+        %p.content__about 配送について
         = link_to '#' do
           = icon('far', 'question-circle')
-        .field
-          = f.label :配送料の負担
-          %span 必須
-          = f.select :postage_payment, [['選択してください', 0], ['送料込み(出品者負担)', 1], ['着払い(購入者負担)', 2]]
+        .field.withmargin
+          .field__header
+            = f.label :配送料の負担
+            %span.colored.required 必須
+          .field__input
+            = f.select :postage_payment, [['選択してください', 0], ['送料込み(出品者負担)', 1], ['着払い(購入者負担)', 2]]
+            = icon('fas', 'chevron-down')
 
-        .field
-          = f.label :発送元の地域
-          %span 必須
-          = f.select :ship_from, [['選択してください', 0], ['北海道', 1], ['青森県', 2]]
+        .field.withmargin
+          .field__header
+            = f.label :発送元の地域
+            %span.colored.required 必須
+          .field__input
+            = f.select :ship_from, [['選択してください', 0], ['北海道', 1], ['青森県', 2]]
+            = icon('fas', 'chevron-down')
 
-        .field
-          = f.label :発送までの日数
-          %span 必須
-          = f.select :preparation, [['選択してください', 0], ['1~2日で発送', 1], ['2~3日で発送', 2], ['4~7日で発送', 3]]
+        .field.withmargin
+          .field__header
+            = f.label :発送までの日数
+            %span.colored.required 必須
+          .field__input
+            = f.select :preparation, [['選択してください', 0], ['1~2日で発送', 1], ['2~3日で発送', 2], ['4~7日で発送', 3]]
+            = icon('fas', 'chevron-down')
 
-      .break
-        %p 価格（¥300〜9,999,999）
+      .content
+        %p.content__about 価格（¥300〜9,999,999）
         = link_to "#" do
           = icon("far", "question-circle")
-        .field
-          = f.label :販売価格
-          %span 必須
-          %span ¥
-          = f.number_field :price, placeholder: '0'
-          .margin
-            .margin__text 販売手数料（10%）
-            %span -
-          .profit
-            .profit__text 販売利益
-            %span -
+        .field.withmargin.price
+          .field__header
+            = f.label :販売価格
+            %span.colored.required 必須
+          .price-input
+            %span ¥
+            = f.number_field :price, placeholder: '0'
+        .price-opt.comission
+          %span 販売手数料（10%）
+          %span ー
+        .price-opt
+          %span 販売利益
+          %span ー
 
-    .btn
-      %button
-        出品する
-      %button
-        下書きに保存
-      = link_to '#' do
-        もどる
+      .btn
+        = f.submit :出品する
+        = link_to '#' do
+          もどる
     
-    .notes
-      禁止されている
-      = link_to "#" do
-        行為
-      および
-      = link_to "#" do
-        出品物
-      を必ずご確認ください。
-      = link_to "#" do
-        偽ブランド品
-      や
-      = link_to "#" do
-        窃盗物
-      などの販売は犯罪であり、 法律により処罰される可能性があります。 また、出品をもちまして
-      = link_to "#" do
-        加盟店規約
-      に同意したことになります。
+      .notes
+        禁止されている
+        = link_to "#" do
+          行為
+        および
+        = link_to "#" do
+          出品物
+        を必ずご確認ください。
+        = link_to "#" do
+          偽ブランド品
+        や
+        = link_to "#" do
+          窃盗物
+        などの販売は犯罪であり、 法律により処罰される可能性があります。 また、出品をもちまして
+        = link_to "#" do
+          加盟店規約
+        に同意したことになります。
 
 = render 'layouts/footer'
