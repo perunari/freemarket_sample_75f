@@ -5,11 +5,11 @@
       .category__panel
         - @category.each do |parent|
           .parent--panel
-            = link_to parent.name, "#", class: "panel--font" 
+            = link_to parent.name, "##{parent.name}", class: "panel--font" 
       .parent__box
         - @category.each do |parent|
-          .parent--title
-            = link_to parent.name, "#", class: "parent--font", id: "#{[:name]}"
+          .parent--title{ id: "#{parent.name}" }
+            = link_to parent.name, "#", class: "parent--font"
           .children__boxes
             - parent.children.each do |child|
               .children--box
@@ -18,7 +18,7 @@
                 - child.children.each do |grandchild|
                   .grandchild--list
                     = link_to grandchild.name, "#", class: "grandchild--title"               
-        .return--top
-          = link_to "トップページへ戻る", "#", class: "up--arrow"
+          .return--top
+            = link_to "トップページへ戻る", "#", class: "up--arrow"
   = render 'layouts/camerabtn'
   = render 'layouts/richfooter'

@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :edit, :create, :show]
   resources :credit_cards, only: :new
   resources :buyings, only: [:new, :create]
-  resources :categories, only: [:index]
+  resources :categories, only: [:index, :show]
 end
