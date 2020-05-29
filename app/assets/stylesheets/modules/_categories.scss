@@ -65,6 +65,26 @@
           }
         }
       }
+      .return--top {
+        background-color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 16px;
+        text-align: left;
+        .up--arrow {
+          &::before {
+            content: "\f062";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 5px;
+          }
+          text-decoration: none;
+          color: #000;
+          font-weight: bold;
+          font-size: 16px;
+
+        }
+      }
     }
   }
 }
