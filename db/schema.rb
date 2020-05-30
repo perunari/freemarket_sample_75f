@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2020_05_28_073223) do
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
     t.integer "postal_code", null: false
-    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "block", null: false
     t.string "building"
     t.integer "phone"
+    t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_05_28_073223) do
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,10 +82,10 @@ ActiveRecord::Schema.define(version: 2020_05_28_073223) do
     t.text "description", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.string "condition", null: false
-    t.string "postage_payment", null: false
-    t.string "ship_from", null: false
-    t.string "preparation", null: false
+    t.string "condition_id", null: false
+    t.string "postage_payment_id", null: false
+    t.string "ship_from_id", null: false
+    t.string "preparation_id", null: false
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
