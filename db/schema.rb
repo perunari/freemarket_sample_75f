@@ -82,10 +82,10 @@ ActiveRecord::Schema.define(version: 2020_05_27_082609) do
     t.text "description", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.string "condition", null: false
-    t.string "postage_payment", null: false
-    t.string "ship_from", null: false
-    t.string "preparation", null: false
+    t.integer "condition_id", null: false
+    t.integer "postage_payment_id", null: false
+    t.integer "ship_from_id", null: false
+    t.integer "preparation_id", null: false
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
