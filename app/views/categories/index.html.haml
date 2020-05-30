@@ -5,11 +5,11 @@
       .category__panel
         - @category.each do |parent|
           .parent--panel
-            = link_to parent.name, "##{parent.name}", class: "panel--font" 
+            = link_to parent.name, "##{parent.name}", class: "panel--font", id: "title-jump"
       .parent__box
         - @category.each do |parent|
           .parent--title{ id: "#{parent.name}" }
-            = link_to parent.name, "#", class: "parent--font"
+            = link_to parent.name, category_path(parent), class: "parent--font"
           .children__boxes
             - parent.children.each do |child|
               .children--box

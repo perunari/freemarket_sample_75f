@@ -1,1 +1,14 @@
-各カテゴリ一覧
+.pro--list__wrap
+  = render 'layouts/searchheader'
+  .category--field
+    .category__main
+      .parent__box
+        .parent--title{ id: "#{@parent.name}" }
+          .parent--font
+            #{@parent.name}の商品一覧
+        .children__boxes
+          - @children.each do |child|
+            .grandchild__box
+              = link_to child.name, "#", class: "grandchild--title"
+  = render 'layouts/camerabtn'
+  = render 'layouts/richfooter'

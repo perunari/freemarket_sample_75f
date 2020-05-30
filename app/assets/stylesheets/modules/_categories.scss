@@ -1,9 +1,11 @@
+// カテゴリー供用
 .category--field {
-  padding: 50px;
+  padding: 5px 50px 50px;
   margin: 0 auto;
   .category__main {
     width: 700px;
     margin: 0 auto;
+    // カテゴリートップのみ
     .category__panel {
       padding: 16px 18px;
       .parent--panel {
@@ -24,10 +26,10 @@
         .panel--font {
           color: #333;
           text-decoration: none;
-
         }
       }
     }
+    // カテゴリー供用
     .parent__box {
       padding: 16px 18px;
       .parent--title {
@@ -47,6 +49,7 @@
       .children__boxes {
         background-color: #fff;
         padding: 16px;
+        // カテゴリートップのみ
         .children--box {
           display: block;
           margin: 10px 0 5px;
@@ -74,6 +77,7 @@
           }
         }
       }
+      // カテゴリー供用
       .return--top {
         background-color: #fff;
         text-decoration: none;
@@ -91,13 +95,8 @@
           color: #000;
           font-weight: bold;
           font-size: 16px;
-
         }
       }
     }
   }
 }
-
-
-
-
