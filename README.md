@@ -112,10 +112,12 @@
 |------|----|------|
 |name|string|null: false|
 |parent_id|integer|null: false, foreign_key: true, default: ''|
+|ancestry|string|
 
 ### Association
 
 - has_many :items
+- has_ancestry
 
 ## brandsテーブル
 

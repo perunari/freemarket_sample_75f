@@ -100,3 +100,8 @@
     }
   }
 }
+
+// 子供カテゴリー：画像リスト
+.category__image {
+  @include category-product;
+}

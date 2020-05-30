@@ -3,13 +3,13 @@
   .category--field
     .category__main
       .parent__box
-        .parent--title{ id: "#{@parent.name}" }
+        .parent--title{ id: "#{@children.name}" }
           .parent--font
-            #{@parent.name}の商品一覧
+            #{@children.name}の商品一覧
         .children__boxes
-          - @children.each do |child|
+          - @grandchildren.each do |grandchild|
             .grandchild__box
-              = link_to child.name, "/subcategories/#{child.id}", class: "grandchild--title"
+              = link_to grandchild.name, "#", class: "grandchild--title"
       .category__image
         .category__image--list
           .sample--image
@@ -35,5 +35,7 @@
             商品名
             12,345円
             (税込)
+        
+
   = render 'layouts/camerabtn'
   = render 'layouts/richfooter'
