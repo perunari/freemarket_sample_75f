@@ -5,19 +5,19 @@
       .category__panel
         - @category.each do |parent|
           .parent--panel
-            = link_to parent.name, "##{parent.name}", class: "panel--font", id: "title-jump"
+            = link_to parent.name, "##{parent.id}", class: "panel--font", id: "title-jump"
       .parent__box
         - @category.each do |parent|
-          .parent--title{ id: "#{parent.name}" }
+          .parent--title{ id: "#{parent.id}" }
             = link_to parent.name, category_path(parent), class: "parent--font"
           .children__boxes
             - parent.children.each do |child|
               .children--box
-                = link_to child.name, "#", class: "children--title"
+                = link_to child.name, "/subcategories/#{child.id}", class: "children--title"
               .grandchild__box
                 - child.children.each do |grandchild|
                   .grandchild--list
-                    = link_to grandchild.name, "#", class: "grandchild--title"               
+                    = link_to grandchild.name, "/bottomcategories/#{grandchild.id}", class: "grandchild--title"               
           .return--top
             = link_to "トップページへ戻る", "#", class: "up--arrow"
   = render 'layouts/camerabtn'

@@ -3,8 +3,8 @@
   .category--field
     .category__main
       .parent__box
-        .parent--title{ id: "#{@parent.name}" }
-          .parent--font
+        .category--title{ id: "#{@parent.name}" }
+          .category--font
             #{@parent.name}の商品一覧
         .children__boxes
           - @children.each do |child|

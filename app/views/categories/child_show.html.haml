@@ -3,9 +3,13 @@
   .category--field
     .category__main
       .parent__box
-        .category--title{ id: "#{@grandchildren.name}" }
+        .category--title{ id: "#{@children.name}" }
           .category--font
-            #{@grandchildren.name}の商品一覧
+            #{@children.name}の商品一覧
+        .children__boxes
+          - @grandchildren.each do |grandchild|
+            .grandchild__box
+              = link_to grandchild.name, "/bottomcategories/#{grandchild.id}", class: "grandchild--title"
       .category__image
         .category__image--list
           .sample--image

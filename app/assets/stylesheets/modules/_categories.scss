@@ -29,7 +29,6 @@
         }
       }
     }
-    // カテゴリー供用
     .parent__box {
       padding: 16px 18px;
       .parent--title {
@@ -102,6 +101,22 @@
 }
 
 // 子供カテゴリー：画像リスト
+
+.category--title {
+  background-color: #3ccace;
+  border-radius: 5px 5px 0 0;
+  display: block;
+  padding: 16px 10px 8px;
+  text-align: center;
+  margin-top: 25px;
+  .category--font {
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+  }
+}
+
 .category__image {
   @include category-product;
 }
