@@ -81,10 +81,10 @@
 |description|text|null: false|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
-|condition|string|null: false|
-|postage_payment|string|null: false|
-|ship_from|string|null: false|
-|preparation|string|null: false|
+|condition_id|integer|null: false|
+|postage_payment_id|integer|null: false|
+|ship_from_id|integer|null: false|
+|preparation_id|integer|null: false|
 |price|integer|null: false|
 
 ### Association
