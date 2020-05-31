@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_parent_categories, only: [:new, :create]
 
   def index
   end
@@ -6,8 +7,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-
-    @parent_categories = Category.where(ancestry: nil)
   end
 
   def create
@@ -43,6 +42,10 @@ class ItemsController < ApplicationController
   def item_params
     # params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, :price, images_attributes: [:picture]).merge(user_id: current_user.id)
     params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, :price, images_attributes: [:picture]).merge(user_id: 1)
+  end
+
+  def set_parent_categories
+    @parent_categories = Category.where(ancestry: nil)
   end
 
 end
