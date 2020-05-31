@@ -16,6 +16,6 @@ class Item < ApplicationRecord
   validates :user_id, :name, :description, :category_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, :price, presence: true
   validates :name, length: { maximum: 40 }
   validates :description, length: { maximum: 1000 }
-  # validates :images, length: { minimum: 1 }
+  validates :images, length: { minimum: 1 }
     
 end
