@@ -2,8 +2,8 @@
 
 .productlisting-wrap
   .main
-    = form_with model: @item do |f|
-      = f.fields_for :images do |i|
+    = form_with model: @item, local: true do |f|
+      = f.fields_for @images do |i|
         .content
           .field
             .field__header
@@ -128,5 +128,5 @@
         = link_to "#" do
           加盟店規約
         に同意したことになります。
-= render 'layouts/error_messages'
+
 = render 'layouts/footer'
