@@ -1,11 +1,9 @@
-// カテゴリー供用
 .category--field {
   padding: 5px 50px 50px;
   margin: 0 auto;
   .category__main {
     width: 700px;
     margin: 0 auto;
-    // カテゴリートップのみ
     .category__panel {
       padding: 16px 18px;
       .parent--panel {
@@ -48,7 +46,6 @@
       .children__boxes {
         background-color: #fff;
         padding: 16px;
-        // カテゴリートップのみ
         .children--box {
           display: block;
           margin: 10px 0 5px;
@@ -76,7 +73,6 @@
           }
         }
       }
-      // カテゴリー供用
       .return--top {
         background-color: #fff;
         text-decoration: none;
@@ -101,7 +97,6 @@
 }
 
 // 子供カテゴリー：画像リスト
-
 .category--title {
   background-color: #3ccace;
   border-radius: 5px 5px 0 0;
