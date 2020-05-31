@@ -6,4 +6,6 @@ class AddColumnToAddresses < ActiveRecord::Migration[5.2]
     remove_column :addresses, :prefecture, :string
 
   end
+
 end
+
