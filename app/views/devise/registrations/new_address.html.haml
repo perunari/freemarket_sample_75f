@@ -6,6 +6,7 @@
         商品送付先住所情報
       .signup-form__address
         = form_for(@address) do |f| 
+          = render 'layouts/error_messages', model: f.object
           .field
             = f.label :送付先氏名（全角）
             = f.label :必須, { class: 'form-require' }
