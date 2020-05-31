@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_051311) do
+ActiveRecord::Schema.define(version: 2020_05_30_051424) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_051311) do
     t.integer "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "prefecture"
+    t.integer "prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_05_27_051311) do
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,13 +82,14 @@ ActiveRecord::Schema.define(version: 2020_05_27_051311) do
     t.text "description", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.string "condition", null: false
-    t.string "postage_payment", null: false
-    t.string "ship_from", null: false
-    t.string "preparation", null: false
+    t.integer "condition_id", null: false
+    t.integer "postage_payment_id", null: false
+    t.integer "ship_from_id", null: false
+    t.integer "preparation_id", null: false
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "size"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -94,12 +97,12 @@ ActiveRecord::Schema.define(version: 2020_05_27_051311) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
+    t.string "email", null: false
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
     t.date "birthday", null: false
-    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
