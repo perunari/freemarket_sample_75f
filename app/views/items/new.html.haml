@@ -37,12 +37,12 @@
 
       .content
         %p.content__about 商品の詳細
-        .field.withmargin
+        .field.withmargin.field__category
           .field__header
             = f.label :カテゴリー
             %span.colored.required 必須
-          .field__input
-            = f.select :category_id, [['選択してください', 0], ['レディース', 1], ['メンズ', 2], ['ベビー・キッズ', 3], ['インテリア', 4]]
+          .field__input.field__input__category
+            = f.collection_select :category_id, @parent_categories.all, :id, :name, { prompt: '選択してください' }, { name: '', id: 'parent_category' }
             = icon('fas', 'chevron-down')
         
         .field.withmargin
@@ -57,7 +57,7 @@
             = f.label :商品の状態
             %span.colored.required 必須
           .field__input
-            = f.collection_select :condition_id, Condition.all, :id, :name, prompt: '選択してください'
+            = f.collection_select :condition_id, Condition.all, :id, :name, { prompt: '選択してください' }
             = icon('fas', 'chevron-down')
 
       .content
@@ -69,7 +69,7 @@
             = f.label :配送料の負担
             %span.colored.required 必須
           .field__input
-            = f.collection_select :postage_payment_id, PostagePayment.all, :id, :name, prompt: '選択してください'
+            = f.collection_select :postage_payment_id, PostagePayment.all, :id, :name, { prompt: '選択してください' }
             = icon('fas', 'chevron-down')
 
         .field.withmargin
@@ -77,7 +77,7 @@
             = f.label :発送元の地域
             %span.colored.required 必須
           .field__input
-            = f.collection_select :ship_from_id, Prefecture.all, :id, :name, prompt: '選択してください'
+            = f.collection_select :ship_from_id, Prefecture.all, :id, :name, { prompt: '選択してください' }
             = icon('fas', 'chevron-down')
 
         .field.withmargin
@@ -85,7 +85,7 @@
             = f.label :発送までの日数
             %span.colored.required 必須
           .field__input
-            = f.collection_select :preparation_id, Preparation.all, :id, :name, prompt: '選択してください'
+            = f.collection_select :preparation_id, Preparation.all, :id, :name, { prompt: '選択してください' }
             = icon('fas', 'chevron-down')
 
       .content

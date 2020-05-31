@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+
+    @parent_categories = Category.where(ancestry: nil)
   end
 
   def create
@@ -26,11 +28,21 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def get_child_categories
+    parent_category = Category.find(params[:id])
+    @child_categories = parent_category.children
+  end
+
+  def get_grandchild_categories
+    child_category = Category.find(params[:id])
+    @grandchild_categories = child_category.children
+  end
+
   private
 
   def item_params
-    # params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition, :postage_payment, :ship_from, :preparation, :price, images_attributes: [:picture]).merge(user_id: current_user.id)
-    params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition, :postage_payment, :ship_from, :preparation, :price, images_attributes: [:picture])
+    # params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, :price, images_attributes: [:picture]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, :price, images_attributes: [:picture]).merge(user_id: 1)
   end
 
 end
