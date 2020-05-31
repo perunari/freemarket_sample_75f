@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2020_05_31_105252) do
     t.string "block", null: false
     t.string "building"
     t.integer "phone"
+    t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -81,10 +81,10 @@ ActiveRecord::Schema.define(version: 2020_05_31_105252) do
     t.text "description", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.integer "condition_id", null: false
-    t.integer "postage_payment_id", null: false
-    t.integer "ship_from_id", null: false
-    t.integer "preparation_id", null: false
+    t.string "condition_id", null: false
+    t.string "postage_payment_id", null: false
+    t.string "ship_from_id", null: false
+    t.string "preparation_id", null: false
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -96,12 +96,12 @@ ActiveRecord::Schema.define(version: 2020_05_31_105252) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
+    t.string "email", null: false
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
     t.date "birthday", null: false
-    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
