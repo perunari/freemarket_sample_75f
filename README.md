@@ -30,7 +30,7 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |postal_code|integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
@@ -92,7 +92,8 @@
 - belongs_to :user
 - has_one :buying, dependent: :destroy
 - has_many :images, dependent: :destroy
-- belongs_to :category
+- has_many :categories, through: :item_categories
+- has_many :item_categories
 - belongs_to :brand
 
 ## imagesテーブル
@@ -111,11 +112,25 @@
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
-|parent_id|integer|null: false, foreign_key: true, default: ''|
+|ancestry|string|
 
 ### Association
 
-- has_many :items
+- has_many :items, through: :item_categories
+- has_many :item_categories
+- has_ancestry
+
+## item_categoriesテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|item_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+
+### Association
+
+- belongs_to :item
+- belongs_to :category
 
 ## brandsテーブル
 
