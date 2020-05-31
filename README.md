@@ -15,7 +15,7 @@
 
 ### Association
 
-- has_many :address, dependent: :destroy
+- has_one :address, dependent: :destroy
 - has_many :credit_cards, dependent: :destroy
 - has_many :items, dependent: :destroy
 - has_many :buyings, dependent: :destroy
@@ -30,7 +30,7 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |postal_code|integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
@@ -81,10 +81,10 @@
 |description|text|null: false|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
-|condition|string|null: false|
-|postage_payment|string|null: false|
-|ship_from|string|null: false|
-|preparation|string|null: false|
+|condition_id|integer|null: false|
+|postage_payment_id|integer|null: false|
+|ship_from_id|integer|null: false|
+|preparation_id|integer|null: false|
 |price|integer|null: false|
 
 ### Association
@@ -92,7 +92,8 @@
 - belongs_to :user
 - has_one :buying, dependent: :destroy
 - has_many :images, dependent: :destroy
-- belongs_to :category
+- has_many :categories, through: :item_categories
+- has_many :item_categories
 - belongs_to :brand
 
 ## imagesテーブル
@@ -111,13 +112,25 @@
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
-|parent_id|integer|null: false, foreign_key: true, default: ''|
 |ancestry|string|
 
 ### Association
 
-- has_many :items
+- has_many :items, through: :item_categories
+- has_many :item_categories
 - has_ancestry
+
+## item_categoriesテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|item_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+
+### Association
+
+- belongs_to :item
+- belongs_to :category
 
 ## brandsテーブル
 
