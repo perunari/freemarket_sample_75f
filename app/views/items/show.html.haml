@@ -41,15 +41,10 @@
             カテゴリー
             %td
               %ul.product__categories
-                %li
-                  = link_to '#', class: 'product__category' do
-                    #{@item.category.name}
-                %li
-                  = link_to '#', class: 'product__category' do
-                    ベビー服(男女兼用) ~95cm
-                %li
-                  = link_to '#', class: 'product__category' do
-                    アウター
+                - @item.categories.each do |category|
+                  %li
+                    = link_to '#', class: 'product__category' do
+                      #{category.name}
         %tr
           %th
             ブランド
