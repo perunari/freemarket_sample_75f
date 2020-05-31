@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_051424) do
+ActiveRecord::Schema.define(version: 2020_05_31_073007) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2020_05_30_051424) do
     t.string "block", null: false
     t.string "building"
     t.integer "phone"
-    t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2020_05_30_051424) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
@@ -82,10 +81,10 @@ ActiveRecord::Schema.define(version: 2020_05_30_051424) do
     t.text "description", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.string "condition_id", null: false
-    t.string "postage_payment_id", null: false
-    t.string "ship_from_id", null: false
-    t.string "preparation_id", null: false
+    t.integer "condition_id", null: false
+    t.integer "postage_payment_id", null: false
+    t.integer "ship_from_id", null: false
+    t.integer "preparation_id", null: false
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
