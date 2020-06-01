@@ -6,8 +6,6 @@
       %h1.product__name
         = @item.name
         -# = @item.name[:id]
-        -# product3
-        product3
       .product__images
         .product__images__main-image
           = image_tag '/product_image_main.png', width: '560', height: '350'
@@ -26,7 +24,7 @@
           .product__price-info__include--tax
             (税込)
           .product__price-info__include--postage
-            = @item.postage_payment
+            = @item.postage_payment_id
             -# = @item.postage_payment[:id]
       
       .product__description
@@ -43,11 +41,11 @@
             %td
               %ul.product__categories
                 %li
-                  = link_to "#{@parent.name}", "/subcategories/#{@parent.id}", class: 'product__category'
+                  -# = link_to "#{@parent.name}", "/subcategories/#{@parent.id}", class: 'product__category'
                 %li
-                  = link_to "#{@child.name}", "/subcategories/#{@child.id}", class: 'product__category'
+                  -# = link_to "#{@child.name}", "/subcategories/#{@child.id}", class: 'product__category'
                 %li
-                  = link_to "#{@grandchild.name}", "/bottomcategories/#{@grandchild.id}", class: 'product__category'
+                  -# = link_to "#{@grandchild.name}", "/bottomcategories/#{@grandchild.id}", class: 'product__category'
         %tr
           %th
             ブランド
@@ -62,22 +60,22 @@
           %th
             商品の状態
             %td
-              = @item.condition
+              = @item.condition_id
         %tr
           %th
             配送料の負担
             %td
-              = @item.postage_payment
+              = @item.postage_payment_id
         %tr
           %th
             発送元の地域
             %td
-              = @item.ship_from
+              = @item.ship_from_id
         %tr
           %th
             発送日の目安
             %td
-              = @item.preparation
+              = @item.preparation_id
       .product__bottom
         %button.product__bottom__like-btn
           = icon('fas', 'star')
@@ -86,8 +84,9 @@
           = icon('fab', 'font-awesome-flag')
           不適切な商品の通報
       
-      -# if user_signed_in? && current_user.id =! @item.user_id
+
       .product__buybtn
+      - if user_signed_in?
         .buybtn
           = link_to new_buying_path,class: 'buybtn__btn' do
             = icon('fas', 'cart-arrow-down')

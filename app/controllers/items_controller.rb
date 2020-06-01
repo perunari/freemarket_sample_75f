@@ -13,11 +13,11 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
-    @tax = 1.1
+    @item = Item.find(1)
     @grandchild = @item.category
     @child = @item.category.parent
     @parent = @child.parent
+    @tax = 1.1
   end
 
 end
