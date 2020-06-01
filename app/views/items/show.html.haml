@@ -2,6 +2,7 @@
 
 %main
   .contents
+
     .product
       %h1.product__name
         = @item.name
@@ -16,6 +17,7 @@
             = image_tag '/product_image_sub2.png', width: '140', height: '90'
           %li.product__images__sub-images__image
             = image_tag '/product_image_sub3.png', width: '140', height: '90'
+
       .product__price-info
         .product__price-info__price
           = "#{(@item.price * @tax).to_i}円"
@@ -24,11 +26,11 @@
           .product__price-info__include--tax
             (税込)
           .product__price-info__include--postage
-            = @item.postage_payment_id
-            -# = @item.postage_payment[:id]
+            送料込み
       
       .product__description
-        = @item.description
+        親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+      
       %table
         %tr
           %th
@@ -120,6 +122,7 @@
         %button.comment-form__submit-btn
           = icon('fas', 'comment')
           コメントする
+
     .previous-and-next
       = link_to '#', class: 'previous-product' do
         = icon('fas', 'chevron-left', class: 'icon--chevron')
@@ -127,9 +130,10 @@
       = link_to '#', class: 'next-product' do
         後ろの商品
         = icon('fas', 'chevron-right', class: 'icon--chevron')
+
     = link_to '#', class: 'same-category-products' do
       ベビー・キッズをもっと見る
-      
+
 = render 'layouts/camerabtn'
 = render 'layouts/richfooter'
 

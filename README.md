@@ -92,7 +92,8 @@
 - belongs_to :user
 - has_one :buying, dependent: :destroy
 - has_many :images, dependent: :destroy
-- belongs_to :category
+- has_many :categories, through: :item_categories
+- has_many :item_categories
 - belongs_to :brand
 
 ## imagesテーブル
@@ -115,8 +116,21 @@
 
 ### Association
 
-- has_many :items
+- has_many :items, through: :item_categories
+- has_many :item_categories
 - has_ancestry
+
+## item_categoriesテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|item_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+
+### Association
+
+- belongs_to :item
+- belongs_to :category
 
 ## brandsテーブル
 
