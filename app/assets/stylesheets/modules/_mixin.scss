@@ -92,3 +92,24 @@
   position: absolute;
   right: 15px;
 } 
+
+@mixin category-product {
+  padding: 16px 18px;
+  display: inline-block;
+  &--list {
+    width: 33%;
+    margin: 0 1px 10px;
+    display: block;
+    float: left;
+    .sample--image {
+      height: 150px;
+      display: block;
+      background-color: #dedede;
+    }
+    .sample--text {
+      background-color: lightslategray;
+      color: #000;
+      padding: 16px;
+    }
+  }
+}
