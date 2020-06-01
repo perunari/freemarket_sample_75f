@@ -10,8 +10,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :subcategories, only: [:show]
   resources :bottomcategories, only: [:show]
-
-  # get '/subcategories/:id', to: 'categories#child_show'
-  # get '/bottomcategories/:id', to: 'categories#g_child_show'
-
+  
 end
