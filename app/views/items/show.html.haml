@@ -2,12 +2,12 @@
 
 %main
   .contents
-
     .product
       %h1.product__name
         = @item.name
         -# = @item.name[:id]
         -# product3
+        product3
       .product__images
         .product__images__main-image
           = image_tag '/product_image_main.png', width: '560', height: '350'
@@ -18,7 +18,6 @@
             = image_tag '/product_image_sub2.png', width: '140', height: '90'
           %li.product__images__sub-images__image
             = image_tag '/product_image_sub3.png', width: '140', height: '90'
-
       .product__price-info
         .product__price-info__price
           = "#{(@item.price * @tax).to_i}円"
@@ -44,14 +43,11 @@
             %td
               %ul.product__categories
                 %li
-                  = link_to '#', class: 'product__category' do
-                    ベビー・キッズ
+                  = link_to "#{@parent.name}", "/subcategories/#{@parent.id}", class: 'product__category'
                 %li
-                  = link_to '#', class: 'product__category' do
-                    ベビー服(男女兼用) ~95cm
+                  = link_to "#{@child.name}", "/subcategories/#{@child.id}", class: 'product__category'
                 %li
-                  = link_to '#', class: 'product__category' do
-                    アウター
+                  = link_to "#{@grandchild.name}", "/bottomcategories/#{@grandchild.id}", class: 'product__category'
         %tr
           %th
             ブランド
@@ -125,7 +121,6 @@
         %button.comment-form__submit-btn
           = icon('fas', 'comment')
           コメントする
-
     .previous-and-next
       = link_to '#', class: 'previous-product' do
         = icon('fas', 'chevron-left', class: 'icon--chevron')
@@ -133,10 +128,9 @@
       = link_to '#', class: 'next-product' do
         後ろの商品
         = icon('fas', 'chevron-right', class: 'icon--chevron')
-
     = link_to '#', class: 'same-category-products' do
       ベビー・キッズをもっと見る
-
+      
 = render 'layouts/camerabtn'
 = render 'layouts/richfooter'
 

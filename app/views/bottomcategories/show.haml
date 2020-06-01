@@ -1,0 +1,35 @@
+.pro--list__wrap
+  = render 'layouts/searchheader'
+  .category--field
+    .category__main
+      .parent__box
+        .category--title{ id: "#{@grandchild.name}" }
+          .category--font
+            #{@grandchild.name}の商品一覧
+      .category__image
+        .category__image--list
+          .sample--image
+          .sample--text
+            商品名
+            12,345円
+            (税込)
+        .category__image--list
+          .sample--image
+          .sample--text
+            商品名
+            12,345円
+            (税込)
+        .category__image--list
+          .sample--image
+          .sample--text
+            商品名
+            12,345円
+            (税込)
+        .category__image--list
+          .sample--image
+          .sample--text
+            商品名
+            12,345円
+            (税込)
+  = render 'layouts/camerabtn'
+  = render 'layouts/richfooter'
