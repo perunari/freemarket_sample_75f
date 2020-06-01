@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   resources :credit_cards, only: :new
   resources :buyings, only: [:new, :create]
   resources :categories, only: [:index, :show]
-  get '/subcategories/:id', to: 'categories#child_show'
-  get '/bottomcategories/:id', to: 'categories#g_child_show'
+  resources :subcategories, only: [:show]
+  resources :bottomcategories, only: [:show]
+
+  # get '/subcategories/:id', to: 'categories#child_show'
+  # get '/bottomcategories/:id', to: 'categories#g_child_show'
 
 end
