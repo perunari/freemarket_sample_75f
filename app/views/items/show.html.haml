@@ -4,7 +4,7 @@
   .contents
     .product
       %h1.product__name
-        product3
+        = @item.name
       .product__images
         .product__images__main-image
           = image_tag '/product_image_main.png', width: '560', height: '350'
@@ -17,7 +17,7 @@
             = image_tag '/product_image_sub3.png', width: '140', height: '90'
       .product__price-info
         .product__price-info__price
-          ¥30,000
+          = "#{(@item.price * @tax).to_i}円"
         .product__price-info__include
           .product__price-info__include--tax
             (税込)
@@ -30,7 +30,7 @@
           %th
             出品者
             %td
-              hoge
+              = @item.user.nickname
         %tr
           %th
             カテゴリー
@@ -46,6 +46,7 @@
           %th
             ブランド
             %td
+            @item.brand.name
         %tr
           %th
             商品のサイズ
@@ -70,7 +71,7 @@
           %th
             発送日の目安
             %td
-              4-7日で発送
+              = @item.preparation_id
       .product__bottom
         %button.product__bottom__like-btn
           = icon('fas', 'star')
@@ -78,6 +79,35 @@
         = link_to '#', class: 'product__bottom__report-btn' do
           = icon('fab', 'font-awesome-flag')
           不適切な商品の通報
+      
+
+      .product__buybtn
+      - if user_signed_in?
+        .buybtn
+          = link_to new_buying_path,class: 'buybtn__btn' do
+            = icon('fas', 'cart-arrow-down')
+            購入画面に進む
+
+
+
+    -# if user_signed_in? && current_user.id == @item.user_id
+    .edit-destroy
+      .edit-destroy__edit-btn
+        = link_to edit_item_path, class: 'editbtn' do
+          = icon('fas', 'edit')
+          商品の編集
+        = link_to "#", class: 'destroybtn' do
+          = icon('fas', 'trash-alt')
+          商品の削除
+
+
+
+
+
+
+
+
+    -# if user_signed_in? && current_user.id =! @item.user_id
     .comment
       %form.comment-form
         %textarea.comment-form__textarea{rows: '5'}
@@ -86,6 +116,7 @@
         %button.comment-form__submit-btn
           = icon('fas', 'comment')
           コメントする
+
     .previous-and-next
       = link_to '#', class: 'previous-product' do
         = icon('fas', 'chevron-left', class: 'icon--chevron')
@@ -93,8 +124,9 @@
       = link_to '#', class: 'next-product' do
         後ろの商品
         = icon('fas', 'chevron-right', class: 'icon--chevron')
+
     = link_to '#', class: 'same-category-products' do
       ベビー・キッズをもっと見る
-      
+
 = render 'layouts/camerabtn'
 = render 'layouts/richfooter'

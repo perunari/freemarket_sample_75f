@@ -17,5 +17,6 @@ class ItemsController < ApplicationController
     @grandchild = @item.category
     @child = @item.category.parent
     @parent = @child.parent
+    @tax = 1.1
   end
 end
