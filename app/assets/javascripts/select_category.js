@@ -1,5 +1,4 @@
 $(function(){
-  
   function appendOption(category){
     const html = `<option value="${category.id}">${category.name}</option>`;
     return html;

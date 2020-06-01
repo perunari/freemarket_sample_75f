@@ -1,5 +1,6 @@
 - if model.errors.any?
   .alert
+    %h2 入力内容に誤りがあります
     %ul
       - model.errors.full_messages.each do |message|
         %li= message

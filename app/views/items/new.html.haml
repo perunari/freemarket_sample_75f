@@ -3,8 +3,9 @@
 .productlisting-wrap
   .main
     = form_with model: @item, local: true do |f|
-      = f.fields_for @images do |i|
-        .content
+      = render 'layouts/itemnew_error_messages', model: f.object
+      .content
+        = f.fields_for @images do |i|
           .field
             .field__header
               = i.label :出品画像
@@ -17,7 +18,7 @@
                   ドラッグアンドドロップ
                   %br
                   またはクリックしてファイルをアップロード
-              = i.file_field :picture, class: 'hidden'
+              = i.file_field :picture, class: 'hidden file-input', type: 'file', name: 'item[images_attributes][][image_url]', value: ''
       
       .content
         .field
@@ -98,7 +99,7 @@
             %span.colored.required 必須
           .price-input
             %span ¥
-            = f.number_field :price, placeholder: '0'
+            = f.number_field :price, value: '0'
         .price-opt.comission
           %span 販売手数料（10%）
           %span ー

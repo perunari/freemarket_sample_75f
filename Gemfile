@@ -78,6 +78,7 @@ gem 'ancestry'
 gem 'active_hash'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails-i18n'
 
 group :production do
   gem 'unicorn'
