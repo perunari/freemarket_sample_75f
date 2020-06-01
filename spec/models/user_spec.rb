@@ -14,6 +14,7 @@ describe User do
       expect(user.errors[:nickname]).to include("を入力してください")
     end
 
+
     it "emailがない場合は登録できないこと" do
       user = build(:user, email: "")
       user.valid?
@@ -50,10 +51,16 @@ describe User do
       expect(user.errors[:birthday]).to include("を入力してください")
     end
 
-    it "passwordが存在してもpassword_confirmationがない場合は登録できないこと" do
-      user = build(:user, password_confirmation: "")
+    it "passwordがない場合は登録できないこと" do
+      user = build(:user, password: "")
       user.valid?
-      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+      expect(user.errors[:password]).to include("を入力してください")
+    end
+
+    it "passwordが存在してもpassword_confirmationがない場合は登録できないこと" do
+        user = build(:user, password_confirmation: "")
+        user.valid?
+        expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
     end
 
     it " 重複したemailが存在する場合は登録できないこと " do
@@ -84,25 +91,25 @@ describe User do
     it " family_nameが全角でない場合は登録できないこと" do
       user = build(:user, family_name: "kana")
       user.valid?
-      expect(user.errors[:family_name]).to include("は不正な値で")
+      expect(user.errors[:family_name]).to include("は不正な値です")
     end
 
     it " first_nameが全角でない場合は登録できないこと" do
       user = build(:user, first_name: "kana")
       user.valid?
-      expect(user.errors[:first_name]).to include("は不正な値で")
+      expect(user.errors[:first_name]).to include("は不正な値です")
     end
 
     it " family_name_kanaがひらがなで返ること" do
-      user = build(:user, family_name_kana: "kana")
+      user = build(:user, family_name_kana: "田中")
       user.valid?
-      expect(user.errors[:family_name_kana]).to include("は不正な値で")
+      expect(user.errors[:family_name_kana]).to include("は不正な値です")
     end
 
     it " first_name_kanaがひらがなで返ること" do
-      user = build(:user, first_name_kana: "kana")
+      user = build(:user, first_name_kana: "太郎")
       user.valid?
-      expect(user.errors[:first_name_kana]).to include("は不正な値で")
+      expect(user.errors[:first_name_kana]).to include("は不正な値です")
     end
   end
 end
