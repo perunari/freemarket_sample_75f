@@ -3,6 +3,6 @@
   .my--main
     .confirm__logout
       .logout-btn
-        = link_to "ログアウトする", "#", method: :delete, class: "submit__btn--out"
+        = link_to "ログアウトする", destroy_user_session_path, method: :delete, class: "submit__btn--out"
   = render "layouts/menu_bar"
   = render "layouts/richfooter.html" 
