@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 720200527051250) do
     t.string "city", null: false
     t.string "block", null: false
     t.string "building"
-    t.string "phone"
+    t.integer "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 720200527051250) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "buyings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "buyings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "item_id"
     t.integer "address_id"
