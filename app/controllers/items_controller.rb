@@ -24,6 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(1)
+    @grandchild = @item.category
+    @child = @item.category.parent
+    @parent = @child.parent
   end
 
   def get_child_categories
