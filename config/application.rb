@@ -16,5 +16,12 @@ module FreemarketSample75f
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    config.generators do |generator|
+      generator.orm :active_record, primary_key_type: :integer
+    end
+
+
+
   end
 end
