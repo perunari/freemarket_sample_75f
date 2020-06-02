@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_051311) do
+ActiveRecord::Schema.define(version: 0) do
 
   create_table "addresses", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -23,8 +23,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_051311) do
     t.string "city", null: false
     t.string "block", null: false
     t.string "building"
-    t.integer "phone"
-    t.integer "prefecture_id"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -36,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_051311) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "buyings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "buyings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "item_id"
     t.integer "address_id"
@@ -88,7 +87,6 @@ ActiveRecord::Schema.define(version: 2020_05_27_051311) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "size"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -108,8 +106,6 @@ ActiveRecord::Schema.define(version: 2020_05_27_051311) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "users"
