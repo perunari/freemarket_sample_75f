@@ -91,23 +91,7 @@
           font-weight: 100;
           color: #333333;
         }
-        .image-upload {
-          cursor: pointer;
-          &__box {
-            margin-top: 16px;
-            padding: 40px 0;
-            background-color: #F5F5F5;
-            border: 1px dashed #CCCCCC;
-            text-align: center;
-            i {
-              font-size: 20px;
-              margin-bottom: 8px;
-            }
-          }
-          .hidden {
-            display: none;
-          }
-        }
+
         span.char-counter {
           font-size: 10px;
           display: block;
@@ -194,3 +178,57 @@
     }
   }
 }
+
+.image-upload {
+  cursor: pointer;
+  &__box {
+    margin-top: 16px;
+    padding: 40px 0;
+    background-color: #F5F5F5;
+    border: 1px dashed #CCCCCC;
+    text-align: center;
+    i {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .file-input {
+      display: none;
+    }
+  }
+}
+
+.item-image {
+  display: inline-block;
+}
+
+// .item-num-0{
+//   width: 100%;
+// }
+// .item-num-1{
+//   width: 491px;
+// }
+// .item-num-2{
+//   width: 363px;
+// }
+// .item-num-3{
+//   width: 234px;
+// }
+// .item-num-4{
+//   width: 106px;
+// }
+// //下段のfile_field
+// .item-num-5{
+//   width: 100%;
+// }
+// .item-num-6{
+//   width: 491px;
+// }
+// .item-num-7{
+//   width: 363px;
+// }
+// .item-num-8{
+//   width: 234px;
+// }
+// .item-num-9{
+//   width: 106px;
+// }

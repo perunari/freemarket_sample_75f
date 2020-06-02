@@ -5,21 +5,20 @@
     = form_with model: @item, local: true do |f|
       = render 'layouts/itemnew_error_messages', model: f.object
       .content
-        = f.fields_for @images do |i|
+        = f.fields_for :images do |i|
           .field
             .field__header
               = i.label :出品画像
               %span.colored.required 必須
             %p 最大10枚までアップロードできます
-            %label.image-upload
-              .image-upload__box
-                = icon("fa", "camera")
-                %p
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
-                = i.file_field :picture, class: 'hidden file-input', type: 'file', name: 'item[images_attributes][][image_url]', value: ''
-      
+            #image-box-1
+              .item-num-0#image-box__container
+                %label.image-upload
+                  .image-upload__box
+                    = icon("fa", "camera")
+                    %p クリックしてファイルをアップロード
+                    = i.file_field :picture, class: 'file-input', type: 'file'
+
       .content
         .field
           .field__header
