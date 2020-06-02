@@ -1,6 +1,6 @@
 class CreateBuyings < ActiveRecord::Migration[5.2]
   def change
-    create_table :buyings do |t|
+    create_table :buyings, id: :integer do |t|
       t.references :user, type: :integer, foreign_key: true
       t.references :item, type: :integer, foreign_key: true
       t.references :address, type: :integer, foreign_key: true
