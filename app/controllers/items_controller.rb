@@ -18,5 +18,6 @@ class ItemsController < ApplicationController
     @child = @item.category.parent
     @parent = @child.parent
     @tax = 1.1
+    @address = @item.user.address.prefecture.name
   end
 end
