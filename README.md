@@ -86,6 +86,7 @@
 |ship_from_id|integer|null: false|
 |preparation_id|integer|null: false|
 |price|integer|null: false|
+|status_id|integer|null: false|
 
 ### Association
 
