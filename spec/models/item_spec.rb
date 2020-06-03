@@ -4,7 +4,9 @@ describe Item do
   describe '#create' do
 
     it "必須項目が全てないと登録できない" do
-      item = build(:item)
+      user = create(:user)
+      category = create(:category)
+      item = build(:item, user_id: user[:id], category_id: category[:id])
       expect(item).to be_valid
     end
 
@@ -23,13 +25,13 @@ describe Item do
     it "商品説明がない場合は登録できないこと" do
       item = build(:item, description: "")
       item.valid?
-      expect(item.errors[:discription]).to include("を入力してください")
+      expect(item.errors[:description]).to include("を入力してください")
     end
 
     it "商品説明がない場合は登録できないことが1000文字以上場合は登録できないこと" do
-      item = build(:item, discription: "#{'あああああああああああ' * 100}"
+      item = build(:item, description: "#{'あああああああああああ' * 100}")
       item.valid?
-      expect(item.errors[:discription]).to include("は最大で1000字までです")
+      expect(item.errors[:description]).to include("は最大で1000字までです")
     end
 
     it "ログインしてないと登録できないこと" do
@@ -84,6 +86,13 @@ describe Item do
       item = build(:item, condition_id: "")
       item.valid?
       expect(item.errors[:condition_id]).to include("を選択してください")
+    end
+
+    it "商品画像が10枚以上の場合は登録できない" do
+      item = build(:item)
+      item.images = build_list(:image, 11)
+      item.valid?
+      expect(item.errors[:images]).to include("を1枚~10枚アップロードしてください")
     end
     
   end
