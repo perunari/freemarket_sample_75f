@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_parent_categories, only: [:new, :create]
+  before_action :signed_in?, only: [:new, :create]
 
   def index
   end
@@ -45,12 +46,15 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    # params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, :price, images_attributes: [:picture]).merge(user_id: current_user.id)
-    params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, :price, images_attributes: [:picture]).merge(user_id: 1)
+    params.require(:item).permit(:name, :description, :category_id, :brand_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, :price, images_attributes: [:picture]).merge(user_id: current_user.id)
   end
 
   def set_parent_categories
     @parent_categories = Category.where(ancestry: nil)
+  end
+
+  def signed_in?
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end

@@ -1,62 +1,52 @@
-$(function() {
+$(document).on('turbolinks:load', ()=> {
+  const buildFileField = (index)=> {
+    const html = `
+      <div data-index="${index}" class="js-file_group">
+        <input class="js-file" type="file" name="item[images_attributes][${index}][picture]" id="item_images_attributes_${index}_picture">
+        <span class="js-remove">削除</div>
+      </div>
+    `;
+    return html;
+  };
 
-  const dataBox = new DataTransfer();
-  const file_field = document.querySelector('input[type="file"]');
-  
-  $('.file-input').on('change', function() {
-    const file = $('input[type="file"]').prop('files')[0];
+  const buildImg = (index, url)=> {
+    const html = `
+      <img data-index="${index}" src="${url}" width="100px" height="100px">
+    `;
+    return html;
+  };
 
-    $.each(this.files, function(i, file) {
-      const fileReader = new FileReader();
-      dataBox.items.add(file);
-      file_field.files = dataBox.files;
-      let num = $('.item-image').length + 1 + i;
-      fileReader.readAsDataURL(file);
+  let fileIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-      if (num == 10) {
-        $('#image-box__container').css('display', 'none');
-      }
+  lastIndex = $('.js-file_group:last').data('index');
+  fileIndex.splice(0, lastIndex);
 
-      fileReader.onloadend = function() {
-        const src = fileReader.result;
-        const html = `
-          <div class='item-image' data-image="${file.name}">
-            <div class='item-image__content'>  
-              <div class='item-image__content--icon'>
-                <img src="${src}" width='80' height='120'>
-              </div>
-            </div>
-            <div class='item-image__operation'>
-              <div class='item-image__operation--delete'>削除</div>
-            </div>
-          </div>
-        `;
-        $('#image-box__container').before(html);
-      };
-      $('#image-box__container').attr('class', `item-num-${num}`);
-    });
+  $('.hidden-destroy').hide();
+
+  $('#image-box').on('change', '.js-file', function(e) {
+    const targetIndex = $(this).parent().data('index');
+    const file = e.target.files[0];
+    const blobUrl = window.URL.createObjectURL(file);
+
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      img.setAttribute('src', blobUrl);
+    } else {
+      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('#image-box').append(buildFileField(fileIndex[0]));
+      fileIndex.shift();
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+    }
   });
 
-  $(document).on('click', '.item-image__operation--delete', function() {
-    const target_image = $(this).parent().parent();
-    const target_name = $(target_image).data('image');
+  $('#image-box').on('click', '.js-remove', function() {
+    const targetIndex = $(this).parent().data('index');
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
 
-    if (file_field.files.length == 1) {
-      $('input[type="file"]').val(null);
-      dataBox.clearData();
-      console.log(dataBox);
-    } else {
-      $.each(file_field.files, function(i, input) {
-        if (input.name == target_name) {
-          dataBox.items.remove(i);
-        }
-      });
-      file_field.files = dataBox.files;
-    }
+    $(this).parent().remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
 
-    target_image.remove();
-    let num = $('.item-image').length;
-    $('#image-box__container').show();
-    $('#image-box__container').attr('class', `item-num-${num}`);
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
