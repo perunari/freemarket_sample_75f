@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_101637) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "size"
     t.integer "status_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
