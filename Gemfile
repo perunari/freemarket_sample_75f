@@ -78,10 +78,12 @@ gem 'jquery-rails'
 gem 'payjp'
 gem 'ancestry'
 gem 'active_hash'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn'
