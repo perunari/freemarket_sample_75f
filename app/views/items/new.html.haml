@@ -1,147 +1,140 @@
-.pro--list__wrap
-  = render "layouts/header"
-  .pro--list__main
-    .pro--list__main__box
-      .pro--list__main__picture__box
-        .pro--list__main__title
-          出品画像
-          %span 必須
-        .pro--list__main__picture--tips
-          最大10枚までアップロードできます
-        .pro--list__main__picture--upload
-          .pro--list__main__picture--upload__field
-            .pro--list__main__picture--upload__icon
-              = icon("fa", "camera")
-            .pro--list__main__picture--upload__text
-              ドラッグアンドドロップ
-              %br
-              またはクリックしてファイルをアップロード
-    .pro--list__main__box
-      .pro--list__main__product__name
-        .pro--list__main__title
-          商品名
-          %span 必須
-        .pro--list__main__product__text--box
-          %input.product__text--area{name: "value", placeholder: "40字まで", type: "text", value: ""}
-      .pro--list__main__product__instruction
-        .pro--list__main__title
-          商品の説明
-          %span 必須
-        .pro--list__main__product__instruction__text--box
-          %textarea.product__instruction__text--area{name: "description", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n", value: ""}
-        .product__instruction__text--count
-          %span 0/1000
-    .pro--list__main__details
-      .pro--list__main__box
-        .pro--list__main__title--middle
-          商品の詳細
-        .pro--list__main__middle__box
-          .pro--list__main__title
-            カテゴリー
-            %span 必須
-          %div.select__box
-            %select
-              %option{value: "0"}  選択してください
-              %option{value: "1"}  レディース
-              %option{value: "2"}  メンズ
-              %option{value: "3"}  ベビー・キッズ
-              %option{value: "4"}  インテリア
-        .pro--list__main__middle__box
-          .pro--list__main__title--free
-            ブランド
-            %span 任意
-          .pro--list__main__product__text--box
-          %input.product__text--area{name: "value", placeholder: "例）シャネル", type: "text", value: ""}
-        .pro--list__main__middle__box
-          .pro--list__main__title
-            商品の状態
-            %span 必須
-          %div.select__box
-            %select
-              %option{value: "0"}  選択してください
-              %option{value: "1"}  新品・未使用
-              %option{value: "2"}  未使用に近い
-              %option{value: "3"}  目立った傷や汚れなし
-              %option{value: "4"}  やや傷や汚れあり
-    .pro--list__main__delivery
-      .pro--list__main__box
-        .pro--list__main__title--middle
-          配送について
-          .question--box
-            = link_to "#", class: "link__color--question" do
-              = icon("far", "question-circle")
-        .pro--list__main__middle__box
-          .pro--list__main__title
-            配送料の負担
-            %span 必須
-          %div.select__box
-            %select
-              %option{value: "0"}  選択してください
-              %option{value: "1"}  送料込み(出品者負担)
-              %option{value: "2"}  着払い(購入者負担)
-        .pro--list__main__middle__box
-          .pro--list__main__title
-            発送元の地域
-            %span 必須
-          %div.select__box
-            %select
-              %option{value: "0"}  選択してください
-              %option{value: "1"}  北海道
-              %option{value: "2"}  青森県
-        .pro--list__main__middle__box
-          .pro--list__main__title
-            発送までの日数
-            %span 必須
-          %div.select__box
-            %select
-              %option{value: "0"}  選択してください
-              %option{value: "1"}  1~2日で発送
-              %option{value: "2"}  2~3日で発送
-              %option{value: "2"}  4~7日で発送
-    .pro--list__main__sale
-      .pro--list__main__box
-        .pro--list__main__sale--title
-          価格（¥300〜9,999,999)
-          .question--box
-            = link_to "#", class: "link__color--question" do
-              = icon("far", "question-circle")
-        .pro--list__main__sale--boxes
-          .pro--list__main__title
-            販売価格
-            %span 必須
-          .price--mark
-            ¥
-          .price--box
-            %input.price--box--inner{name: "price", placeholder: "0", autocomplete: "off", type: "number", value: ""}
-        .pro--list__main__fee--boxes
-          .price__sub--title
-            販売手数料（10%）
-          .price__value
-            %p ー
-        .pro--list__main__profit--boxes
-          .price__sub--title
-            販売利益
-          .price__value
-            %p ー
-    .pro--list__select
-      .pro--list__main__box--select
-        .pro--list__select--boxes
-          .pro--list__select--field
-            %button.submit__btn--ex{type: "submit"}出品する
-          .pro--list__select--field
-            %button.submit__btn--draft{type: "submit"}下書きに保存
-          .pro--list__select__return
-            = link_to "もどる", "#", class: "select__btn--return"
-        .pro--list__select__notes
-          禁止されている
-          = link_to "行為", "#", class: "link__color"
-          および
-          = link_to "出品物", "#", class: "link__color"
-          を必ずご確認ください。
-          = link_to "偽ブランド品", "#", class: "link__color"
-          や
-          = link_to "盗品物", "#", class: "link__color"
-          などの販売は犯罪であり、 法律により処罰される可能性があります。 また、出品をもちまして
-          = link_to "加盟店規約", "#", class: "link__color"
-          に同意したことになります。
-  = render "layouts/footer"
+= render "layouts/header"
+
+.productlisting-wrap
+  .main
+    = form_with model: @item, local: true do |f|
+      = render 'layouts/itemnew_error_messages', model: f.object
+      .content
+        .field
+          .field__header
+            = f.label :出品画像
+            %span.colored.required 必須
+          %p 最大10枚までアップロードできます
+          #image-box
+            #previews
+              - if @item.persisted?
+                - @item.images.each_with_index do |image, i|
+                  = image_tag image.picture.url, data: {index: i}, width: '100', height: '100'
+            = f.fields_for :images do |i|
+              %div{data: {index: "#{i.index}"}, class: "js-file_group"}
+                = i.file_field :picture, class: 'js-file'
+                %span.js-remove 削除
+              - if @item.persisted?
+                = i.check_box :_destroy, data: { index: i.index }, class: 'hidden-destroy'
+
+            - if @item.persisted?
+              %div{data: {index: "#{@item.images.count}"}, class: "js-file_group"}
+                = file_field_tag :picture, name: "item[images_attributes][#{@item.images.count}][picture]", class: "js-file"
+                %span.js-remove 削除
+
+      .content
+        .field
+          .field__header
+            = f.label :商品名, class: 'title'
+            %span.colored.required 必須
+          .field__input
+            = f.text_field :name, placeholder: '40字まで'
+        
+        .field.withmargin
+          .field__header
+            = f.label :商品の説明
+            %span.colored.required 必須
+          .field__input
+            = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: '6'
+          %span.char-counter 0/1000
+
+      .content
+        %p.content__about 商品の詳細
+        .field.withmargin.field__category
+          .field__header
+            = f.label :カテゴリー
+            %span.colored.required 必須
+          .field__input.field__input__category
+            = f.collection_select :category_id, @parent_categories.all, :id, :name, { prompt: '選択してください' }, { name: '', id: 'parent_category' }
+            = icon('fas', 'chevron-down')
+        
+        .field.withmargin
+          .field__header
+            = f.label :ブランド
+            %span.colored.optional 任意
+          .field__input
+            = f.text_field :brand_id, placeholder: '例）シャネル'
+        
+        .field.withmargin
+          .field__header
+            = f.label :商品の状態
+            %span.colored.required 必須
+          .field__input
+            = f.collection_select :condition_id, Condition.all, :id, :name, { prompt: '選択してください' }
+            = icon('fas', 'chevron-down')
+
+      .content
+        %p.content__about 配送について
+        = link_to '#' do
+          = icon('far', 'question-circle')
+        .field.withmargin
+          .field__header
+            = f.label :配送料の負担
+            %span.colored.required 必須
+          .field__input
+            = f.collection_select :postage_payment_id, PostagePayment.all, :id, :name, { prompt: '選択してください' }
+            = icon('fas', 'chevron-down')
+
+        .field.withmargin
+          .field__header
+            = f.label :発送元の地域
+            %span.colored.required 必須
+          .field__input
+            = f.collection_select :ship_from_id, Prefecture.all, :id, :name, { prompt: '選択してください' }
+            = icon('fas', 'chevron-down')
+
+        .field.withmargin
+          .field__header
+            = f.label :発送までの日数
+            %span.colored.required 必須
+          .field__input
+            = f.collection_select :preparation_id, Preparation.all, :id, :name, { prompt: '選択してください' }
+            = icon('fas', 'chevron-down')
+
+      .content
+        %p.content__about 価格（¥300〜9,999,999）
+        = link_to "#" do
+          = icon("far", "question-circle")
+        .field.withmargin.price
+          .field__header
+            = f.label :販売価格
+            %span.colored.required 必須
+          .price-input
+            %span ¥
+            = f.number_field :price, value: '0'
+        .price-opt.comission
+          %span 販売手数料（10%）
+          %span ー
+        .price-opt
+          %span 販売利益
+          %span ー
+
+      .btn
+        = f.submit :出品する
+        = link_to '#' do
+          もどる
+    
+      .notes
+        禁止されている
+        = link_to "#" do
+          行為
+        および
+        = link_to "#" do
+          出品物
+        を必ずご確認ください。
+        = link_to "#" do
+          偽ブランド品
+        や
+        = link_to "#" do
+          窃盗物
+        などの販売は犯罪であり、 法律により処罰される可能性があります。 また、出品をもちまして
+        = link_to "#" do
+          加盟店規約
+        に同意したことになります。
+
+= render 'layouts/footer'
