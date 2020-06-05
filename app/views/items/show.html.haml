@@ -8,22 +8,10 @@
       .product__images
         .product__images__main-image
           = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{@picture[0].picture.file.path}", width: '560', height: '350'
-
-
-
         %ul.product__images__sub-images
-          %li.product__images__sub-images__image
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/freemarket-f/uploads/image/picture/17/sample4.jpg', width: '140', height: '90'
-          
-          
-          
-          
-          
-          
-          -# %li.product__images__sub-images__image
-          -#   = image_tag 'https://s3-ap-northeast-1.amazonaws.com/freemarket-f/uploads/image/picture/14/猫1.jpeg', width: '140', height: '90'
-          -# %li.product__images__sub-images__image
-          -#   = image_tag '/product_image_sub3.png', width: '140', height: '90'
+          - @picture.each do |image|
+            %li.product__images__sub-images__image
+              = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{image.picture.file.path}", width: '140', height: '90'
       .product__price-info
         .product__price-info__price
           = "#{(@item.price * @tax).to_i}円"
