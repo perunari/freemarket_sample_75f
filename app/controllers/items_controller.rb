@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_parent_categories, only: [:new, :create]
   before_action :signed_in?, only: [:new, :create]
+  before_action :set_item, only: [:show]
 
   def index
   end
@@ -28,10 +29,16 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(1)
     @grandchild = @item.category
     @child = @item.category.parent
     @parent = @child.parent
+    @preparation = @item.preparation.name
+    @condition = @item.condition.name
+    @address = @item.user.address.prefecture.name
+    @size = @item.size
+    @brand = @item.brand.name
+    @picture = @item.images
+    @tax = 1.1
   end
 
   def get_child_categories
@@ -56,6 +63,10 @@ class ItemsController < ApplicationController
 
   def signed_in?
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
