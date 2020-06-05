@@ -28,17 +28,16 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item= Item.find(11)
-    @grandchild= @item.category
-    @child= @item.category.parent
-    @parent= @child.parent
+    @item = Item.find(params[:id])
+    @grandchild = @item.category
+    @child = @item.category.parent
+    @parent = @child.parent
     @preparation = @item.preparation.name
-    @condition= @item.condition.name
-    @address= @item.user.address.prefecture.name
-    @images= @item.images.all
-    @size= @item.size
-    @brand= @item.brand.name
-    @picture= @item.images
+    @condition = @item.condition.name
+    @address = @item.user.address.prefecture.name
+    @size = @item.size
+    @brand = @item.brand.name
+    @picture = @item.images
     @tax = 1.1
   end
 
