@@ -93,19 +93,7 @@ main {
     }
   }
   .buybtn {
-    display: block;
-    width:450px;
-    margin: 20px auto;
-    color: #FFFFFF;
-    background-color: #48D1CC;
-    border: 1px solid #48D1CC;
-    font-size: 18px;
-    border-radius: 28px;
-    padding: 12px 140px;
-    cursor: pointer;
-    display: flex;
-    justify-self: center;
-    margin-bottom: 20px;
+    @include btn();
     a.buybtn__btn{
       color: #FFFFFF;
       background-color: #48D1CC;
@@ -144,35 +132,29 @@ td {
   margin: 20px auto;
   border-radius: 28px;
   padding: 12px 140px;
-  cursor: pointer;
   margin-bottom: 20px;
+  margin: 20px auto;
   a.editbtn {
-    display: block;
     text-align: center;
-    color: #FFFFFF;
-    background-color: #48D1CC;
-    border: 1px solid #48D1CC;
-    font-size: 18px;
-    border-radius: 28px;
-    padding: 12px 0 12px 0;
-    cursor: pointer;
-    margin-bottom: 20px;
+    @include btn();
   }
   a.destroybtn{
     display: block;
+    width:450px;
+    margin: 20px auto;
     text-align: center;
-    padding: 12px 0 12px 0;
     color: #FFFFFF;
     background-color: #aaa;
     border: 1px solid #aaa;
     font-size: 18px;
     border-radius: 28px;
+    padding: 12px 140px;
     cursor: pointer;
+    justify-self: center;
+    margin-bottom: 20px;
   }
+
 }
-
-
-
 
 
 
@@ -194,15 +176,7 @@ td {
     padding: 10px;
   }
   &__submit-btn {
-    display: block;
-    margin: 0 auto;
-    color: #FFFFFF;
-    background-color: #48D1CC;
-    border: 1px solid #48D1CC;
-    font-size: 18px;
-    border-radius: 28px;
-    padding: 12px 140px;
-    cursor: pointer;
+    @include btn();
   }
 }
 

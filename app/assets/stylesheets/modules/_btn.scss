@@ -1,0 +1,14 @@
+@mixin btn(){
+  display: block;
+  width:450px;
+  margin: 20px auto;
+  color: #FFFFFF;
+  background-color: #48D1CC;
+  border: 1px solid #48D1CC;
+  font-size: 18px;
+  border-radius: 28px;
+  padding: 12px 140px;
+  cursor: pointer;
+  justify-self: center;
+  margin-bottom: 20px;
+}
