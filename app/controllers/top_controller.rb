@@ -1,7 +1,7 @@
 class TopController < ApplicationController
 
   def index
-    @item= Item.all.order("created_at DESC")
+    @item= Item.where(status_id: 1).order("created_at DESC")
   end
 
 end
