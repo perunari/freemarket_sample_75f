@@ -9,18 +9,21 @@ Rails.application.routes.draw do
   end
   
   root 'top#index'
-  resources :users, only: :show
+  resources :users, only: :show do
+    resources :addresses, only: :edit
+  end
   get '/logout', to: 'users#index'
   resources :items, only: [:new, :create, :edit, :update, :show] do
     collection do
       get 'get_child_categories', defaults: { format: 'json' }
       get 'get_grandchild_categories', defaults: { format: 'json' }
     end
+    resources :buyings, only: [:new, :create]
   end
   resources :credit_cards, only: :new
-  resources :buyings, only: [:new, :create]
   resources :categories, only: [:index, :show]
   resources :subcategories, only: [:show]
   resources :bottomcategories, only: [:show]
+  
   
 end
