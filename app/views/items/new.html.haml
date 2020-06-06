@@ -49,9 +49,43 @@
           .field__header
             = f.label :カテゴリー
             %span.colored.required 必須
-          .field__input.field__input__category
-            = f.collection_select :category_id, @parent_categories.all, :id, :name, { prompt: '選択してください' }, { name: '', id: 'parent_category' }
-            = icon('fas', 'chevron-down')
+          - case controller.action_name
+          - when 'new'
+            .field__input.field__input__category
+              = f.collection_select :category_id, @parent_categories.all, :id, :name, { prompt: '選択してください' }, { name: 'parent_category', id: 'parent_category' }
+              = icon('fas', 'chevron-down')
+          - when 'create'
+            - if @parent_category.nil?
+              .field__input.field__input__category
+                = f.collection_select :category_id, @parent_categories.all, :id, :name, { prompt: '選択してください' }, { name: 'parent_category', id: 'parent_category' }
+                = icon('fas', 'chevron-down')
+            - elsif @parent_category.present? && @child_category.nil?
+              .field__input.field__input__category
+                = f.collection_select :category_id, @parent_categories.all, :id, :name, { selected: @parent_category }, { name: 'parent_category', id: 'parent_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#children__select
+                = f.collection_select :category_id, Category.find(@parent_category).children.all, :id, :name, { prompt: '選択してください' }, { name: 'child_category', id: 'child_category' }
+                = icon('fas', 'chevron-down')
+            - elsif @child_category.present? && @grandchild_category.nil?
+              .field__input.field__input__category
+                = f.collection_select :category_id, @parent_categories.all, :id, :name, { selected: @parent_category }, { name: 'parent_category', id: 'parent_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#children__select
+                = f.collection_select :category_id, Category.find(@parent_category).children.all, :id, :name, { selected: @child_category }, { name: 'child_category', id: 'child_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#grandchildren__select
+                = f.collection_select :category_id, Category.find(@child_category).children.all, :id, :name, { prompt: '選択してください' }, { name: 'item[category_id]', id: 'grandchild_category' }
+                = icon('fas', 'chevron-down')
+            - else
+              .field__input.field__input__category
+                = f.collection_select :category_id, @parent_categories.all, :id, :name, { selected: @parent_category }, { name: 'parent_category', id: 'parent_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#children__select
+                = f.collection_select :category_id, Category.find(@parent_category).children.all, :id, :name, { selected: @child_category }, { name: 'child_category', id: 'child_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#grandchildren__select
+                = f.collection_select :category_id, Category.find(@child_category).children.all, :id, :name, { selected: @grandchild_category }, { name: 'item[category_id]', id: 'grandchild_category' }
+                = icon('fas', 'chevron-down')
         
         .field.withmargin
           .field__header
@@ -106,7 +140,7 @@
             %span.colored.required 必須
           .price-input
             %span ¥
-            = f.number_field :price, value: '0'
+            = f.number_field :price, value: @item.price
         .price-opt.comission
           %span 販売手数料（10%）
           %span ー
