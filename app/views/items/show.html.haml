@@ -4,33 +4,31 @@
   .contents
     .product
       %h1.product__name
-        product3
+        = @item.name
       .product__images
         .product__images__main-image
-          = image_tag '/product_image_main.png', width: '560', height: '350'
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{@picture[0].picture.file.path}", width: '560', height: '350'
         %ul.product__images__sub-images
-          %li.product__images__sub-images__image
-            = image_tag '/product_image_sub1.png', width: '140', height: '90'
-          %li.product__images__sub-images__image
-            = image_tag '/product_image_sub2.png', width: '140', height: '90'
-          %li.product__images__sub-images__image
-            = image_tag '/product_image_sub3.png', width: '140', height: '90'
+          - @picture.each do |image|
+            %li.product__images__sub-images__image
+              = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{image.picture.file.path}", width: '140', height: '90'
       .product__price-info
         .product__price-info__price
-          ¥30,000
+          = "#{(@item.price * @tax).to_i}円"
         .product__price-info__include
           .product__price-info__include--tax
             (税込)
           .product__price-info__include--postage
             送料込み
+
       .product__description
-        親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+        = @item.description
       %table
         %tr
           %th
             出品者
             %td
-              hoge
+              = @item.user.nickname
         %tr
           %th
             カテゴリー
@@ -46,15 +44,17 @@
           %th
             ブランド
             %td
+              = @brand
         %tr
           %th
             商品のサイズ
             %td
+              = @size
         %tr
           %th
             商品の状態
             %td
-              未使用に近い
+              = @condition
         %tr
           %th
             配送料の負担
@@ -64,13 +64,12 @@
           %th
             発送元の地域
             %td
-              = link_to '#', class: 'product__ship-from' do
-                岩手県
+              = @address
         %tr
           %th
             発送日の目安
             %td
-              4-7日で発送
+              = @preparation
       .product__bottom
         %button.product__bottom__like-btn
           = icon('fas', 'star')
@@ -78,6 +77,35 @@
         = link_to '#', class: 'product__bottom__report-btn' do
           = icon('fab', 'font-awesome-flag')
           不適切な商品の通報
+      
+   
+      .product__buybtn
+      - if user_signed_in? && current_user.id != @item.user_id
+        .buybtn
+          = link_to new_buying_path,class: 'buybtn__btn' do
+            = icon('fas', 'cart-arrow-down')
+            購入画面に進む
+
+
+
+  - if user_signed_in? && current_user.id == @item.user_id
+    .edit-destroy
+      .edit-destroy__edit-btn
+        = link_to edit_item_path, class: 'editbtn' do
+          = icon('fas', 'edit')
+          商品の編集
+        = link_to "#", class: 'destroybtn' do
+          = icon('fas', 'trash-alt')
+          商品の削除
+
+
+
+
+
+
+
+
+  - if user_signed_in? && current_user.id != @item.user_id
     .comment
       %form.comment-form
         %textarea.comment-form__textarea{rows: '5'}
@@ -86,6 +114,7 @@
         %button.comment-form__submit-btn
           = icon('fas', 'comment')
           コメントする
+
     .previous-and-next
       = link_to '#', class: 'previous-product' do
         = icon('fas', 'chevron-left', class: 'icon--chevron')
@@ -93,6 +122,7 @@
       = link_to '#', class: 'next-product' do
         後ろの商品
         = icon('fas', 'chevron-right', class: 'icon--chevron')
+
     = link_to '#', class: 'same-category-products' do
       ベビー・キッズをもっと見る
 = render 'layouts/camerabtn'
