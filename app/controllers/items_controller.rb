@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
   def update
     params[:item][:category_id] = "" if params[:parent_category].blank? || params[:child_category].blank?
     @item = Item.find(params[:id])
-    binding.pry
     
     if @item.update(item_params)
       redirect_to root_path

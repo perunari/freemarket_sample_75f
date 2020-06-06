@@ -60,7 +60,7 @@
               = icon('fas', 'chevron-down')
             .field__input.field__input__category#grandchildren__select
               = f.collection_select :category_id, @child_category.children.all, :id, :name, { selected: @item.category_id }, { name: 'item[category_id]', id: 'grandchild_category' }
-              = icon('fas', 'chevron-down')         
+              = icon('fas', 'chevron-down')
           - when 'update'
             - if @parent_category.nil?
               .field__input.field__input__category
