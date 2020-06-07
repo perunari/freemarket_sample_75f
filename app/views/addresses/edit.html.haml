@@ -5,7 +5,7 @@
       .signup-form__identification
         商品送付先住所情報 変更
       .signup-form__address
-        = form_for(@address, url: edit_user_address_path) do |f| 
+        = form_for(@address, url: user_address_path) do |f| 
           = render 'layouts/error_messages', model: f.object
           .field
             = f.label :送付先氏名（全角）

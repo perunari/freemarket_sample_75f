@@ -46,9 +46,6 @@
           %br/
           = @address.family_name
           = @address.first_name
-          .please-register
-            = icon("fa", "plus-circle")
-            = link_to "変更する", edit_user_address_path(current_user, @address)
       .payment-btn
         %button.submit__btn--ex{type: "submit"}購入する
   = render "layouts/footer"

@@ -1,16 +1,18 @@
 class AddressesController < ApplicationController
   def edit
-    @user = User.find(params[:id])
-    @address = current_user.address
+    @address = Address.find(params[:id])
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-      if current_user == @user
-      
-      else
-        redirect_to root_url
-      end   
-    end
+    address = Address.find(params[:id])
+    address.update(address_params)
+    redirect_to root_path
+  end
+
+  protected
+  
+  def address_params
+    params.require(:address).permit(:family_name, :first_name,:family_name_kana, :first_name_kana, :postal_code, :prefecture_id, :city, :block, :building, :phone)
+  end
+  
 end
