@@ -14,18 +14,29 @@
             #previews
               - if @item.persisted?
                 - @item.images.each_with_index do |image, i|
-                  = image_tag image.picture.url, data: {index: i}, width: '100', height: '100'
+                  %div{class: "preview-box", data: {index: i}}
+                    .upper-box
+                      = image_tag image.picture.url, data: {index: i}, width: '112', height: '112'
+                      .delete-box
+                        .delete-btn
+                          %span 削除
+                      -# .lower-box
+                      -#   .name-box
+                      -#     = image.picture.identifier
+                          
+            .label-content
+
             = f.fields_for :images do |i|
               %div{data: {index: "#{i.index}"}, class: "js-file_group"}
                 = i.file_field :picture, class: 'js-file'
-                %span.js-remove 削除
+                -# %span.js-remove 削除
               - if @item.persisted?
                 = i.check_box :_destroy, data: { index: i.index }, class: 'hidden-destroy'
 
             - if @item.persisted?
               %div{data: {index: "#{@item.images.count}"}, class: "js-file_group"}
                 = file_field_tag :picture, name: "item[images_attributes][#{@item.images.count}][picture]", class: "js-file"
-                %span.js-remove 削除
+                -# %span.js-remove 削除
 
       .content
         .field

@@ -3,15 +3,26 @@ $(document).on('turbolinks:load', ()=> {
     const html = `
       <div data-index="${index}" class="js-file_group">
         <input class="js-file" type="file" name="item[images_attributes][${index}][picture]" id="item_images_attributes_${index}_picture">
-        <span class="js-remove">削除</div>
       </div>
     `;
     return html;
   };
 
-  const buildImg = (index, url)=> {
+  const buildImg = (index, url, name)=> {
     const html = `
-      <img data-index="${index}" src="${url}" width="100px" height="100px">
+      <div data-index="${index}" class="preview-box">
+        <div class="upper-box">
+          <img data-index="${index}" src="${url}" width="112px" height="112px">
+          <div class="delete-box" id="delete_btn_${index}">
+            <span>削除</span>
+          </div>
+          <div class="lower-box">
+            <div class="name-box">
+              <span>${name}</span> 
+            </div>
+          </div>
+        </div>
+      </div>
     `;
     return html;
   };
@@ -31,21 +42,24 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
-      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('#previews').append(buildImg(targetIndex, blobUrl, file.name));
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
 
-  $('#image-box').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index');
+  $('#image-box').on('click', '.delete-box', function() {
+    const targetIndex = $(this).parent().parent().data('index');
+    console.log(targetIndex);
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
-    $(this).parent().remove();
+    $(this).parent().parent().remove();
+    $(`#item_images_attributes_${targetIndex}_picture`).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
+    $(`.js-file_group[data-index="${targetIndex}"]`).remove();
 
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
