@@ -44,6 +44,11 @@ $(document).on('turbolinks:load', ()=> {
     }
   });
 
+  // もしチェックが入っていたらチェックを外す
+  if ($('input[type="checkbox"]').prop('checked')) {
+    $('input[type="checkbox"]').prop('checked', false);
+  }
+
   $('#image-box').on('click', '.delete-box', function() {
     const targetIndex = $(this).parent().parent().data('index');
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
