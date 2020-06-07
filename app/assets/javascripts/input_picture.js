@@ -16,11 +16,6 @@ $(document).on('turbolinks:load', ()=> {
           <div class="delete-box" id="delete_btn_${index}">
             <span>削除</span>
           </div>
-          <div class="lower-box">
-            <div class="name-box">
-              <span>${name}</span> 
-            </div>
-          </div>
         </div>
       </div>
     `;
@@ -51,7 +46,6 @@ $(document).on('turbolinks:load', ()=> {
 
   $('#image-box').on('click', '.delete-box', function() {
     const targetIndex = $(this).parent().parent().data('index');
-    console.log(targetIndex);
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     
     if (hiddenCheck) hiddenCheck.prop('checked', true);

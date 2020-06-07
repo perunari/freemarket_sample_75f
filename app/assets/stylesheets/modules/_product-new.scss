@@ -179,40 +179,13 @@
   }
 }
 
-
-.image-upload {
-  cursor: pointer;
-  &__box {
-    margin-top: 16px;
-    padding: 40px 0;
-    background-color: #F5F5F5;
-    border: 1px dashed #CCCCCC;
-    text-align: center;
-    i {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-    .js-file {
-      display: none;
-    }
-  }
-}
-
-.item-image {
-  display: inline-block;
-}
-
-
-
 //投稿写真関係
 #image-box {
-  // display: block;
   margin: 16px auto 0;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
   height: 207px;
-  //プレビュー表示欄のCSS
   #previews {
     display: flex;
     .preview-box {
@@ -227,14 +200,8 @@
           height: 112px;
         }
       }
-      .lower-box {
-        display: flex;
-        text-align: center;
-        
-      }
     }
   }
-  //file_fieldのcss
   .js-file_group {
     cursor: inherit;
     .js-file {
@@ -255,17 +222,7 @@
   cursor: pointer;
 }
 
-.name-box {
-  font-size: 5px;
-  word-break: normal;
-  width: 110px;
-}
-
-
-
-
-
-//投稿クリックエリアのCSS
+//プレビューとファイル選択ボタンの境界
 .label-content{
   margin-bottom: 10px;
   width: 620px;
