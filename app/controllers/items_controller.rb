@@ -35,15 +35,19 @@ class ItemsController < ApplicationController
     @preparation = @item.preparation.name
     @condition = @item.condition.name
     @address = @item.user.address.prefecture.name
-    @size = @item.size
-    @brand = @item.brand.name
+    # @size = @item.size
+    # @brand = @item.brand.name
     @picture = @item.images
     @tax = 1.1
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    if @item.destroy
+      redirect_to root_path, notice: '商品が削除されました'
+    else
+      flash.now[:alert] = '商品の削除に失敗しました'
+      render :show
+    end
   end
 
   def get_child_categories
