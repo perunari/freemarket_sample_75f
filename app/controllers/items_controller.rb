@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_parent_categories, only: [:new, :create]
   before_action :signed_in?, only: [:new, :create]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
   end
@@ -39,6 +39,15 @@ class ItemsController < ApplicationController
     @brand = @item.brand.name
     @picture = @item.images
     @tax = 1.1
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to root_path, notice: '商品が削除されました'
+    else
+      flash.now[:alert] = '商品の削除に失敗しました'
+      render :show
+    end
   end
 
   def get_child_categories
