@@ -35,8 +35,8 @@ class ItemsController < ApplicationController
     @preparation = @item.preparation.name
     @condition = @item.condition.name
     @address = @item.user.address.prefecture.name
-    @size = @item.size
-    @brand = @item.brand.name
+    @size = @item.size if @item.size.prsent?
+    @brand = @item.brand.name if @item.brand.prsent?
     @picture = @item.images
     @tax = 1.1
   end

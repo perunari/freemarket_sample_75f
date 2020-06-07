@@ -34,7 +34,7 @@
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
-|phone|integer||
+|phone|string||
 
 ### Association
 
@@ -87,6 +87,7 @@
 |preparation_id|integer|null: false|
 |price|integer|null: false|
 |status_id|integer|null: false|
+|size|string||
 
 ### Association
 
