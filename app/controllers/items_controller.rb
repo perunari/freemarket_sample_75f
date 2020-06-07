@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_parent_categories, only: [:new, :create, :edit, :update]
   before_action :signed_in?, only: [:new, :create]
+  before_action :set_item, only: [:edit, :update]
 
   def index
   end
@@ -27,14 +28,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @child_category = @item.category.parent
     @parent_category = @child_category.parent
   end
 
   def update
     params[:item][:category_id] = "" if params[:parent_category].blank? || params[:child_category].blank?
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -74,6 +73,10 @@ class ItemsController < ApplicationController
 
   def signed_in?
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
