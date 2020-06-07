@@ -29,10 +29,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to root_path
   end
 
+  def edit
+    user = current_user
+  end
+
+  def update
+    user = current_user
+    if user.update(user_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
   protected
   
   def address_params
     params.require(:address).permit(:family_name, :first_name,:family_name_kana, :first_name_kana, :postal_code, :prefecture_id, :city, :block, :building, :phone)
   end
-  
+
+  def user_params
+    params.require(:user).permit(:nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :birthday)
+  end
+
 end

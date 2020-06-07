@@ -30,10 +30,7 @@
       設定
     .menu__bar--list
       %ul
-        %li= link_to "プロフィール", "#", class: "menu__bar--list__contents"
         %li= link_to "発送元・お届け先住所変更", edit_user_address_path(current_user), class: "menu__bar--list__contents"
         %li= link_to "支払い方法", "#", class: "menu__bar--list__contents"
-        %li= link_to "メール/パスワード", "#", class: "menu__bar--list__contents"
-        %li= link_to "本人情報", "#", class: "menu__bar--list__contents"
-        %li= link_to "電話番号の確認", "#", class: "menu__bar--list__contents"
+        %li= link_to "本人情報変更",  edit_user_registration_path, class: "menu__bar--list__contents"
         %li= link_to "ログアウト", logout_path, class: "menu__bar--list__contents"
