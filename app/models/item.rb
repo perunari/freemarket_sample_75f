@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :preparation
   belongs_to_active_hash :status
 
-  validates :images, length: { in: 1..10, message: 'を1枚~10枚アップロードしてください' }
+  validates :images, length: { in: 1..5, message: 'を1枚~5枚アップロードしてください' }
   validates :user_id, :name, :description, :price, :status_id, presence: true
   validates :category_id, :condition_id, :postage_payment_id, :ship_from_id, :preparation_id, length: { minimum: 1, message: 'を選択してください' }
   validates :name, length: { maximum: 40, message: 'は最大で40字までです' }

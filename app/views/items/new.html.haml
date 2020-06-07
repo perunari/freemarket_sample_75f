@@ -9,7 +9,7 @@
           .field__header
             = f.label :出品画像
             %span.colored.required 必須
-          %p 最大10枚までアップロードできます
+          %p 最大5枚までアップロードできます
           #image-box
             #previews
               - if @item.persisted?
@@ -47,7 +47,6 @@
             %span.colored.required 必須
           .field__input
             = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: '6'
-          %span.char-counter 0/1000
 
       .content
         %p.content__about 商品の詳細
@@ -156,8 +155,8 @@
 
       .btn
         = f.submit :出品する
-        = link_to '#' do
-          もどる
+        = link_to root_path do
+          TOPページへもどる
     
       .notes
         禁止されている

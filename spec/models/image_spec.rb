@@ -1,7 +1,7 @@
 require 'rails_helper'
   
 describe Image do
-  describe '#create' do
+  describe '#update' do
 
     it "商品画像がない場合は登録できないこと" do
       image = build(:image, picture: "")
