@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_parent_categories, only: [:new, :create, :edit, :update]
   before_action :signed_in?, only: [:new, :create]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  add_breadcrumb "カテゴリー", :categories_path
 
   def index
   end
@@ -55,6 +56,10 @@ class ItemsController < ApplicationController
     @brand = @item.brand.name if @item.brand.present?
     @picture = @item.images
     @tax = 1.1
+
+    add_breadcrumb @parent.name, "/categories/#{@parent.id}"
+    add_breadcrumb @child.name,  "/subcategories/#{@child.id}"
+    add_breadcrumb @grandchild.name, "/bottomcategories/#{@grandchild.id}"
   end
 
   def destroy

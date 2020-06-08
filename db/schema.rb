@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(version: 2020_06_07_120611) do
     t.datetime "updated_at", null: false
     t.string "size"
     t.integer "status_id"
-    t.string "size"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"

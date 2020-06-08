@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  add_breadcrumb "カテゴリー", :categories_path
+
 
   # 全体像
   def index
@@ -9,5 +11,7 @@ class CategoriesController < ApplicationController
   def show
     @parent = Category.find(params[:id])
     @children = @parent.children
+
+    add_breadcrumb @parent.name
   end
 end
