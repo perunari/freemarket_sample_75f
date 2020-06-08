@@ -1,0 +1,54 @@
+.signup-wrap
+  = render "layouts/header"
+  .signup-main
+    .signup-form
+      .signup-form__identification
+        商品送付先住所情報 変更
+      .signup-form__address
+        = form_for(@address, url: user_address_path) do |f| 
+          = render 'layouts/error_messages', model: f.object
+          .field
+            = f.label :送付先氏名（全角）
+            = f.label :必須, { class: 'form-require' }
+            %br/
+            = f.text_field :family_name, autofocus: true, autocomplete: "on", placeholder: "例）山田", class: "familyname"
+            = f.text_field :first_name, autofocus: true, autocomplete: "on", placeholder: "例）太郎", class: "firstname"
+          .field
+            = f.label :送付先氏名かな（全角）
+            = f.label :必須, { class: 'form-require' }
+            %br/
+            = f.text_field :family_name_kana, autofocus: true, autocomplete: "on", placeholder: "例）やまだ", class: "familyname"
+            = f.text_field :first_name_kana, autofocus: true, autocomplete: "on", placeholder: "例）たろう", class: "firstname"
+          .field
+            = f.label :郵便番号
+            = f.label :必須, { class: 'form-require' }
+            %br/
+            = f.text_field :postal_code, autofocus: true, autocomplete: "on", placeholder: "例）123-4567", class: "text-form"
+          .field
+            = f.label :都道府県
+            = f.label :必須, { class: 'form-require' }
+            %br/
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
+          .field
+            = f.label :市区町村
+            = f.label :必須, { class: 'form-require' }
+            %br/
+            = f.text_field :city, autofocus: true, autocomplete: "on", placeholder: "例）横浜市緑区", class: "text-form"
+          .field
+            = f.label :番地
+            = f.label :必須, { class: 'form-require' }
+            %br/
+            = f.text_field :block, autofocus: true, autocomplete: "on", placeholder: "例）青山1-1-1", class: "text-form"
+          .field
+            = f.label :建物名
+            = f.label :任意, { class: 'form-ninni' }
+            %br/
+            = f.text_field :building, autofocus: true, autocomplete: "on", placeholder: "例）柳ビル103", class: "text-form"
+          .field
+            = f.label :電話番号
+            = f.label :任意, { class: 'form-ninni' }
+            %br/
+            = f.text_field :phone, autofocus: true, autocomplete: "on", placeholder: "例）09012345678", class: "text-form"
+          .actions
+            = f.submit "変更する", class: "signup-btn"
+  = render "layouts/footer" 

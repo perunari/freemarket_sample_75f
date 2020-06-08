@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @items = @user.items
   end
 
   def edit
