@@ -3,10 +3,11 @@
     出品中の商品
   .exhibition__main__item-list
     - @items.each do |item|
-      = link_to "/items/#{item.id}" do
-        = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{item.images[0].picture.file.path}", class:"featurecontent__img",size: "200x200"
-        .exhibition__main__item-list__name
-          #{item.name}
-        .exhibition__main__item-list__price
-          #{item.price}円
-          (税込)
+      .exhibition__main__item-list__box
+        = link_to "/items/#{item.id}" do
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{item.images[0].picture.file.path}", class:"exhibition_img",size: "200x200"
+          .exhibition__main__item-list__name
+            #{item.name}
+          .exhibition__main__item-list__price
+            #{item.price}円
+            (税込)
