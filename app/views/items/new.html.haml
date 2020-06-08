@@ -9,23 +9,29 @@
           .field__header
             = f.label :出品画像
             %span.colored.required 必須
-          %p 最大10枚までアップロードできます
+          %p 最大5枚までアップロードできます
           #image-box
             #previews
               - if @item.persisted?
                 - @item.images.each_with_index do |image, i|
-                  = image_tag image.picture.url, data: {index: i}, width: '100', height: '100'
+                  %div{class: "preview-box", data: {index: i}}
+                    .upper-box
+                      = image_tag image.picture.url, data: {index: i}, width: '112', height: '112'
+                      .delete-box
+                        .delete-btn
+                          %span 削除
+                          
+            .label-content
+
             = f.fields_for :images do |i|
               %div{data: {index: "#{i.index}"}, class: "js-file_group"}
                 = i.file_field :picture, class: 'js-file'
-                %span.js-remove 削除
               - if @item.persisted?
                 = i.check_box :_destroy, data: { index: i.index }, class: 'hidden-destroy'
 
             - if @item.persisted?
               %div{data: {index: "#{@item.images.count}"}, class: "js-file_group"}
                 = file_field_tag :picture, name: "item[images_attributes][#{@item.images.count}][picture]", class: "js-file"
-                %span.js-remove 削除
 
       .content
         .field
@@ -41,7 +47,6 @@
             %span.colored.required 必須
           .field__input
             = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: '6'
-          %span.char-counter 0/1000
 
       .content
         %p.content__about 商品の詳細
@@ -49,9 +54,43 @@
           .field__header
             = f.label :カテゴリー
             %span.colored.required 必須
-          .field__input.field__input__category
-            = f.collection_select :category_id, @parent_categories.all, :id, :name, { prompt: '選択してください' }, { name: '', id: 'parent_category' }
-            = icon('fas', 'chevron-down')
+          - case controller.action_name
+          - when 'new'
+            .field__input.field__input__category
+              = f.collection_select :category_id, @parent_categories.all, :id, :name, { prompt: '選択してください' }, { name: 'parent_category', id: 'parent_category' }
+              = icon('fas', 'chevron-down')
+          - when 'create'
+            - if @parent_category.nil?
+              .field__input.field__input__category
+                = f.collection_select :category_id, @parent_categories.all, :id, :name, { prompt: '選択してください' }, { name: 'parent_category', id: 'parent_category' }
+                = icon('fas', 'chevron-down')
+            - elsif @parent_category.present? && @child_category.nil?
+              .field__input.field__input__category
+                = f.collection_select :category_id, @parent_categories.all, :id, :name, { selected: @parent_category }, { name: 'parent_category', id: 'parent_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#children__select
+                = f.collection_select :category_id, Category.find(@parent_category).children.all, :id, :name, { prompt: '選択してください' }, { name: 'child_category', id: 'child_category' }
+                = icon('fas', 'chevron-down')
+            - elsif @child_category.present? && @grandchild_category.nil?
+              .field__input.field__input__category
+                = f.collection_select :category_id, @parent_categories.all, :id, :name, { selected: @parent_category }, { name: 'parent_category', id: 'parent_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#children__select
+                = f.collection_select :category_id, Category.find(@parent_category).children.all, :id, :name, { selected: @child_category }, { name: 'child_category', id: 'child_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#grandchildren__select
+                = f.collection_select :category_id, Category.find(@child_category).children.all, :id, :name, { prompt: '選択してください' }, { name: 'item[category_id]', id: 'grandchild_category' }
+                = icon('fas', 'chevron-down')
+            - else
+              .field__input.field__input__category
+                = f.collection_select :category_id, @parent_categories.all, :id, :name, { selected: @parent_category }, { name: 'parent_category', id: 'parent_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#children__select
+                = f.collection_select :category_id, Category.find(@parent_category).children.all, :id, :name, { selected: @child_category }, { name: 'child_category', id: 'child_category' }
+                = icon('fas', 'chevron-down')
+              .field__input.field__input__category#grandchildren__select
+                = f.collection_select :category_id, Category.find(@child_category).children.all, :id, :name, { selected: @grandchild_category }, { name: 'item[category_id]', id: 'grandchild_category' }
+                = icon('fas', 'chevron-down')
         
         .field.withmargin
           .field__header
@@ -106,7 +145,7 @@
             %span.colored.required 必須
           .price-input
             %span ¥
-            = f.number_field :price, value: '0'
+            = f.number_field :price, value: @item.price
         .price-opt.comission
           %span 販売手数料（10%）
           %span ー
@@ -116,8 +155,8 @@
 
       .btn
         = f.submit :出品する
-        = link_to '#' do
-          もどる
+        = link_to root_path do
+          TOPページへもどる
     
       .notes
         禁止されている

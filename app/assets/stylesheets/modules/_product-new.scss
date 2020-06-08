@@ -56,9 +56,6 @@
           span.colored.optional {
             background-color: #BBBBBB;
           }
-          .span.char-counter {
-  
-          }
         }
         &__input {
           width: 100%;
@@ -179,56 +176,51 @@
   }
 }
 
-.image-upload {
-  cursor: pointer;
-  &__box {
-    margin-top: 16px;
-    padding: 40px 0;
-    background-color: #F5F5F5;
-    border: 1px dashed #CCCCCC;
-    text-align: center;
-    i {
-      font-size: 20px;
-      margin-bottom: 8px;
+//投稿写真関係
+#image-box {
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: 207px;
+  #previews {
+    display: flex;
+    .preview-box {
+      height: 162px;
+      width: 112px;
+      margin: 0 16px 10px 0;
+      .upper-box {
+        height: 112px;
+        width: 100%;
+        img{
+          width: 112px;
+          height: 112px;
+        }
+      }
     }
+  }
+  .js-file_group {
+    cursor: inherit;
     .js-file {
-      display: none;
+      width: 100px;
+      font-size: 12px;
+      margin-right: 27px;
+      color: #fff;
     }
   }
 }
-
-.item-image {
-  display: inline-block;
+.delete-box {
+  color: #00b0ff;
+  height: 27px;
+  line-height: 27px;
+  border: 1px solid #eee;
+  background: #f5f5f5;
+  width: 110px;
+  cursor: pointer;
 }
 
-// .item-num-0{
-//   width: 100%;
-// }
-// .item-num-1{
-//   width: 491px;
-// }
-// .item-num-2{
-//   width: 363px;
-// }
-// .item-num-3{
-//   width: 234px;
-// }
-// .item-num-4{
-//   width: 106px;
-// }
-// //下段のfile_field
-// .item-num-5{
-//   width: 100%;
-// }
-// .item-num-6{
-//   width: 491px;
-// }
-// .item-num-7{
-//   width: 363px;
-// }
-// .item-num-8{
-//   width: 234px;
-// }
-// .item-num-9{
-//   width: 106px;
-// }
+//プレビューとファイル選択ボタンの境界
+.label-content{
+  margin-bottom: 10px;
+  width: 620px;
+}

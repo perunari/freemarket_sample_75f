@@ -29,12 +29,12 @@
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|postal_code|integer|null: false|
+|postal_code|string|null: false|
 |prefecture_id|integer|null: false|
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
-|phone|integer||
+|phone|string||
 
 ### Association
 
@@ -87,6 +87,7 @@
 |preparation_id|integer|null: false|
 |price|integer|null: false|
 |status_id|integer|null: false|
+|size|string||
 
 ### Association
 

@@ -44,12 +44,14 @@
           %th
             ブランド
             %td
-              = @brand
+              - if @item.brand.present?
+                = @brand
         %tr
           %th
             商品のサイズ
             %td
-              = @size
+              - if @item.size.present?
+                = @size
         %tr
           %th
             商品の状態
@@ -94,7 +96,7 @@
         = link_to edit_item_path, class: 'editbtn' do
           = icon('fas', 'edit')
           商品の編集
-        = link_to "#", class: 'destroybtn' do
+        = link_to item_path(@item), method: :delete, class: 'destroybtn' do
           = icon('fas', 'trash-alt')
           商品の削除
 

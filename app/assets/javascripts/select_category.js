@@ -7,7 +7,7 @@ $(function(){
   function appendChildrenBox(insertHTML){
     const childSelectHTML = `
       <div class='field__input field__input__category' id='children__select'>
-        <select id='child_category' name=''>
+        <select id='child_category' name='child_category'>
           <option value=''>選択してください</option>
           ${insertHTML}
         </select>
@@ -34,7 +34,7 @@ $(function(){
     const parentCategoryId = document.getElementById('parent_category').value;
     if(parentCategoryId !== ''){
       $.ajax({
-        url: 'get_child_categories',
+        url: '/items/get_child_categories',
         type: 'GET',
         data: { id: parentCategoryId },
         dataType: 'json'
@@ -61,7 +61,7 @@ $(function(){
     const childCategoryId = document.getElementById('child_category').value;
     if(childCategoryId !== ''){
       $.ajax({
-        url: 'get_grandchild_categories',
+        url: '/items/get_grandchild_categories',
         type: 'GET',
         data: { id: childCategoryId },
         dataType: 'json'

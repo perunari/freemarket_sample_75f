@@ -10,5 +10,4 @@ class CategoriesController < ApplicationController
     @parent = Category.find(params[:id])
     @children = @parent.children
   end
-
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
   
 describe Item do
-  describe '#create' do
+  describe '#update' do
 
     it "必須項目が全てないと登録できない" do
       user = create(:user)

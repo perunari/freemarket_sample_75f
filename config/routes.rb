@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :addresses, only: [:edit, :update]
   end
   get '/logout', to: 'users#index'
-  resources :items, only: [:new, :create, :edit, :update, :show] do
+  resources :items, except: :index do
     collection do
       get 'get_child_categories', defaults: { format: 'json' }
       get 'get_grandchild_categories', defaults: { format: 'json' }

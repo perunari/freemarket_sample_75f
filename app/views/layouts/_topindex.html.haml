@@ -97,14 +97,35 @@
             新規投稿商品
         .newslists
           .newslist
-            = link_to root_path do
-              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+            .newspic
+              = link_to "/items/#{@item[0].id}" do
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{@item[0].images[0].picture.file.path}", class:"featurecontent__img",size: "146x240"
+            .newsname
+              #{@item[0].name}
+            .newsprice
+              #{@item[0].price}円
+            .newstax
+              (税込)
           .newslist
-            = link_to root_path do
-              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+            .newspic
+              = link_to "/items/#{@item[1].id}" do
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{@item[1].images[0].picture.file.path}", class:"featurecontent__img",size: "146x240"
+            .newsname
+              #{@item[1].name}
+            .newsprice
+              #{@item[1].price}円
+            .newstax
+              (税込)
           .newslist
-            = link_to root_path do
-              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+            .newspic
+              = link_to "/items/#{@item[2].id}" do
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{@item[2].images[0].picture.file.path}", class:"featurecontent__img",size: "146x240"
+            .newsname
+              #{@item[2].name}
+            .newsprice
+              #{@item[2].price}円
+            .newstax
+              (税込)
   %secsion.picbrand
     %h2.pictop
       ピックアップブランド
@@ -114,11 +135,32 @@
             アーカイブ
         .piclists
           .piclist
-            = link_to root_path do
-              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+            .picpic
+              = link_to "/items/#{@item[3].id}" do
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{@item[3].images[0].picture.file.path}", class:"featurecontent__img",size: "146x240"
+            .newsname
+              #{@item[3].name}
+            .newsprice
+              #{@item[3].price}円
+            .newstax
+              (税込)
           .piclist
-            = link_to root_path do
-              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+            .picpic
+              = link_to "/items/#{@item[4].id}"  do
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{@item[4].images[0].picture.file.path}", class:"featurecontent__img",size: "146x240"
+            .newsname
+              #{@item[4].name}
+            .newsprice
+              #{@item[4].price}円
+            .newstax
+              (税込)
           .piclist
-            = link_to root_path do
-              = image_tag "material/icon/icon-04.png", class:"featurecontent__img",size: "73x120"
+            .picpic
+              = link_to "/items/#{@item[5].id}"  do
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{@item[5].images[0].picture.file.path}", class:"featurecontent__img",size: "146x240"
+            .newsname
+              #{@item[5].name}
+            .newsprice
+              #{@item[5].price}円
+            .newstax
+              (税込)
