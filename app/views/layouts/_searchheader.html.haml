@@ -1,4 +1,4 @@
-%header
+.search--header
   .inner
     .upper
       %h1.upper__left
@@ -10,6 +10,11 @@
             %input.search-form__input{name: "key", placeholder: "キーワードから探す"}
             %button.search-form__btn{type: 'submit'}
               = icon('fas', 'search')
+
+    .breadcrumbs
+      %ul
+        %li
+          = render_breadcrumbs
     
     .lower
       %ul.lower__left

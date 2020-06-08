@@ -84,6 +84,7 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'fog-aws'
+gem 'breadcrumbs_on_rails'
 
 group :production do
   gem 'unicorn'

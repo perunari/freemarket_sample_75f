@@ -35,7 +35,7 @@
             %td
               %ul.product__categories
                 %li
-                  = link_to "#{@parent.name}", "/subcategories/#{@parent.id}", class: 'product__category'
+                  = link_to "#{@parent.name}", "/categories/#{@parent.id}", class: 'product__category'
                 %li
                   = link_to "#{@child.name}", "/subcategories/#{@child.id}", class: 'product__category'
                 %li
