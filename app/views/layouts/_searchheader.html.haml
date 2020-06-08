@@ -27,16 +27,16 @@
       %ul.lower__right
         - if user_signed_in?
           %li.lower__right__loginbtn 
-            = link_to user_path(current_user) do
+            = link_to user_path(current_user), class: "loginbtn" do
               マイページ
           %li.lower__right__logoutbtn 
-            = link_to logout_path do
+            = link_to logout_path, class: "logoutbtn" do
               ログアウト
 
         - else
           %li.lower__right__loginbtn
-            = link_to new_user_session_path do
+            = link_to new_user_session_path, class: "loginbtn" do
               ログイン
           %li.lower__right__signupbtn
-            = link_to new_user_registration_path do
+            = link_to new_user_registration_path, class: "signupbtn" do
               新規会員登録

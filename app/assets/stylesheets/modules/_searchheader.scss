@@ -53,7 +53,7 @@
   display: flex;
   justify-content: space-between;
   color: #333333;
-
+  
   ul li a {
       text-decoration: none;
       color: #333333;
@@ -69,8 +69,8 @@
     li .category {
       margin-right: 48px;
       &:before {
-        font-family: “Font Awesome 5 Free”;
-        content: ‘\f00b’;
+        font-family: "Font Awesome 5 Free";
+        content: '\f00b';
         font-weight: 900;
         padding-right: 5px;
         color: #00CCCC;
@@ -78,8 +78,8 @@
     }
     li .bland {
       &:before {
-        font-family: “Font Awesome 5 Free”;
-        content: ‘\f290’;
+        font-family: "Font Awesome 5 Free";
+        content: '\f290';
         font-weight: 900;
         padding-right: 5px;
         color: #00CCCC;
@@ -92,8 +92,8 @@
       margin-right: 24px;
       .loginbtn {
         &:before {
-          font-family: “Font Awesome 5 Free”;
-          content: ‘\f2bd’;
+          font-family: "Font Awesome 5 Free";
+          content: '\f2bd';
           font-weight: 900;
           padding-right: 5px;
           color: #00CCCC;
@@ -106,8 +106,8 @@
     &__logoutbtn {
       .logoutbtn {
         &:before {
-          font-family: “Font Awesome 5 Free”;
-          content: ‘\f2f5’;
+          font-family: "Font Awesome 5 Free";
+          content: '\f2f5';
           font-weight: 900;
           padding-right: 5px;
           color: #00CCCC;
@@ -120,8 +120,8 @@
     &__signupbtn {
       .signupbtn {
         &:before {
-          font-family: “Font Awesome 5 Free”;
-          content: ‘\f044’;
+          font-family: "Font Awesome 5 Free";
+          content: '\f044';
           font-weight: 900;
           padding-right: 5px;
           color: #00CCCC;
