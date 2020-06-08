@@ -84,6 +84,7 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'fog-aws'
+gem 'dotenv-rails'
 
 group :production do
   gem 'unicorn'

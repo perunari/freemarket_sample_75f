@@ -39,5 +39,7 @@
           = icon("fa", "plus-circle")
           登録してください
       .payment-btn
-        %button.submit__btn--ex{type: "submit"}購入する
+        -# %button.submit__btn--ex{type: "submit"}購入する
+        = link_to item_buyings_path(@item), method: :post do
+          購入する
   = render "layouts/footer"
