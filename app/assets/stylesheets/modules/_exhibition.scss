@@ -1,0 +1,12 @@
+.exhibition__main{
+  width: calc( 100% - 280px);
+  &__title{
+    text-align: center;
+    font-weight: bold;
+    @include menu-content;
+  }
+  &__item-list{
+    padding: 0 40px 40px 40px;
+  }
+}
+

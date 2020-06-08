@@ -1,9 +1,11 @@
 = render "layouts/searchheader.html"
 .my--main
   .my--main__boxes
-    ユーザー名：
+    ユーザー名
     .my--nickname
       = current_user.nickname
-= render "layouts/menu_bar"
+.main--middle
+  = render "layouts/menu_bar"
+  = render "layouts/exhibition_item"
 = render "layouts/footer" 
 = render "layouts/richfooter.html" 
