@@ -9,7 +9,7 @@ class BuyingsController < ApplicationController
 
   def create
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    card = CreditCard.where(user_id: current_user.id).first
+    card = CreditCard.find_by(user_id: current_user.id)
     charge = Payjp::Charge.create(
       amount: (@item.price * 1.1).ceil,
       customer: Payjp::Customer.retrieve(card.customer_id),
