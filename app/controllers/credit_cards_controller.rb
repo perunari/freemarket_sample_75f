@@ -12,7 +12,7 @@ class CreditCardsController < ApplicationController
       redirect_to new_user_credit_card_path(current_user)
     else
       customer = Payjp::Customer.create(
-        @card: params['payjpToken'],
+        card: params['payjpToken'],
         metadata: { user_id: current_user.id }
       )
       @card = CreditCard.new(
