@@ -152,7 +152,7 @@
             %span.colored.required 必須
           .price-input
             %span ¥
-            = f.number_field :price, value: @item.price
+            = f.number_field :price, value: @item.price.to_s(:delimited)
         .price-opt.comission
           %span 販売手数料（10%）
           %span ー

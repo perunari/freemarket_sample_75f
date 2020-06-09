@@ -31,11 +31,17 @@ main {
     padding: 0 30px;
     &__main-image {
       margin-bottom: 10px;
+      img {
+        object-fit: contain;
+      }
     }
     &__sub-images {
       padding: 0 60px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
+      img {
+        object-fit: contain;
+      }
     }
   }
 

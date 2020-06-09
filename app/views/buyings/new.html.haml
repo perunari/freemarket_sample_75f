@@ -16,7 +16,7 @@
             .confirm__detail--box
               .confirm--price 
                 ¥
-                = (@item.price * 1.1).ceil
+                = (@item.price * 1.1).ceil.to_s(:delimited)
               .confirm--fee
                 (税込)
                 = @item.postage_payment.name  
@@ -26,13 +26,22 @@
           支払い金額
         .totalpayment--price
           ¥
-          = (@item.price * 1.1).ceil
+          = (@item.price * 1.1).ceil.to_s(:delimited)
+
       .payment-rule
         .payment-rule-title
           支払い方法
-        .please-register
-          = icon("fa", "plus-circle")
-          = link_to "登録してください", new_user_credit_card_path(current_user), data: {"turbolinks": false}
+        -if @card.present?
+          .card-information
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+        - else
+          .please-register
+            = icon("fa", "plus-circle")
+            = link_to "登録してください", new_user_credit_card_path(current_user, item_id: params[:item_id]), data: {"turbolinks": false}
       .payment-rule
         .payment-rule-title
           配送先
@@ -46,7 +55,12 @@
           %br/
           = @address.family_name
           = @address.first_name
-      .payment-btn
-        = link_to item_buyings_path(@item), method: :post do
+      -if @card.present? && @address.present?
+        .payment-btn
+          = link_to item_buyings_path(@item), method: :post do
+            購入する
+      - else
+        .payment-btn.payment-btn--ex
           購入する
+
   = render "layouts/footer"
