@@ -9,5 +9,5 @@
           .exhibition__main__item-list__name
             #{item.name}
           .exhibition__main__item-list__price
-            #{item.price}円
+            ¥ #{(item.price * 1.1).ceil.to_s(:delimited)}
             (税込)

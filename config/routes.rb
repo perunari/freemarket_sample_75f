@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   
   root 'top#index'
   resources :users, only: :show do
+    resources :addresses, only: [:edit, :update]
     resources :credit_cards, only: [:new, :create, :show, :destroy]
   end
 

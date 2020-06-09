@@ -4,6 +4,7 @@ class CreditCardsController < ApplicationController
 
   def new
     redirect_to action: 'show', id: @card.id if @card.present?
+    @item_id = params[:item_id] if params[:item_id].present?
   end
 
   def create
@@ -21,9 +22,13 @@ class CreditCardsController < ApplicationController
         user_id: current_user.id
       )
       if @card.save
-        redirect_to action: 'show', id: @card.id
+        if params[:item_id].present?
+          redirect_to new_item_buying_path(params[:item_id])
+        else
+          redirect_to action: 'show', id: @card.id
+        end
       else
-        redirect_to action: 'create'
+        redirect_to action: 'new', alert: 'クレジットカードの登録に失敗しました'
       end
     end
   end
@@ -43,7 +48,7 @@ class CreditCardsController < ApplicationController
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
-      @card.delete
+      @card.destroy
     end
     redirect_to action: 'new'
   end

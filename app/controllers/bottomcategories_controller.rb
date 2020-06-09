@@ -5,6 +5,7 @@ class BottomcategoriesController < ApplicationController
   # 孫の一覧
   def show
     @grandchild = Category.find(params[:id])
+    @items = Item.where(category_id: params[:id])
     @child = @grandchild.parent
     @parent = @child.parent
 

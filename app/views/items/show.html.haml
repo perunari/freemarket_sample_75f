@@ -14,7 +14,7 @@
               = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{image.picture.file.path}", width: '140', height: '90'
       .product__price-info
         .product__price-info__price
-          = "#{(@item.price * @tax).to_i}円"
+          = "¥ #{(@item.price * @tax).ceil.to_s(:delimited)}"
         .product__price-info__include
           .product__price-info__include--tax
             (税込)
@@ -90,42 +90,27 @@
 
 
 
-  - if user_signed_in? && current_user.id == @item.user_id
-    .edit-destroy
-      .edit-destroy__edit-btn
-        = link_to edit_item_path, class: 'editbtn' do
-          = icon('fas', 'edit')
-          商品の編集
-        = link_to item_path(@item), method: :delete, class: 'destroybtn' do
-          = icon('fas', 'trash-alt')
-          商品の削除
+    - if user_signed_in? && current_user.id == @item.user_id
+      .edit-destroy
+        .edit-destroy__edit-btn
+          = link_to edit_item_path, class: 'editbtn' do
+            = icon('fas', 'edit')
+            商品の編集
+          = link_to item_path(@item), method: :delete, class: 'destroybtn' do
+            = icon('fas', 'trash-alt')
+            商品の削除
 
+    - if user_signed_in? && current_user.id != @item.user_id
+      .comment
+        %form.comment-form
+          %textarea.comment-form__textarea{rows: '5'}
+          .comment-form__notice
+            相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %button.comment-form__submit-btn
+            = icon('fas', 'comment')
+            コメントする
 
-
-
-
-
-
-
-  - if user_signed_in? && current_user.id != @item.user_id
-    .comment
-      %form.comment-form
-        %textarea.comment-form__textarea{rows: '5'}
-        .comment-form__notice
-          相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %button.comment-form__submit-btn
-          = icon('fas', 'comment')
-          コメントする
-
-    .previous-and-next
-      = link_to '#', class: 'previous-product' do
-        = icon('fas', 'chevron-left', class: 'icon--chevron')
-        前の商品
-      = link_to '#', class: 'next-product' do
-        後ろの商品
-        = icon('fas', 'chevron-right', class: 'icon--chevron')
-
-    = link_to '#', class: 'same-category-products' do
-      ベビー・キッズをもっと見る
+    = link_to bottomcategory_path(@grandchild.id), class: 'same-category-products' do
+      #{@item.category.name}をもっと見る
 = render 'layouts/camerabtn'
 = render 'layouts/richfooter'

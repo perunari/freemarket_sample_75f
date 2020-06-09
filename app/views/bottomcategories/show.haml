@@ -6,30 +6,17 @@
         .category--title{ id: "#{@grandchild.name}" }
           .category--font
             #{@grandchild.name}の商品一覧
+
       .category__image
-        .category__image--list
-          .sample--image
-          .sample--text
-            商品名
-            12,345円
-            (税込)
-        .category__image--list
-          .sample--image
-          .sample--text
-            商品名
-            12,345円
-            (税込)
-        .category__image--list
-          .sample--image
-          .sample--text
-            商品名
-            12,345円
-            (税込)
-        .category__image--list
-          .sample--image
-          .sample--text
-            商品名
-            12,345円
-            (税込)
+        - @items.each do |item|
+          .category__image--list            
+            .sample--image
+              = link_to item_path(item) do
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/freemarket-f/#{item.images[0].picture.file.path}", class:"featurecontent__img",size: "146x240"
+              .sample--text
+                #{item.name}
+                #{(item.price * 1.1).ceil.to_s(:delimited)}円
+                (税込)
+
   = render 'layouts/camerabtn'
   = render 'layouts/richfooter'

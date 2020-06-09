@@ -2,7 +2,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :address, dependent: :destroy
+  has_many :credit_cards, dependent: :destroy
   has_many :items, dependent: :destroy
+
   validates :nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :birthday ,presence: true
   mailRegex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   email = "a@a.com"

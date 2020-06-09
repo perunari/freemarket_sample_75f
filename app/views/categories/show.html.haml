@@ -10,30 +10,6 @@
           - @children.each do |child|
             .grandchild__box
               = link_to child.name, "/subcategories/#{child.id}", class: "grandchild--title"
-      .category__image
-        .category__image--list
-          .sample--image
-          .sample--text
-            商品名
-            12,345円
-            (税込)
-        .category__image--list
-          .sample--image
-          .sample--text
-            商品名
-            12,345円
-            (税込)
-        .category__image--list
-          .sample--image
-          .sample--text
-            商品名
-            12,345円
-            (税込)
-        .category__image--list
-          .sample--image
-          .sample--text
-            商品名
-            12,345円
-            (税込)
+      
   = render 'layouts/camerabtn'
   = render 'layouts/richfooter'
