@@ -9,12 +9,12 @@ class BuyingsController < ApplicationController
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     card = CreditCard.where(user_id: current_user.id).first
     charge = Payjp::Charge.create(
-      amount: (@item.price * 1.1),
+      amount: (@item.price * 1.1).ceil,
       customer: Payjp::Customer.retrieve(card.customer_id),
       currency: 'jpy'
     )
 
-    buying = Buying.new(user_id: current_user.id, item_id: @item.id, address_id: current_user.address, credit_card_id: card.id, amount: (@item.price * 1.1))
+    buying = Buying.new(user_id: current_user.id, item_id: @item.id, address_id: current_user.address.id, credit_card_id: card.id, amount: (@item.price * 1.1).ceil)
     if buying.save
       @item.status_id = 2
       @item.save
