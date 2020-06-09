@@ -46,8 +46,9 @@
 |Column|Type|Option|
 |------|----|------|
 |user_id|integer|null: false, foreign_key: true|
-|customer_id|string|null: false|
-|card_id|string|null: false|
+|card_number|integer|null: false, unique: true|
+|exp_month|integer|null: false|
+|exp_year|integer|null: false|
 
 ### Association
 

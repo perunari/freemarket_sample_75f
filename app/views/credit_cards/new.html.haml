@@ -6,12 +6,12 @@
         %h2 クレジットカード情報
       .creditcard-main__form__text
         .creditcard-main__form__text__input
-          = form_with url: user_credit_cards_path(current_user), id: 'charge-form', name: "inputForm" do |form|
+          = form_with url: new_credit_card_path do |form|
             .field
               = form.label :カード番号, { class: 'form-label'}
               = form.label :必須, { class: 'form-require' }
               %br/
-              = form.text_field :number, placeholder: "半角数字のみ", class: "text-form", id: "payment_card_number", maxlength: 16
+              = form.text_field :card_number, placeholder: "半角数字のみ", class: "text-form"
               %ul.cards-image
                 %li
                   = image_tag "material/pict/visa.svg", width: "49", height: "20", class: "card-image"
@@ -32,18 +32,17 @@
               = form.label :必須, { class: 'form-require' }
               %br/
               .field__deadline
-                = form.select :exp_month, [['01', '1'], ['02', '2'], ['03', '3'], ['04', '4'], ['05', '5'], ['06', '6'], ['07', '7'], ['08', '8'], ['09', '9'], ['10', '10'], ['11', '11'], ['12', '12']], {}, { id: 'payment_card_exp_mm', type: 'text' }
+                = form.select :card_deadline,[['01', 1], ['2', 2]]  
                 = form.label :月, class: "deadline-label"
-                = form.select :exp_year, [['20', '2020'], ['21', '2021'], ['22', '2022'], ['23', '2023'], ['24', '2024'], ['25', '2025'], ['26', '2026'], ['27', '2027'], ['28', '2028'], ['29', '2029'], ['30', '2030']], {}, { id: 'payment_card_exp_yy', type: 'text' }
+                = form.select :card_deadline,[['20', 1], ['21', 2]]
                 = form.label :年, class: "deadline-label" 
             .field
               = form.label :セキュリティコード, { class: 'form-label'}
               = form.label :必須, { class: 'form-require' }
               %br/
               .field__security_code
-                = form.text_field :cvc, placeholder: "カード背面４桁もしくは３桁の番号", class: "text-form", id: "payment_card_cvc", maxlength: 4
-            #card_token
+                = form.text_field :security_code, placeholder: "カード背面４桁もしくは３桁の番号", class: "text-form"
             .field
-              = form.submit "追加する", class: "add-btn", id: "payment_card_regist"
+              = form.submit "追加する", class: "add-btn"
   = render "layouts/richfooter"
   = render "layouts/camerabtn"

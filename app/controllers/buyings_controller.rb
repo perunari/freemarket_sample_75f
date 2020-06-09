@@ -1,6 +1,4 @@
 class BuyingsController < ApplicationController
-  before_action :set_item
-  require 'payjp'
 
   def new
   end
