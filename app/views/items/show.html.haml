@@ -84,7 +84,7 @@
       .product__buybtn
       - if user_signed_in? && current_user.id != @item.user_id
         .buybtn
-          = link_to new_buying_path,class: 'buybtn__btn' do
+          = link_to new_item_buying_path(@item), class: 'buybtn__btn' do
             = icon('fas', 'cart-arrow-down')
             購入画面に進む
 
