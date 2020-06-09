@@ -16,7 +16,7 @@
             .confirm__detail--box
               .confirm--price 
                 ¥
-                = @item.price
+                = (@item.price * 1.1).ceil
               .confirm--fee
                 (税込)
                 = @item.postage_payment.name  
@@ -26,13 +26,13 @@
           支払い金額
         .totalpayment--price
           ¥
-          = @item.price
+          = (@item.price * 1.1).ceil
       .payment-rule
         .payment-rule-title
           支払い方法
         .please-register
           = icon("fa", "plus-circle")
-          = link_to "登録してください", new_credit_card_path
+          = link_to "登録してください", new_user_credit_card_path(current_user), data: {"turbolinks": false}
       .payment-rule
         .payment-rule-title
           配送先
@@ -47,5 +47,6 @@
           = @address.family_name
           = @address.first_name
       .payment-btn
-        %button.submit__btn--ex{type: "submit"}購入する
+        = link_to item_buyings_path(@item), method: :post do
+          購入する
   = render "layouts/footer"
