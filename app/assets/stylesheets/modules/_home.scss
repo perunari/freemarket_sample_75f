@@ -230,6 +230,8 @@ section.news{
         text-decoration: none;
         color: #3CCACE;
         font-weight: bold;
+        display: flex;
+        justify-content: center;
       }
   .newslists{
     width: 780px;
@@ -244,6 +246,7 @@ section.news{
     font-weight: normal;
       .newsname{
         padding: 16px 0 0 16px;
+        word-break: break-all;
       }
       .newsprice{
         padding-left: 16px;
