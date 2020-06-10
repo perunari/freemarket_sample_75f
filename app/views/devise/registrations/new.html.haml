@@ -4,9 +4,9 @@
     .signup-form
       .signup-form__information
         会員情報
+      = render "devise/shared/error_messages", resource: resource
       .signup-form__first
         = form_for(@user, url: users_sign_up_path) do |f|
-          = render "devise/shared/error_messages", resource: resource
           .field
             = f.label :ニックネーム 
             = f.label :必須, { class: 'form-require' }

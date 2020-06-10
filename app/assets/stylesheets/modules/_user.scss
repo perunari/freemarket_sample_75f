@@ -157,3 +157,22 @@
     
   }
 }
+
+#error_explanation {
+  background-color: #FFF8DC;
+  padding: 20px 40px;
+  background-color: #FFF8DC;
+  border-top: 1px solid #EEEEEE;
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  ul {
+    list-style: disc;
+    text-indent: 24px;
+    li {
+      color: #FF0000;
+    }
+  }
+}

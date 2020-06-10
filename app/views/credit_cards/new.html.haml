@@ -43,9 +43,9 @@
               .field__security_code
                 = form.text_field :cvc, placeholder: "カード背面４桁もしくは３桁の番号", class: "text-form", id: "payment_card_cvc", maxlength: 4
             #card_token
+            .field
+              = form.submit "追加する", class: "add-btn", id: "payment_card_regist"
             - if @item_id.present?
               .hiddeln-field
                 = form.hidden_field :item_id, value: @item_id
-            .field
-              = form.submit "追加する", class: "add-btn", id: "payment_card_regist"
   = render "layouts/richfooter"

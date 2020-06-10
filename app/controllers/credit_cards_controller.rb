@@ -4,7 +4,11 @@ class CreditCardsController < ApplicationController
 
   def new
     redirect_to action: 'show', id: @card.id if @card.present?
-    @item_id = params[:item_id] if params[:item_id].present?
+    if params[:item_id].present?
+      @item_id = params[:item_id]
+    else
+      @item_id = ''
+    end
   end
 
   def create
@@ -21,6 +25,7 @@ class CreditCardsController < ApplicationController
         customer_id: customer.id,
         user_id: current_user.id
       )
+      # binding.pry
       if @card.save
         if params[:item_id].present?
           redirect_to new_item_buying_path(params[:item_id])
